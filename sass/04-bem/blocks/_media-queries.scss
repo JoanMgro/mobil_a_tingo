@@ -4,7 +4,7 @@
     @include nav-375;
     @include main-375;
     @include btn-375;
-    @include form-buscar-375;
+    @include form-375;
     @include input-375;
     @include carrusel-375;
 
@@ -14,7 +14,10 @@
     @include page-425;
     @include header-425;
     @include nav-425;
-    @include form-buscar-425;
+    @include main-425;
+    @include form-container-425;
+    @include form-425;
+    @include unete-425;
 
 
 }
@@ -27,7 +30,8 @@
     @include log-in-576;
 
     @include main-576;
-    @include buscar-servicio-576;
+    @include form-container-576;
+    @include form-576;
     @include registrarse-576;
     @include text-576;
     @include ofertas-cont-576;
@@ -44,7 +48,10 @@
 @mixin blocks-768{
     @include page-768;
     @include header-768;
-    @include buscar-servicio-768;
+    @include main-768;
+    @include form-container-768;
+    @include form-768;
+    @include unete-768;
     @include ofertas-cont-768;
     @include carrusel-768;
     @include card-768;
@@ -71,8 +78,9 @@
     @include menu-list-992;
     @include log-in-992;
     @include link-992;
-    @include buscar-servicio-992;
-    @include form-buscar-992;
+    @include main-992;
+    @include form-container-992;
+    @include form-992;
     @include text-992;
     @include unete-992;
 
@@ -82,6 +90,7 @@
     @include page-1200;
     @include header-1200;
     @include main-1200;
+    @include form-container-1200;
     @include ofertas-cont-1200;
     @include registrarse-1200;
     

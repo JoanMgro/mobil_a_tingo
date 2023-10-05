@@ -1,80 +1,93 @@
 .main{
-    @include disp-flex(column);
-    row-gap: 1rem;
+    display: grid;
+    @include grid;
+    row-gap: 3rem;
 
+}
+
+.main__form-container{
+    @include pos-col(1, 12);
 }
 
 .main__search-results{
     visibility:visible;
+    @include pos-col(1, 12);
+}
+
+.main__unete{
+    @include pos-col(1, 12);
 }
 
 
 @mixin main-375{
     .main{
-        padding: 0 0.5rem 0 0.5rem;
+        @include grid($size:$screen-xxs);
+        // padding: 0 0.5rem 0 0.5rem;
+    }
+}
+
+@mixin main-425{
+    .main{
+        @include grid($size:$screen-xs);
+        
     }
 }
 
 @mixin main-576{
     .main{
-        flex-wrap: wrap;
-        @include disp-flex(row);
-        @include flex-locate(space-around, center);
+        @include grid($size:$screen-s);
         
     }
-    .main__search-results{
-        order: 0;
-    }
-    .main__registrarse{
+ 
+    
+ 
+}
+
+
+@mixin main-768{
+    .main{
+        @include grid($size:$screen-m);
         
-        order: 1;
     }
-    .main__search-results{
-        order: 2;
+ 
+}
+
+@mixin main-992{
+    .main{
+        @include grid($size:$screen-l);
+        
     }
-    .main__ofertas{
-        order: 3;
-    }
-    .main__unete{
-        order: 4;
-    }
+ 
 }
 
 @mixin main-1200{
     
     .main{
-        @include flex-locate(space-between, center);
+        @include grid($size:$screen-xl);
         padding: 0.5rem;
         
     }
+    .main__form-container{
+        @include pos-col(1, 5);
+    }
+    
+    .main__search-results{
+        visibility:visible;
+        @include pos-col(6, 7);
+        @include pos-row(1, 2);
+    }
+    
+    .main__unete{
+        @include pos-col(1, 5);
+    }
   
 
-    .main__search-results{
-        order: 0;
-    }
-    .main__ofertas{
-        order: 1;
-        
-        
-    }
-
-    .main__search-results{
-        order: 2;
-    }
-
-    .main__registrarse{
-        
-        order: 3;
-    }
-
-    .main__unete{
-        order: 4;
-    }
 }
 
 @mixin main-1300{
     
     .main{
+        @include grid($size:$screen-xxl);
        row-gap: 2rem;
         
     }
@@ -83,6 +96,7 @@
 @mixin main-1440{
     
     .main{
+        @include grid($size:$screen-xxxl);
        row-gap: 5rem;
         
     }

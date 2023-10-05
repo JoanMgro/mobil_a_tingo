@@ -5,7 +5,7 @@
     text-align: center;
 }
 
-.input_buscar{
+.input_type_buscar{
     width: 100%;
     height: 2px;
     
@@ -29,7 +29,7 @@
 
 @mixin input-375{
 
-    .input_buscar{
+    .input_type_buscar{
         height: 2rem;
     }
     .input_radio{

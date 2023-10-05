@@ -8,27 +8,52 @@
     @include flex-locate(flex-end, center);
 }
 
+@mixin unete-425{
+    .unete{
+        padding-right: 3rem;
+        width: 100%;
+        max-width: 27rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
 
 @mixin unete-576{
     .unete{
         padding-right: 3rem;
         width: 100%;
+        max-width: 30rem;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
+
+@mixin unete-768{
+    .unete{
+        padding-right: 3rem;
+        width: 100%;
+        max-width: 30.5rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
 
 
 @mixin unete-992{
     .unete{
         background-position: 15%;
         height: 10rem;
-        padding-right: 11rem;
+        padding-right: 1rem;
     }
     
 }
 @mixin unete-1200{
     .unete{
-     width: 50%;
+     width: 100%;
      padding-right: 1rem;
+     margin: 0;
     }
     
 }

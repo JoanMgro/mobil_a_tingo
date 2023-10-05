@@ -1,0 +1,61 @@
+.form-container{
+    min-width: 20rem;
+    min-height: 15.5rem;
+    @include disp-flex(column);
+    @include flex-locate($align: center);
+    @include round($color: $bg-search-box, $radio: 2.75rem);
+    @include shadow;
+    background-color: $bg-search-box;
+    row-gap: 1rem;
+    padding: 0.5rem;
+
+}
+
+@mixin form-container-425{
+    .form-container{
+        width: 100%;
+        max-width: 27rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}
+
+
+@mixin form-container-576{
+    .form-container{
+        width: 100%;
+        max-width: 30.5rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}
+
+@mixin form-container-768{
+    .form-container{
+        width: 100%;
+        max-width: 30.5rem;
+        margin-left: auto;
+        margin-right: auto;
+       
+    }
+
+}
+
+@mixin form-container-992{
+    .form-container{
+        max-width: 30.5rem;
+    }
+
+}
+
+@mixin form-container-1200{
+    .form-container{
+        max-width: 30.5rem;
+        margin: 0;
+    }
+
+}
+
+

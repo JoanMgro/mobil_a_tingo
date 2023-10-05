@@ -1,7 +1,7 @@
 .page {
     display:grid; 
     @include grid;
-    row-gap: 0.5rem;  
+    row-gap: 2rem;  
     padding-top: 0.5rem;
     padding-bottom: 12rem; 
     width: $screen-small;
@@ -45,11 +45,12 @@
   @mixin page-576{
      .page {
         @include grid($size:$screen-s);
+        row-gap: 3rem;
         padding-bottom: 7.5rem; 
 
-        &__main{
-            @include disp-flex;
-        }
+        // &__main{
+            
+        // }
   
     }
 

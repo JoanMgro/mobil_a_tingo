@@ -12,6 +12,11 @@
   grid-column: $start / span $span;
 }
 
+@mixin pos-row($start, $span: 1){
+  grid-row: $start / span $span;
+}
+
+
 @mixin absolute($top: auto, $right:auto, $bottom: auto, $left: auto){
    position: absolute;
    top: $top;

@@ -37,7 +37,7 @@ html {
   grid-template-columns: repeat(12, minmax(26.6666666667px, 1fr));
   grid-template-rows: max-content;
   grid-auto-rows: max-content;
-  row-gap: 0.5rem;
+  row-gap: 2rem;
   padding-top: 0.5rem;
   padding-bottom: 12rem;
   width: 100%;
@@ -218,13 +218,24 @@ html {
 }
 
 .main {
-  display: flex;
-  flex-direction: column;
-  row-gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(26.6666666667px, 1fr));
+  grid-template-rows: max-content;
+  grid-auto-rows: max-content;
+  row-gap: 3rem;
+}
+
+.main__form-container {
+  grid-column: 1/span 12;
 }
 
 .main__search-results {
   visibility: visible;
+  grid-column: 1/span 12;
+}
+
+.main__unete {
+  grid-column: 1/span 12;
 }
 
 .registrarse {
@@ -326,7 +337,7 @@ html {
   font-weight: 500;
 }
 
-.text_buscar {
+.text_title_buscar {
   font-weight: 500;
 }
 
@@ -354,7 +365,7 @@ html {
   font-size: 0.75rem;
 }
 
-.buscar-servicio {
+.form-container {
   min-width: 20rem;
   min-height: 15.5rem;
   display: flex;
@@ -369,7 +380,7 @@ html {
   padding: 0.5rem;
 }
 
-.form-buscar {
+.form {
   display: flex;
   flex-direction: column;
   min-width: 16rem;
@@ -379,7 +390,7 @@ html {
   row-gap: 0.75rem;
 }
 
-.form-buscar__input-container {
+.form__input-container {
   position: relative;
 }
 
@@ -419,7 +430,7 @@ html {
   text-align: center;
 }
 
-.input_buscar {
+.input_type_buscar {
   width: 100%;
   height: 2px;
 }
@@ -438,7 +449,7 @@ html {
   width: 65%;
 }
 
-.radio-cont {
+.radio-container {
   min-width: 16rem;
   width: 100%;
   display: flex;
@@ -650,9 +661,11 @@ html {
     width: 10rem;
   }
   .main {
-    padding: 0 0.5rem 0 0.5rem;
+    grid-template-columns: repeat(12, minmax(31.25px, 1fr));
+    grid-template-rows: max-content;
+    grid-auto-rows: max-content;
   }
-  .input_buscar {
+  .input_type_buscar {
     height: 2rem;
   }
   .input_radio {
@@ -676,17 +689,32 @@ html {
   .nav_state_opened {
     width: 12rem;
   }
+  .main {
+    grid-template-columns: repeat(12, minmax(35.4166666667px, 1fr));
+    grid-template-rows: max-content;
+    grid-auto-rows: max-content;
+  }
+  .form-container {
+    width: 100%;
+    max-width: 27rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .unete {
+    padding-right: 3rem;
+    width: 100%;
+    max-width: 27rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 @media (min-width: 576px) {
   .page {
     grid-template-columns: repeat(12, minmax(48px, 1fr));
     grid-template-rows: max-content;
     grid-auto-rows: max-content;
+    row-gap: 3rem;
     padding-bottom: 7.5rem;
-  }
-  .page__main {
-    display: flex;
-    flex-direction: row;
   }
   .header {
     grid-template-columns: repeat(12, minmax(48px, 1fr));
@@ -734,29 +762,19 @@ html {
     min-height: 1.25rem;
   }
   .main {
-    flex-wrap: wrap;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
+    grid-template-columns: repeat(12, minmax(48px, 1fr));
+    grid-template-rows: max-content;
+    grid-auto-rows: max-content;
   }
-  .main__search-results {
-    order: 0;
+  .form-container {
+    width: 100%;
+    max-width: 30.5rem;
+    margin-left: auto;
+    margin-right: auto;
   }
-  .main__registrarse {
-    order: 1;
-  }
-  .main__search-results {
-    order: 2;
-  }
-  .main__ofertas {
-    order: 3;
-  }
-  .main__unete {
-    order: 4;
-  }
-  .buscar-servicio {
-    width: 40%;
+  .form {
+    height: 20rem;
+    row-gap: 1.7rem;
   }
   .registrarse {
     display: flex;
@@ -779,6 +797,9 @@ html {
   .unete {
     padding-right: 3rem;
     width: 100%;
+    max-width: 30rem;
+    margin-left: auto;
+    margin-right: auto;
   }
   .footer {
     display: flex;
@@ -820,8 +841,27 @@ html {
     grid-template-rows: max-content;
     grid-auto-rows: max-content;
   }
-  .buscar-servicio {
-    width: 50%;
+  .main {
+    grid-template-columns: repeat(12, minmax(64px, 1fr));
+    grid-template-rows: max-content;
+    grid-auto-rows: max-content;
+  }
+  .form-container {
+    width: 100%;
+    max-width: 30.5rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .form {
+    height: 20rem;
+    row-gap: 1.7rem;
+  }
+  .unete {
+    padding-right: 3rem;
+    width: 100%;
+    max-width: 30.5rem;
+    margin-left: auto;
+    margin-right: auto;
   }
   .ofertas-cont {
     height: -moz-fit-content;
@@ -905,10 +945,15 @@ html {
   .link_text_nav {
     font-size: 1.25rem;
   }
-  .buscar-servicio {
+  .main {
+    grid-template-columns: repeat(12, minmax(82.6666666667px, 1fr));
+    grid-template-rows: max-content;
+    grid-auto-rows: max-content;
+  }
+  .form-container {
     max-width: 30.5rem;
   }
-  .form-buscar {
+  .form {
     height: 20rem;
     row-gap: 1.7rem;
   }
@@ -919,7 +964,7 @@ html {
     width: 12rem;
   }
   .text_unete {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
   }
   .text_redes {
     font-size: 1rem;
@@ -927,7 +972,7 @@ html {
   .unete {
     background-position: 15%;
     height: 10rem;
-    padding-right: 11rem;
+    padding-right: 1rem;
   }
 }
 @media (min-width: 1200px) {
@@ -942,24 +987,25 @@ html {
     grid-auto-rows: max-content;
   }
   .main {
-    justify-content: space-between;
-    align-items: center;
+    grid-template-columns: repeat(12, minmax(100px, 1fr));
+    grid-template-rows: max-content;
+    grid-auto-rows: max-content;
     padding: 0.5rem;
   }
-  .main__search-results {
-    order: 0;
-  }
-  .main__ofertas {
-    order: 1;
+  .main__form-container {
+    grid-column: 1/span 5;
   }
   .main__search-results {
-    order: 2;
-  }
-  .main__registrarse {
-    order: 3;
+    visibility: visible;
+    grid-column: 6/span 7;
+    grid-row: 1/span 2;
   }
   .main__unete {
-    order: 4;
+    grid-column: 1/span 5;
+  }
+  .form-container {
+    max-width: 30.5rem;
+    margin: 0;
   }
   .ofertas-cont {
     width: 50%;
@@ -968,8 +1014,9 @@ html {
     width: 40%;
   }
   .unete {
-    width: 50%;
+    width: 100%;
     padding-right: 1rem;
+    margin: 0;
   }
 }
 @media (min-width: 1300px) {
@@ -984,6 +1031,9 @@ html {
     grid-auto-rows: max-content;
   }
   .main {
+    grid-template-columns: repeat(12, minmax(108.3333333333px, 1fr));
+    grid-template-rows: max-content;
+    grid-auto-rows: max-content;
     row-gap: 2rem;
   }
 }
@@ -1002,6 +1052,9 @@ html {
     grid-auto-rows: max-content;
   }
   .main {
+    grid-template-columns: repeat(12, minmax(120px, 1fr));
+    grid-template-rows: max-content;
+    grid-auto-rows: max-content;
     row-gap: 5rem;
   }
 }
