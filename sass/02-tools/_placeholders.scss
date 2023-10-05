@@ -1,0 +1,32 @@
+%input-style {
+    border:1px solid black;
+    padding-left: 0.313rem;
+
+}
+
+%anchor-style{
+    text-decoration: none;
+}
+
+%btn-index-style{
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
+    
+}
+
+
+
+%btn-primary{
+    border-color: $border-color-primary;
+    background-color: $bg-btn-primary;
+}
+
+%btn-secondary{
+    color: $mobatingo-orange;
+    border: 1px solid transparent;
+    background-color: black;
+    border-radius: 1rem;
+    padding: 0 0.5rem 0 0.5rem;
+}
+

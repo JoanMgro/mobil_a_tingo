@@ -1,0 +1,78 @@
+.menu-list{
+    @include disp-flex(column);
+    @include flex-locate($justify: center);
+
+
+    &__menu-item{
+        border-top: 2px solid $border-color-tertiary;
+        padding: 0.5rem 0 0.5rem 0;
+        &_log-in{
+            padding: 1.5rem 0 1.5rem 0;
+        }
+       
+    }
+
+
+    &__menu-link_log-in{
+        margin-left: auto;
+        margin-right: auto;
+        @include round($color:$border-color-primary, $radio:1.25rem);
+        @include shadow;
+    }
+}
+
+@mixin menu-list-576{
+    .menu-list{
+    @include disp-flex;
+    @include flex-locate($justify:space-around, $align:center);
+    height: 100%;
+    }
+
+    .menu-list__menu-item{
+        border-top:0;
+        
+        padding:0;
+            &_hover:hover{
+                border-bottom: 1px solid $border-color-primary;
+            }
+            &_log-in{
+                padding:0;
+                
+            }
+           
+        }   
+    
+        .menu-list__menu-link_log-in{
+            @include round($color:$border-color-primary, $radio:1.25rem);
+            @include shadow;
+        }
+
+   
+    
+
+
+}
+ 
+ @mixin menu-list-768{
+
+
+ }
+ 
+ @mixin menu-list-992{
+
+ }
+ 
+ @mixin menu-list-1200{
+
+
+ }
+ 
+ @mixin menu-list-1300{
+
+
+ }
+ @mixin menu-list-1440{
+
+
+ }
+ 

@@ -1,0 +1,80 @@
+@use "sass:math";
+
+@mixin grid($mincols:12, $size:$screen-xxxs){
+   $min: math.div($size, $mincols);
+   grid-template-columns: repeat($mincols, minmax($min, 1fr));
+   grid-template-rows: max-content;
+   grid-auto-rows: max-content;
+}
+
+
+@mixin pos-col($start, $span: 1){
+  grid-column: $start / span $span;
+}
+
+@mixin absolute($top: auto, $right:auto, $bottom: auto, $left: auto){
+   position: absolute;
+   top: $top;
+   right: $right;
+   bottom: $bottom;
+   left: $left;
+ }
+
+ @mixin round($color:black, $radio:1rem, $thick:1px){
+   border: $thick solid $color;
+   border-radius: $radio;
+ }
+
+ @mixin round-down($color:black, $radio:1rem, $thick:1px){
+  border-bottom: $thick solid $color;
+  border-bottom-left-radius: $radio;
+  border-bottom-right-radius: $radio;
+}
+
+
+
+ @mixin shadow($x:0, $y:0.25, $blur: 0.25, $color:$shadow-color-primary){
+   box-shadow: #{$x}rem #{$y}rem #{$blur}rem $color;
+ }
+
+@mixin flex($dir: row, $justify: normal, $align: normal){
+  display: flex;
+  flex-direction: $dir;
+  justify-content: $justify;
+  align-items: $align;
+
+}
+
+@mixin disp-flex($dir: row){
+  display: flex;
+  flex-direction: $dir;
+}
+
+@mixin flex-locate($justify: normal, $align: normal){
+  justify-content: $justify;
+  align-items: $align;
+
+}
+
+
+@mixin background-img($path, $repeat: no-repeat, $position: center, $size: contain){
+
+background-image: url($path);
+background-repeat: $repeat;
+background-position: $position;
+background-size: $size;
+}
+
+@mixin locate-self($top: 0rem, $right: 0rem, $bottom: 0rem,$left: 0rem){
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+
+}
+
+@mixin my-border($sides, $thick: 1px, $color:$border-color-quaternary){
+  @each $side in $sides {
+    border-#{$side} :  $thick solid $color;
+  }
+}

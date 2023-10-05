@@ -1,0 +1,4 @@
+.grupo-iconos{
+     @include disp-flex;
+     @include flex-locate(center, center);
+}

@@ -1,0 +1,84 @@
+.btn{
+    @include round;
+    font-size: $mobatingo-font-4;
+    font-weight: 500;
+}
+.btn_registrarse{
+    border-color: $border-color-primary;
+    background-color: $bg-btn-primary;
+    @include shadow;
+    padding: 0.25rem;
+    min-width: 4.5rem;
+    min-height: 1.5rem;
+    height: 2rem;
+    width: 6rem;
+    text-align: center;
+    font-weight: 400;
+    
+}
+
+.btn_buscar{
+    background-color: $bg-btn-secondary; 
+    color: $text-color-secondary;
+    @include shadow;
+    width: 6rem;
+    height: 2rem;   
+
+}
+
+.btn_buscar_cerca{
+    background-color: $bg-btn-secondary; 
+    color: $text-color-secondary;
+    @include shadow;
+    width: 7.5rem;
+    height: 2rem;   
+
+}
+
+.btn_unete{
+    background-color: $bg-btn-secondary;
+    color: $text-color-secondary;
+    @include shadow;
+    width: 10rem;
+    height: 2rem; 
+    @include disp-flex;
+    @include flex-locate(center, center);
+    column-gap: 1rem;
+}
+
+.btn__ico{
+    @include background-img('../images/icons/unete-icon.png');
+    display: block;
+    min-width: 1rem;
+    min-height: 1rem;
+
+
+}
+
+.btn_send{
+    border-color: $border-color-primary;        
+    background-color: $bg-btn-primary;
+    min-width: 5rem;
+    min-height: 1.5rem;
+    @include shadow;
+   
+    
+}
+.btn_card{
+    display: block;
+    background-color: $bg-btn-secondary; 
+    color: $text-color-secondary;
+    font-size: $mobatingo-font-3;
+    @include shadow;
+    width: 4.25rem;
+    height: 1,5rem;  
+    text-align: center;
+   
+}
+
+@mixin btn-375{
+
+
+
+}
+

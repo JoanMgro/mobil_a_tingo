@@ -1,0 +1,43 @@
+
+@media (min-width: $screen-xxs){    
+    @include blocks-375;
+
+}
+
+@media (min-width: $screen-xs){
+    @include blocks-425;
+
+}
+
+@media (min-width: $screen-s){
+    @include blocks-576;
+    
+
+}
+
+@media (min-width: $screen-m){
+    @include blocks-768;
+    
+
+}
+
+@media (min-width: $screen-l){
+    @include blocks-992;
+
+}
+
+@media (min-width: $screen-xl){
+    @include blocks-1200
+}
+
+@media (min-width: $screen-xxl){
+    @include blocks-1300;
+    ;
+
+}
+
+@media (min-width: $screen-xxxl){
+    @include blocks-1440;
+
+}
+

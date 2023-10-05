@@ -1,0 +1,107 @@
+@mixin blocks-375{
+    @include page-375;
+    @include header-375;
+    @include nav-375;
+    @include main-375;
+    @include btn-375;
+    @include form-buscar-375;
+    @include input-375;
+    @include carrusel-375;
+
+}
+
+@mixin blocks-425{
+    @include page-425;
+    @include header-425;
+    @include nav-425;
+    @include form-buscar-425;
+
+
+}
+
+@mixin blocks-576{
+    @include page-576;
+    @include header-576;
+    @include nav-576;
+    @include menu-list-576;
+    @include log-in-576;
+
+    @include main-576;
+    @include buscar-servicio-576;
+    @include registrarse-576;
+    @include text-576;
+    @include ofertas-cont-576;
+    @include carrusel-576;
+    @include unete-576;
+
+    @include footer-576;
+    @include newsletter-576;
+    @include grupo-redes-576;
+    @include grupo-legal-576;
+   
+}
+
+@mixin blocks-768{
+    @include page-768;
+    @include header-768;
+    @include buscar-servicio-768;
+    @include ofertas-cont-768;
+    @include carrusel-768;
+    @include card-768;
+    
+    @include info-cont-768;
+    @include buttons-cont-768;
+    
+    @include footer-768;
+    @include newsletter-768;
+    @include grupo-legal-768;
+    @include text-768;
+    @include grupo-redes-768;
+    
+  
+   
+  
+
+
+}
+
+@mixin blocks-992{
+    @include page-992;
+    @include header-992;
+    @include menu-list-992;
+    @include log-in-992;
+    @include link-992;
+    @include buscar-servicio-992;
+    @include form-buscar-992;
+    @include text-992;
+    @include unete-992;
+
+}
+
+@mixin blocks-1200{
+    @include page-1200;
+    @include header-1200;
+    @include main-1200;
+    @include ofertas-cont-1200;
+    @include registrarse-1200;
+    
+    @include unete-1200;
+   
+}
+
+@mixin blocks-1300{
+    @include page-1300;
+    @include header-1300;
+    @include main-1300;
+   
+
+}
+
+@mixin blocks-1440{
+    @include page-1440;
+    @include header-1440;
+    @include main-1440;
+   
+}
+
+

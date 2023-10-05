@@ -1,0 +1,44 @@
+.card{
+    min-height: 12rem;
+    min-width: 6.75rem;
+    width: 7rem;
+    height: 13rem;
+    background-color: $bg-body;
+    @include shadow($x:0.25, $y:0.25, $blur: 0.25, $color:$shadow-color-secondary);
+    @include round($color: $mobatingo-white, $radio: 0.25rem);
+    
+}
+
+.card__image{
+    width: 100%;
+    
+        
+}
+
+.card__info-cont{
+    @include absolute($top: 60%, $right:0.25rem, $left: 0.25rem);
+}
+
+@mixin card-768{
+    .card{
+
+        width: 10rem;
+        height: 17rem;
+
+        
+    }
+
+    .card__image{
+        height: 100%;
+    
+        
+    }
+
+    .card__info-cont{
+        @include locate-self($top: 60%, $right:0.25rem, $left: 0.25rem);
+        
+    }
+    
+
+}
+

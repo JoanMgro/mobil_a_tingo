@@ -1,0 +1,28 @@
+.ofertas-cont{
+    min-width: 20rem;
+    @include disp-flex(column);
+    @include flex-locate(center, center);
+    row-gap: 1rem;
+    padding: 0.5rem 0 0.5rem 0;
+}
+
+@mixin ofertas-cont-576{
+    .ofertas-cont{
+        width: 100%;
+    }
+
+}
+
+@mixin ofertas-cont-768{
+    .ofertas-cont{
+        height: fit-content;
+    }
+
+}
+
+@mixin ofertas-cont-1200{
+    .ofertas-cont{
+        width: 50%;
+    }
+
+}

@@ -1,0 +1,15 @@
+.input-list{
+
+    background-color: $bg-option-box;
+    text-align: center;
+    min-height: 3.5rem;
+    overflow-y: scroll;
+    @include round-down;
+    @include my-border(('left', 'right'));
+    
+}
+
+.input-list_js_hidden{
+    display: none;
+    
+}

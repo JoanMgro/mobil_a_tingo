@@ -1,0 +1,157 @@
+.page {
+    display:grid; 
+    @include grid;
+    row-gap: 0.5rem;  
+    padding-top: 0.5rem;
+    padding-bottom: 12rem; 
+    width: $screen-small;
+    position: relative;
+    min-height: 100vh;
+    background-color: $bg-body;     
+
+    &__header{
+        @include pos-col(1, 12);
+        position: relative; 
+
+    }
+    &__main{
+        @include pos-col(1, 12);
+        width: 100%;
+        @include disp-flex(column);
+    }
+
+    &__footer{
+      @include absolute($bottom: 0rem, $left: 0rem, $right: 0rem);
+      @include disp-flex;
+      min-height: 5.3rem;
+
+    }
+}
+
+@mixin page-375{
+     .page {
+      @include grid($size:$screen-xxs);
+    }
+  
+  }
+  
+  @mixin page-425{
+     .page {
+      @include grid($size:$screen-xs);
+    }
+  
+  }
+  //576
+  @mixin page-576{
+     .page {
+        @include grid($size:$screen-s);
+        padding-bottom: 7.5rem; 
+
+        &__main{
+            @include disp-flex;
+        }
+  
+    }
+
+  }
+  
+  @mixin page-768{
+     .page {
+        @include grid($size:$screen-m);
+  
+    }
+ 
+  }
+  
+  @mixin page-992{
+     .page {
+        @include grid($size:$screen-l);
+  
+    }
+
+  }
+  
+  @mixin page-1200{
+     .page {
+        @include grid($size:$screen-xl);
+  
+    }
+
+  }
+  
+  @mixin page-1300{
+     .page {
+      @include grid($size:$screen-xxl);
+    }
+ 
+  }
+  @mixin page-1440{
+     .page {
+      @include grid($size:$screen-xxxl);
+      margin-left: auto;
+      margin-right: auto;
+      width: $screen-xlarge;
+      
+    }
+
+  }
+  
+
+
+
+// @mixin page-sm{
+//     .o page\@sm{
+//         padding-bottom: 6rem; 
+//         width: $screen-small;
+//         @include re-grid($size:$screen-small-min);
+//     }
+// }
+
+// @mixin index--medium{
+//     .index{
+//         width: $screen-medium;
+//         font-size: 1.25rem;
+//         @include re-grid($size:$screen-medium-min);
+
+        
+//     }
+// }
+
+// @mixin index--large{
+//     .index{
+//         width: $screen-large;
+//         font-size: 1.25rem;
+//         @include re-grid($size:$screen-large-min);
+
+        
+//     }
+// }
+
+// @mixin index--xlarge{
+//     .index{
+//         width: $screen-xlarge;
+//         font-size: 1.25rem;
+//         @include re-grid($size:$screen-xlarge-min);
+
+        
+//     }
+// }
+
+
+// @mixin index--xxlarge{
+//     .index{
+//         width: $screen-xxlarge;
+//         font-size: 1.75rem;
+//         @include re-grid($size:$screen-xxlarge);
+//         margin-left: auto;
+//         margin-right: auto;
+//         row-gap: 0.5rem;
+
+        
+//     }
+// }
+
+
+
+
+

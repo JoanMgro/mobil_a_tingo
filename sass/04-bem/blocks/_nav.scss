@@ -1,0 +1,66 @@
+.nav{
+
+    &_state_opened{
+        min-width: 8.5rem;
+        background-color: $bg-navbar;
+        padding: 2.5rem 0.5rem 0.5rem 0.5rem;
+    }
+    &_state_closed{
+        display: none;
+    }
+}
+
+
+@mixin nav-375{
+    
+    .nav_state_opened{
+        width: 10rem;
+    }
+ 
+ }
+ 
+ @mixin nav-425{
+    .nav_state_opened{
+        width: 12rem;
+    } 
+ }
+
+ @mixin nav-576{
+    .nav{
+        display: block;
+        padding: 0;
+        min-width: min-content;
+        width: 100%;
+
+    }
+
+
+    
+
+
+ }
+ 
+ @mixin nav-768{
+
+
+ }
+ 
+ @mixin nav-992{
+
+
+ }
+ 
+ @mixin nav-1200{
+
+
+ }
+ 
+ @mixin nav-1300{
+
+
+ }
+ @mixin nav-1440{
+
+
+ }
+ 

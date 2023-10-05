@@ -1,0 +1,50 @@
+.footer{
+    min-height: 5rem;
+    height: 11.25rem;  
+    @include disp-flex(column-reverse);
+    @include flex-locate(center, center);
+    row-gap: 0.75rem;
+    padding: 0;
+    border-top: 2px solid $border-color-primary;    
+}
+
+
+@mixin footer-576{
+    .footer{
+        @include disp-flex;
+        height: 6.5rem;
+        flex-wrap: wrap;
+    }
+    .footer__grupo-redes{
+        order: 0;
+    }
+    .footer__newsletter{
+        order: 1;
+    }
+    .footer__grupo-legal{
+        order: 2;
+    }
+
+    
+}
+
+@mixin footer-768{
+    .footer{
+        @include flex-locate(space-between, center);
+        height: 6.5rem;
+        
+    }
+
+    .footer__grupo-legal{
+        order: 0;
+    }
+    .footer__grupo-redes{
+        order: 1;
+    }
+    .footer__newsletter{
+        order: 2;
+    }
+
+
+    
+}

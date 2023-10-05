@@ -1,0 +1,89 @@
+.main{
+    @include disp-flex(column);
+    row-gap: 1rem;
+
+}
+
+.main__search-results{
+    visibility:visible;
+}
+
+
+@mixin main-375{
+    .main{
+        padding: 0 0.5rem 0 0.5rem;
+    }
+}
+
+@mixin main-576{
+    .main{
+        flex-wrap: wrap;
+        @include disp-flex(row);
+        @include flex-locate(space-around, center);
+        
+    }
+    .main__search-results{
+        order: 0;
+    }
+    .main__registrarse{
+        
+        order: 1;
+    }
+    .main__search-results{
+        order: 2;
+    }
+    .main__ofertas{
+        order: 3;
+    }
+    .main__unete{
+        order: 4;
+    }
+}
+
+@mixin main-1200{
+    
+    .main{
+        @include flex-locate(space-between, center);
+        padding: 0.5rem;
+        
+    }
+  
+
+    .main__search-results{
+        order: 0;
+    }
+    .main__ofertas{
+        order: 1;
+        
+        
+    }
+
+    .main__search-results{
+        order: 2;
+    }
+
+    .main__registrarse{
+        
+        order: 3;
+    }
+
+    .main__unete{
+        order: 4;
+    }
+}
+
+@mixin main-1300{
+    
+    .main{
+       row-gap: 2rem;
+        
+    }
+}
+
+@mixin main-1440{
+    
+    .main{
+       row-gap: 5rem;
+        
+    }
+}

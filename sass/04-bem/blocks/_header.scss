@@ -1,0 +1,91 @@
+.header{
+    display: grid;
+    @include grid;
+
+    &__logo-img{
+        @include pos-col(1, 4);
+    }
+
+    &__menu-btn{
+        @include absolute($top: 0.45rem, $right:0.75rem);
+        
+    }
+
+    &__nav{
+        @include absolute($top: 0.25rem, $right:0.5rem);
+        @include round($color: $border-color-secondary, $radio:0.5rem, $thick: 2px);
+
+    }
+
+}
+@mixin header-375{
+    .header {
+     @include grid($size:$screen-xxs);
+   }
+ 
+ }
+ 
+ @mixin header-425{
+    .header {
+     @include grid($size:$screen-xs);
+   }
+ 
+ }
+
+ @mixin header-576{
+    .header {
+       @include grid($size:$screen-s);
+       &__menu-btn{
+        display: none;
+       }
+       &__nav{
+        position: static;
+        border: none;
+        @include pos-col(5, 8);
+
+       }
+ 
+
+  }
+
+ }
+ 
+ @mixin header-768{
+    .header {
+       @include grid($size:$screen-m);
+       
+
+   }
+
+ }
+ 
+ @mixin header-992{
+    .header {
+       @include grid($size:$screen-l);
+ 
+   }
+
+ }
+ 
+ @mixin header-1200{
+    .header {
+       @include grid($size:$screen-xl);
+ 
+   }
+
+ }
+ 
+ @mixin header-1300{
+    .header {
+     @include grid($size:$screen-xxl);
+   }
+
+ }
+ @mixin header-1440{
+    .header {
+     @include grid($size:$screen-xxxl);
+     
+   }
+
+ }
+ 

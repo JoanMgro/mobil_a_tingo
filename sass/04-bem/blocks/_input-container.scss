@@ -1,0 +1,7 @@
+.input-container{
+    width: 100%;
+}
+.input-container__input-list{
+    @include absolute($top: 1.5rem, $right:0, $bottom: 0, $left: 0);
+    
+}

@@ -1,0 +1,48 @@
+.carrusel{
+    min-width: 19rem;
+    min-height: 13.25rem;
+    width: 100%;
+    @include round($color: $border-color-carrusel, $radio: 2rem);
+    background-color: $bg-carrusel;
+    @include disp-flex;
+    @include flex-locate($justify: space-between, $align: center);
+    column-gap: 1rem;
+    padding: 0.5rem 0 0.5rem 0;
+}
+
+.carrusel__card{
+    position: relative;
+}
+
+.carrusel__card_show_two{
+    display: none;
+
+}
+
+
+.carrusel__card_show_three{
+    display: none;
+
+}
+
+@mixin carrusel-375{
+    .carrusel__card_show_two{
+        display: block;
+
+    }
+}
+
+
+@mixin carrusel-576{
+    .carrusel__card_show_three{
+        display: block;
+
+    }
+}
+
+@mixin carrusel-768{
+    .carrusel{
+        height: 20rem;
+
+    }
+}

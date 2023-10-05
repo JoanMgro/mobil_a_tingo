@@ -1,0 +1,7 @@
+.radio-cont{
+    min-width: 16rem;
+    width: 100%;
+    @include disp-flex;
+    @include flex-locate(space-around, center);
+    
+}

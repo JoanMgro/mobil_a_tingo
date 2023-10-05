@@ -1,0 +1,36 @@
+.buscar-servicio{
+    min-width: 20rem;
+    min-height: 15.5rem;
+    @include disp-flex(column);
+    @include flex-locate($align: center);
+    @include round($color: $bg-search-box, $radio: 2.75rem);
+    @include shadow;
+    background-color: $bg-search-box;
+    row-gap: 1rem;
+    padding: 0.5rem;
+
+}
+
+
+@mixin buscar-servicio-576{
+    .buscar-servicio{
+        width: 40%;
+    }
+
+}
+
+@mixin buscar-servicio-768{
+    .buscar-servicio{
+        width: 50%;
+    }
+
+}
+
+@mixin buscar-servicio-992{
+    .buscar-servicio{
+        max-width: 30.5rem;
+    }
+
+}
+
+

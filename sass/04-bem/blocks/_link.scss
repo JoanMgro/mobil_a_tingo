@@ -1,0 +1,78 @@
+.link{
+    font-size: $mobatingo-font-4;   
+
+    
+}
+
+.link_text_terminos{
+    font-size: $mobatingo-font-3;
+}
+
+.link_red_face{
+    @include background-img('../images/icons/facebook.png');
+    display: inline-block;
+    min-width: 2.5rem;
+    min-height: 2rem;
+    
+}
+
+.link_red_insta{
+    @include background-img('../images/icons/instagram.png');
+    display: inline-block;
+    min-width: 2.5rem;
+    min-height: 2rem;
+    
+
+}
+.link_red_x{
+    @include background-img('../images/icons/x.png');
+    display: inline-block;
+    min-width: 2.5rem;
+    min-height: 2rem;
+    
+
+}
+.link_red_wsup{
+    @include background-img('../images/icons/wsup.png');
+    display: inline-block;
+    min-width: 2.5rem;
+    min-height: 2rem;
+    
+
+}
+
+@mixin link-375{
+
+ }
+ 
+ @mixin link-425{
+    
+ }
+
+ @mixin link-576{
+ 
+ }
+ 
+ @mixin link-768{
+
+ }
+ 
+ @mixin link-992{
+
+    .link_text_nav{
+        font-size: $mobatingo-font-5;        
+    }
+
+ }
+ 
+ @mixin link-1200{
+
+ }
+ 
+ @mixin link-1300{
+    
+ }
+ @mixin link-1440{
+
+ }
+ 

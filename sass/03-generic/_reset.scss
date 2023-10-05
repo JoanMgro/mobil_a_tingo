@@ -1,0 +1,28 @@
+html {
+    box-sizing: border-box;
+    text-decoration: none;
+     
+  }
+*, *:before, *:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+a{
+  text-decoration: none;
+  color: $mobatingo-black; 
+}
+ul{
+  list-style-type: none;
+  margin-block: 0;
+  margin-inline: 0;
+  padding-inline: 0;
+ 
+}
+img{
+  object-fit: contain;
+  object-position: center;
+}
+
+

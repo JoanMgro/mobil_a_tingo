@@ -1,0 +1,17 @@
+.grupo-redes{
+    @include disp-flex(column);
+    @include flex-locate(center, center);
+}
+
+
+@mixin grupo-redes-576{
+   .grupo-redes{
+    width: 35%;
+   }
+}
+
+@mixin grupo-redes-768{
+    .grupo-redes{
+     width: 25%;
+    }
+ }

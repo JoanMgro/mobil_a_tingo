@@ -1,0 +1,24 @@
+.registrarse{
+    @include disp-flex;
+    @include flex-locate(space-around, center);
+}
+
+@mixin registrarse-576{
+    .registrarse{
+        @include disp-flex(column);
+        @include flex-locate(center, center);
+        row-gap: 1rem;
+        width: 40%;
+    }
+}
+
+
+@mixin registrarse-1200{
+    .registrarse{
+   
+        width: 40%;
+    }
+}
+
+
+

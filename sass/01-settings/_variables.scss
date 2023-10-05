@@ -1,0 +1,71 @@
+$mobatingo-white: #FFFFFF;
+$mobatingo-orange:#F4A712;
+$mobatingo-black:#000000;
+$mobatingo-black-025:rgba(0  0  0 / 0.25);
+$mobatingo-black-030: rgba(0 0 0 / 0.30);
+$mobatingo-grey-040: rgba(217 217 217 / 0.40);
+$mobatingo-bluegray: #545F71;
+
+
+$mobatingo-font-family: 'Heebo', sans-serif;
+
+$factor:0.25rem;
+$mobatingo-font-1 : 1 * $factor;
+$mobatingo-font-2 : 2 * $factor;
+$mobatingo-font-3 : 3 * $factor;
+$mobatingo-font-4 : 4 * $factor;//1rem
+$mobatingo-font-5 : 5 * $factor;
+$mobatingo-font-6 : 6 * $factor;
+$mobatingo-font-7 : 7 * $factor;
+$mobatingo-font-8 : 8 * $factor;
+$mobatingo-font-9 : 9 * $factor;   
+$mobatingo-font-10 : 10 * $factor;  
+
+
+//background-colors
+$bg-general-primary: $mobatingo-orange;
+$bg-body: $mobatingo-white;
+$bg-navbar: $mobatingo-white;
+$bg-btn-primary: $mobatingo-orange;
+$bg-btn-secondary: $mobatingo-black;
+$bg-search-box: $mobatingo-orange;
+$bg-carrusel: $mobatingo-grey-040;
+$bg-option-box: $mobatingo-white;
+
+//text-colors
+$text-color-primary: $mobatingo-black;
+$text-color-secondary:$mobatingo-orange;
+
+//Shadow-colors
+$shadow-color-primary: $mobatingo-black-025;
+$shadow-color-secondary:$mobatingo-orange;
+
+
+//Border Colors
+$border-color-primary:$mobatingo-orange;
+$border-color-secondary:$mobatingo-black;
+$border-color-tertiary:$mobatingo-black-030;
+$border-color-quaternary:$mobatingo-bluegray;
+$border-color-carrusel:$mobatingo-grey-040;
+
+//max-body-widths
+$screen-small: 100%;
+$screen-medium: 100%;
+$screen-large: 100%;
+$screen-xlarge: 1440px;
+
+
+//Media-break-points
+$screen-xxxs: 320px;
+$screen-xxs: 375px;
+$screen-xs: 425px;
+$screen-s: 576px;
+$screen-m: 768px;
+$screen-l: 992px;
+$screen-xl: 1200px;
+$screen-xxl: 1300px;
+$screen-xxxl: 1440px;
+
+
+
+

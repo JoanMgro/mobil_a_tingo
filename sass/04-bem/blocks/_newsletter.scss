@@ -1,0 +1,19 @@
+.newsletter{
+    @include disp-flex;
+    @include flex-locate(space-around, center);
+    width: 100%;
+
+}
+
+
+@mixin newsletter-576{
+    .newsletter{
+        width: 60%;
+    }
+}
+
+@mixin newsletter-768{
+    .newsletter{
+        width: 35%;
+    }
+}

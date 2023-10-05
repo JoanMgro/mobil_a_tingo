@@ -1,0 +1,10 @@
+
+@mixin buttons-cont-768{
+    .buttons-cont{
+
+        width: 100%;
+        @include disp-flex;
+        @include flex-locate(space-around, center);
+    }
+
+}

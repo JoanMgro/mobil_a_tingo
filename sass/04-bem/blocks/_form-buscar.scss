@@ -1,0 +1,35 @@
+.form-buscar{
+    @include disp-flex(column);
+    min-width: 16rem;
+    
+    width: 80%; // Equivale a width: 16rem;
+    @include flex-locate($align: center);
+    row-gap: 0.75rem;
+
+}
+
+.form-buscar__input-container{
+    position: relative;
+}
+
+@mixin form-buscar-375{
+
+}
+
+@mixin form-buscar-425{
+
+}
+
+@mixin form-buscar-992{
+    .form-buscar{
+       
+        height: 20rem; // Equivale a width: 16rem;
+        row-gap: 1.7rem;
+     
+    
+    }
+
+}
+
+
+

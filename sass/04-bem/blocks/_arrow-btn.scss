@@ -1,0 +1,21 @@
+.arrow-btn{
+    border: none;
+    background-color: transparent;
+    min-width: 2.5rem;
+    min-height: 2.5rem;
+    opacity: 0.25;
+
+    &:hover{
+        opacity: 1;
+    }
+     
+}
+
+.arrow-btn_left{
+    @include background-img('../images/buttons/arrow-left.png');
+}
+
+
+.arrow-btn_right{
+    @include background-img('../images/buttons/arrow-right.png');
+}

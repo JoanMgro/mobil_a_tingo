@@ -1,0 +1,61 @@
+.log-in{
+    @include disp-flex;
+    @include flex-locate(space-around, center);
+    padding: 0 0.5rem 0 0.5rem;
+    min-width: 5rem;
+    min-height: 2.25rem;
+    width: 6rem;
+    text-align: center;
+    background-color: $bg-general-primary;
+
+    &__ico{
+        min-width: 1rem;
+        min-height: 0.75rem;
+        @include background-img('../images/icons/login.png');
+    }
+    
+}
+
+
+@mixin log-in-576{
+
+    .log-in{
+        min-height: 1.25rem;
+    }
+    
+
+
+ }
+ 
+ @mixin log-in-768{
+
+
+ }
+ 
+ @mixin log-in-992{
+
+    .log-in{
+        width: 8rem;
+    }
+    .log-in__ico{
+        width: 1.25rem;
+        height: 1rem;
+    }
+
+
+ }
+ 
+ @mixin log-in-1200{
+
+
+ }
+ 
+ @mixin log-in-1300{
+
+
+ }
+ @mixin log-in-1440{
+
+
+ }
+ 

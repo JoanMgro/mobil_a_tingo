@@ -1,0 +1,23 @@
+.grupo-legal{
+    @include disp-flex(column);
+    @include flex-locate(center, center);
+}
+
+
+@mixin grupo-legal-576{
+    .grupo-legal{
+        width: 100%;
+        @include disp-flex;
+        @include flex-locate(space-around, center);
+
+    }
+}
+
+@mixin grupo-legal-768{
+    .grupo-legal{
+        width: 40%;
+        @include disp-flex(column);
+        @include flex-locate(center, center);
+
+    }
+}
