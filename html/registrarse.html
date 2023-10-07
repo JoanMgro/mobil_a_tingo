@@ -10,13 +10,13 @@
   
     <title>MobilATingo</title>
 </head>
-<body class="page">
+<body class="page page_registrarse">
   <header class="page__header header">
     <img class="header__logo-img logo-img" src="../src/images/logos/logo.png" alt="Logo Mobilatingo">
     <nav id="hambu-menu" class="header__nav nav nav_state_closed">
       <ul class="menu-list">
         <li class="menu-list__menu-item menu-list__menu-item_hover">
-          <a class="menu-list__menu-link link link_text_nav" href="#">Inicio</a>
+          <a class="menu-list__menu-link link link_text_nav" href="../index.html">Inicio</a>
         </li>
         <li class="menu-list__menu-item menu-list__menu-item_hover">
           <a class="menu-list__menu-link link-text_nav" href="#">Servicios</a>
@@ -41,102 +41,64 @@
 
   <main class="page__main main">
 
-    <section class="main__buscar-servicio buscar-servicio">
-      <p class="text text_buscar buscar-servicio__text">Datos Basicos</p>
-      <form id="buscar-servicio" action="" method="" class="buscar-servicio__form-buscar form-buscar">
-        <label for="nombre">Nombre:
-            <input id="nombre" class="form-buscar__input input input_buscar" type="text" name="nombre" autocomplete="off">
-        </label>
-        <label for="nit">Nit:
-            <input id="nit" class="form-buscar__input input input_buscar" type="text" name="nit" autocomplete="off">
-        </label>     
+    <section class="main__form-container main__form-container_registro form-container form-container_registro">
+      <p class="form-container__text text text_title_buscar">Datos de Registro</p>
+      <form id="registrase" action="./login.html" method="" class="form-container__form form form_type_registrarse">
+        <p class="form__text text text_titulo_registrar">Informacion de Log in</p>
+        <label class="form__label label " for="r-email">Email:</label>
+        <input id="r-email" class="form__input_reg input input_type_buscar" type="email" name="r-email" autocomplete="off">
+        <label class="form__label label " for="r-pass">Password:</label>
+        <input id="r-pass" class="form__input_reg input input_type_buscar" type="password" name="r-pass" autocomplete="off">
+        <p class="form__text text text_titulo_registrar">Informacion de la empresa</p>
+        <label class="form__label label " for="nombre">Nombre:</label>
+        <input id="nombre" class="form__input_reg input input_type_buscar" type="text" name="nombre" autocomplete="off">
+        <label class="form__label label " for="nit">Nit:</label>
+        <input id="nit" class="form__input_reg input input_type_buscar" type="text" name="nit" autocomplete="off">
+        <label class="form__label label " for="logo">Logo:</label>
+        <input id="logo" class="form__input_reg input input_type_buscar" type="file" name="logo" autocomplete="off">
+        <p class="form__text text text_titulo_registrar">Informacion de Ubicacion</p>
+        <!-- BOTON LOCALIZAR ME -->
+        <button id="locate" class="form__btn btn btn_buscar btn_locate">Localizarme</button>
+        <label class="form__label label " for="latitud">Coord Latitud:</label>
+        <input id="latitud" class="form__input_reg input input_type_buscar" type="text" name="u-latitud" autocomplete="off">
+        <label class="form__label label " for="longitud">Coord Longitud:</label>
+        <input id="longitud" class="form__input_reg input input_type_buscar" type="text" name="u-longitud" autocomplete="off">
+        <!-- INFO UBICACION -->
+        <label class="form__label label " for="pais">Pais:</label>
+        <input id="pais" class="form__input_reg input input_type_buscar" type="text" name="pais" autocomplete="off">
+        <label class="form__label label " for="departamento">Departamento:</label>
+        <input id="departamento" class="form__input_reg input input_type_buscar" type="text" name="departamento" autocomplete="off">
+        <label class="form__label label " for="ciudad">Ciudad:</label>
+        <input id="ciudad" class="form__input_reg input input_type_buscar" type="text" name="ciudad" autocomplete="off">
+        <label class="form__label label " for="barrio">Barrio:</label>
+        <input id="barrio" class="form__input_reg input input_type_buscar" type="text" name="barrio" autocomplete="off">
+        <label class="form__label label " for="direccion">Direccion:</label>
+        <input id="direccion" class="form__input_reg input input_type_buscar" type="text" name="direccion" autocomplete="off">
+        <p class="form__text text text_titulo_registrar">Informacion de Telefonica</p>
+        <div id="telf-container" class="form__field-container_tel">
+          <div id="t-0"  class="field-container field-container_tel">
+            <input type="checkbox" name="tel-fijo" id="t-0-0" class="field-container__check_tel">
+            <label id="t-0-1" class="label field-container__label_tel" for="t-0-2">Telefono Fijo:</label>
+            <input id="t-0-2" class="input input_type_buscar field-container__input_tel" type="number" name="u-tel-fijo" autocomplete="off">
   
-        <label for="logo-comp">Logo:</label>
-        <input id="logo-comp" class="form-buscar__input input input_buscar" type="file" name="logo-comp" autocomplete="off">
-        <input id="barrio" class="form-buscar__input input input_buscar" type="text" name="barrio" placeholder="Barrio" autocomplete="off">
-        <div class="form-buscar__radio-cont radio-cont">
-          <label for="radio" class="radio-cont__label text text_radio label-rad">
-            <span class="">
-              Radio de busqueda
-            </span> 
-            <i class="label-rad__gps-ico"></i>
-          </label>
-          <input id="radio" class="input input_radio" type="number" name="radio" placeholder="Metros">
+          </div>   
+
         </div>
+     
+        
+        <button id="agregar-tel" class="form__btn btn btn_buscar btn_add-tel">Agregar Telefono</button>
+        <!-- <input id="departamento" class="form__input input input_type_buscar" type="text" name="departamento" placeholder="Departamento" autocomplete="off">
+        <input id="ciudad" class="form__input input input_type_buscar" type="text" name="ciudad" placeholder="Ciudad" autocomplete="off">
+        <input id="barrio" class="form__input input input_type_buscar" type="text" name="barrio" placeholder="Barrio" autocomplete="off">
+
         <input id="my-coords" type="hidden" name="my_coords">
-        <input id="controller" type="hidden" name="search-controller" value="searchController">
-        <input id="find-me" class="radio-cont__btn btn btn_buscar" type="submit" value="Buscar">
+        <input id="controller" type="hidden" name="search-controller" value="searchController"> -->
+        <input id="save" class="form__btn form__btn_guardar btn btn_buscar" type="submit" value="Guardar">
 
       </form>
     </section>
 
-    <section class="main__search-results search-results">
-      <!-- contenido creado dianmicamente con resultados de la busqueda -->
 
-    </section>
-    
-    <section class="main__ofertas ofertas-cont">
-      <p class="ofertas-cont__titulo text text_ofertas_titulo">Ofertas del dia</p>
-      <div class="ofertas-cont__carrusel carrusel">
-        <button class="carrusel__arrow-btn carrusel__arrow-btn_left arrow-btn arrow-btn_left"></button>        
-        <!-- <div class="carrusel__display display"> -->
-          <!-- Aca entran las cartas de las promociones -->
-          <div class="carrusel__card card">
-            <img class="card__image" src="./src/images/banners/Banner-01.png" alt="">
-            <div class="card__info-cont info-cont">
-              <p class="info-cont__name text text_card">REPARA MAX S.A.S</p>
-              <p class="info-cont__address text text_card">Calle 93 # 41-80</p>
-              <div class="info-cont__buttons buttons-cont">
-                <a class="buttons-cont__ver btn btn_card">ver</a>
-                <a class="buttons-cont__agendar btn btn_card">Agendar</a>
-              </div>  
-            </div>
-          
-          </div>
-
-          <div class="carrusel__card card carrusel__card_show_two">
-            <img class="card__image" src="./src/images/banners/Banner-01.png" alt="">
-            <div class="card__info-cont info-cont">
-              <p class="info-cont__name text text_card">REPARA MAX S.A.S</p>
-              <p class="info-cont__address text text_card">Calle 93 # 41-80</p>
-              <div class="info-cont__buttons buttons-cont">
-                <a class="buttons-cont__ver btn btn_card">ver</a>
-                <a class="buttons-cont__agendar btn btn_card">Agendar</a>
-              </div>  
-            </div>
-          
-          </div>
-
-          <div class="carrusel__card card carrusel__card_show_three">
-            <img class="card__image" src="./src/images/banners/Banner-01.png" alt="">
-            <div class="card__info-cont info-cont">
-              <p class="info-cont__name text text_card">REPARA MAX S.A.S</p>
-              <p class="info-cont__address text text_card">Calle 93 # 41-80</p>
-              <div class="info-cont__buttons buttons-cont">
-                <a class="buttons-cont__ver btn btn_card">ver</a>
-                <a class="buttons-cont__agendar btn btn_card">Agendar</a>
-              </div>  
-            </div>
-          
-          </div>
-          <!-- Aca llegan las cartas de las promociones -->
-        <!-- </div> -->
-        <button class="carrusel__arrow-btn carrusel__arrow-btn_right arrow-btn arrow-btn_right"></button>
-      </div>
-    </section>
-    <section class="main__unete unete">
-      <div class="unete__info info-cont info-cont_unete">
-        <p class="text text_unete">Ofrece tus servicios en linea<br>con nosotros</p>
-        <a href="" class="btn btn_unete">Unete Ahora 
-          <span class="btn__ico">
-            <!-- <img class="unete__icon-img" src="./src/images/icons/unete-icon.png" alt=""> -->
-          </span>
-        </a>
-  
-
-      </div>
-
-    </section>
   </main>
 
   <footer class="page__footer footer">
@@ -155,15 +117,10 @@
         <a class="grupo-iconos__red link link_red_wsup" href="#"></a>
       </div>
     </div>
-    <div class="footer__newsletter newsletter">
-      <input class="newsletter__email input input_newsletter" type="text" placeholder="Inscribe tu email para recibir las ultimas noticias">
-      <button class="newsletter__send btn btn_send">Enviar</button>
-    </div>
-
   </footer>
 
  
   
-   <script type="module" src="./src/js/main.js"></script>
+   <script type="module" src="../src/js/registrarse.js"></script>
 </body>
 </html>

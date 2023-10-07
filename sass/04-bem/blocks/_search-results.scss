@@ -1,3 +1,28 @@
 .search-results{
     min-width: 100%;
+   
+}
+
+.search-results_suscripciones{
+
+    padding: 0 2rem 0 2rem;
+}
+
+.search-results_hidden{
+    display: none;
+}
+
+@mixin search-results-1200{
+    .search-results{
+        @include round;
+    }
+    .search-results_background{
+        
+        @include background-img($path:'../images/banners/results.png');
+        
+  
+    }
+
+    
+
 }

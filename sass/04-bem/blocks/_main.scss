@@ -18,6 +18,11 @@
     @include pos-col(1, 12);
 }
 
+.main__form-container_dashboard{
+    @include pos-col(1, 12);
+
+}
+
 
 @mixin main-375{
     .main{
@@ -69,6 +74,23 @@
     }
     .main__form-container{
         @include pos-col(1, 5);
+    }
+
+    .main__form-container_login{
+        @include pos-col(4, 6);
+
+    }
+
+
+    .main__form-container_dashboard{
+        @include pos-col(1, 5);
+
+    }
+
+    .main__form-container_registro{
+        @include pos-col(3, 8);
+     
+
     }
     
     .main__search-results{

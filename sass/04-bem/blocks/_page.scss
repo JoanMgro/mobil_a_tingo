@@ -7,7 +7,12 @@
     width: $screen-small;
     position: relative;
     min-height: 100vh;
-    background-color: $bg-body;     
+    background-color: $bg-body;
+    
+    &_registrarse{
+      row-gap: 0rem;
+
+    }
 
     &__header{
         @include pos-col(1, 12);
@@ -26,6 +31,10 @@
       min-height: 5.3rem;
 
     }
+}
+
+.page__main_login{
+  margin-top: 5rem;
 }
 
 @mixin page-375{
@@ -47,10 +56,12 @@
         @include grid($size:$screen-s);
         row-gap: 3rem;
         padding-bottom: 7.5rem; 
-
-        // &__main{
-            
-        // }
+        
+        &_registrarse{
+          row-gap: 0rem;
+    
+        }
+    
   
     }
 

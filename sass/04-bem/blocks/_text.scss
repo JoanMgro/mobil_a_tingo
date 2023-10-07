@@ -17,6 +17,20 @@
 
 }
 
+.text_titulo_registrar{
+    font-weight: 500;
+    width: 100%;
+    text-align: center;
+}
+
+
+.text_micuenta{
+    font-weight: 500;
+    width: 100%;
+    text-align: left;
+}
+
+
 .text_ofertas_titulo{
     @include round($color:$border-color-primary);
     background-color: $bg-general-primary;

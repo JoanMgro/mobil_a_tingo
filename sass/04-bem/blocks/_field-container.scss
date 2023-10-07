@@ -1,0 +1,22 @@
+.field-container{
+    border: none;
+}
+
+.field-container_tel{
+    display: grid;
+    width: 100%;
+    @include grid(12, 256px);
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.field-container__check_tel{
+    @include pos-col(1, 1);
+}
+
+.field-container__label_tel{
+    @include pos-col(2, 5);
+}
+.field-container__input_tel{
+    @include pos-col(7, 6);
+}

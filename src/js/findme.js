@@ -1,47 +1,55 @@
+const locateBtn = document.querySelector('#locate');
 
-const inputCoords = document.querySelector('#my-coords');
-const inputBoundingBox = document.querySelector('#bounding-box');
-const RAD_TIERRA = 6378;
-
-const latitudeRange = (latitude, distanceKm) =>{
-    let deltaLat = (distanceKm/RAD_TIERRA) * (180/Math.PI);
-    return Array(latitude + deltaLat, latitude - deltaLat);
-};
-
-const longitudeRange = (longitude, latitude, distanceKm)=>{
-  let deltaLong = ((distanceKm/RAD_TIERRA) * (180/Math.PI))/Math.cos(latitude*Math.PI/180);
-  return Array(longitude + deltaLong, longitude - deltaLong);
-
-};
+//Declaro las variables que contienen los inputs del form
+const inputLat = document.querySelector('#latitud');
+const inputLong = document.querySelector('#longitud');
+const autoPais = document.querySelector('#pais');
+const autoDepartamento = document.querySelector('#departamento');
+const autoCiudad = document.querySelector('#ciudad');
 
 
 
+//Obtener los valores de Pais, Depto y ciudad de nominatin.
+//crear cookie con las posicion del cliente
+//Cargar los values de los inputs con su dato correspondiente
+async function getData(){
+    const coords = await getCoords();
+    inputLat.value = coords.latitud;
+    inputLong.value = coords.longitud;
 
 
-  // document.querySelector("#find-me").addEventListener("click", (e) => {
-  //   e.preventDefault();
-  //   let boundingBox =[];
-  //   let myPos =[];
+    try {
+        const resp = await fetch(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${coords.latitud}&lon=${coords.longitud}`);
+        const json = await resp.json();
+        autoPais.value = json['address']['country'];
+
+        autoDepartamento.value = json['address']['state'];
+        autoCiudad.value = json['address']['city'];
+
+        return json['address'];
+    } catch (error) {
+        console.log('error getting data');
+        return 'error';
+
+    }
+}
+
+//Obtener las coordenadas del cliente.
+function getCoords(){
+    return new Promise((resolve, reject) =>{
+        navigator.geolocation.getCurrentPosition((pos) => {
+            resolve({latitud:pos.coords.latitude, longitud: pos.coords.longitude});
+        },
+        (err) =>{reject({error:'Error localizacion'});},
+        {enableHighAccuracy: true});});
+    }
 
 
-    
-  //     navigator.geolocation.getCurrentPosition((pos) => {
-  //       myPos.push(pos.coords.latitude);
-  //       myPos.push(pos.coords.longitude);
-  //       inputCoords.value = JSON.stringify(myPos);
-  //       console.log(pos.coords);   
-        
-  //     //console.log(`latitud: ${pos.coords.latitude}, longitud ${pos.coords.longitude}`);
-  //       boundingBox.push(latitudeRange(pos.coords.latitude, radioSelected));
-  //       boundingBox.push(longitudeRange(pos.coords.longitude,boundingBox[0][0], radioSelected));
+//Pedor la geolocalizacion del cliente onload.
 
-  //   }, (err) => {
-  //       console.log('uppa. no sirvio');
+locateBtn.addEventListener('click', (e) =>{
+    e.preventDefault();
+    getData();
 
-  //   }, {enableHighAccuracy: true});
-  //    // inputCoords.value = myPos;
-  //   // inputBoundingBox.value = JSON.stringify(boundingBox);
-  //   // console.log(inputCoords.value);
-    
-  // });
-  
+});
+

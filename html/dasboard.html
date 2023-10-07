@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="../src/css/style.css">
+  
+    <title>MobilATingo</title>
+</head>
+<body class="page">
+  <header class="page__header header">
+    <img class="header__logo-img logo-img" src="../src/images/logos/logo.png" alt="Logo Mobilatingo">
+    <nav id="hambu-menu" class="header__nav nav nav_state_closed">
+      <ul class="menu-list">
+        <li class="menu-list__menu-item menu-list__menu-item_hover">
+          <a class="menu-list__menu-link link link_text_nav" href="#">Home</a>
+        </li>
+        <li class="menu-list__menu-item menu-list__menu-item_hover">
+          <a class="menu-list__menu-link link-text_nav" href="#">Suscripciones</a>
+        </li>
+        <li class="menu-list__menu-item menu-list__menu-item_hover">
+          <a class="menu-list__menu-link link-text_nav" href="#">Faq</a>
+          </li>
+        <li class="menu-list__menu-item menu-list__menu-item_hover">
+          <a class="menu-list__menu-link link-text_nav" href="./login.html">Acerca de</a>
+          </li>
+        <li class="menu-list__menu-item menu-list__menu-item_log-in">
+          <a class="menu-list__menu-link_log-in log-in link-text_nav" href="./login.html">
+            <span class="log-in__span">Salir</span>            
+            <i class="log-in__ico"></i>
+          </a>
+        </li>
+      </ul> 
+           
+    </nav>
+    <button id="hambu"  class="header__menu-btn menu-btn menu-btn_state_closed"></button>  
+  </header>
+  <main class="page__main main">
+
+    <section class="main__form-container_dashboard form-container form-container_dashboard">
+      <p class="form-container__text text text_title_buscar">Suscripciones Activas</p>
+      <form id="suscripciones" action="" method="" class="form-container__form form form_type_dashboard">
+        <input id="suscripcion-01" class="form__input_sus input input_type_sus" type="checkbox" name="suscripcion" autocomplete="off">
+        <label class="form__label_sus label " for="suscripcion-01">Mobilatingo plus 6 meses</label>
+        
+        <button id="listar-hist" class="form__btn form__btn_guardar btn btn_buscar">Ver Historial</button>      
+        
+
+      </form>
+    </section>
+
+    <section id="historial" class="main__search-results search-results search-results_suscripciones search-results_hidden">
+      <p style="text-align: left;">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Deleniti maxime sequi eligendi dicta repellendus, repellat 
+        ut possimus similique tempora quos libero voluptates 
+        sint fuga blanditiis voluptatum harum cumque nostrum magnam!</p>
+      
+    </section>
+
+    <section class="main__form-container_dashboard form-container form-container_dashboard">
+        <p class="form-container__text text text_title_buscar">Mis Servicios</p>
+        <form id="servicios" action="" method="" class="form-container__form form form_type_dashboard">
+          <button id="nuevo-servicio" class="form__btn form__btn_guardar btn btn_buscar btn_servicios">Nuevo Servicio</button>
+          <button id="listar-servicio" class="form__btn form__btn_guardar btn btn_buscar btn_servicios">Listar Servicios</button>
+                      
+        </form>
+      </section>
+
+      <section id="listado-servicios" class="main__search-results search-results search-results_suscripciones search-results_hidden">
+        <p style="text-align: left;">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Deleniti maxime sequi eligendi dicta repellendus, repellat 
+          ut possimus similique tempora quos libero voluptates 
+          sint fuga blanditiis voluptatum harum cumque nostrum magnam!</p>
+        
+      </section>
+    
+      <section class="main__form-container_dashboard form-container form-container_dashboard">
+        <p class="form-container__text text text_title_buscar">Mi Cuenta</p>
+        <form id="cuenta" action="" method="" class="form-container__form form form_type_dashboard">
+          <p class="form__text text text_micuenta">Nombre: <span>Rapramos Sas</span></p>
+          <p class="form__text text text_micuenta">Nit: <span>800.0090.9898</span></p>
+          <p class="form__text text text_micuenta">Calificacion: <span>&#9733&#9733&#9733&#9733&#9734</span></p>
+         
+          <input id="cuenta-btn" class="form__btn form__btn_guardar btn btn_buscar" type="submit" value="Ver Detalle">
+  
+        </form>
+      </section>
+
+      <section id="ver-cuenta" class="main__form-container main__form-container_registro form-container form-container_registro search-results_hidden">
+        <p class="form-container__text text text_title_buscar">Datos de Registro</p>
+        <form id="registrase" action="" method="" class="form-container__form form form_type_registrarse">
+          <p class="form__text text text_titulo_registrar">Informacion de Log in</p>
+          <label class="form__label label " for="r-email">Email:</label>
+          <input id="r-email" class="form__input_reg input input_type_buscar" type="email" name="r-email" autocomplete="off">
+          <label class="form__label label " for="r-pass">Password:</label>
+          <input id="r-pass" class="form__input_reg input input_type_buscar" type="password" name="r-pass" autocomplete="off">
+          <p class="form__text text text_titulo_registrar">Informacion de la empresa</p>
+          <label class="form__label label " for="nombre">Nombre:</label>
+          <input id="nombre" class="form__input_reg input input_type_buscar" type="text" name="nombre" autocomplete="off">
+          <label class="form__label label " for="nit">Nit:</label>
+          <input id="nit" class="form__input_reg input input_type_buscar" type="text" name="nit" autocomplete="off">
+          <label class="form__label label " for="logo">Logo:</label>
+          <input id="logo" class="form__input_reg input input_type_buscar" type="file" name="logo" autocomplete="off">
+          <p class="form__text text text_titulo_registrar">Informacion de Ubicacion</p>
+          <!-- BOTON LOCALIZAR ME -->
+          <button id="locate" class="form__btn btn btn_buscar btn_locate">Localizarme</button>
+          <label class="form__label label " for="latitud">Coord Latitud:</label>
+          <input id="latitud" class="form__input_reg input input_type_buscar" type="text" name="u-latitud" autocomplete="off">
+          <label class="form__label label " for="longitud">Coord Longitud:</label>
+          <input id="longitud" class="form__input_reg input input_type_buscar" type="text" name="u-longitud" autocomplete="off">
+          <!-- INFO UBICACION -->
+          <label class="form__label label " for="pais">Pais:</label>
+          <input id="pais" class="form__input_reg input input_type_buscar" type="text" name="pais" autocomplete="off">
+          <label class="form__label label " for="departamento">Departamento:</label>
+          <input id="departamento" class="form__input_reg input input_type_buscar" type="text" name="departamento" autocomplete="off">
+          <label class="form__label label " for="ciudad">Ciudad:</label>
+          <input id="ciudad" class="form__input_reg input input_type_buscar" type="text" name="ciudad" autocomplete="off">
+          <label class="form__label label " for="barrio">Barrio:</label>
+          <input id="barrio" class="form__input_reg input input_type_buscar" type="text" name="barrio" autocomplete="off">
+          <label class="form__label label " for="direccion">Direccion:</label>
+          <input id="direccion" class="form__input_reg input input_type_buscar" type="text" name="direccion" autocomplete="off">
+          <p class="form__text text text_titulo_registrar">Informacion de Telefonica</p>
+          <div id="telf-container" class="form__field-container_tel">
+            <div id="t-0"  class="field-container field-container_tel">
+              <input type="checkbox" name="tel-fijo" id="t-0-0" class="field-container__check_tel">
+              <label id="t-0-1" class="label field-container__label_tel" for="t-0-2">Telefono Fijo:</label>
+              <input id="t-0-2" class="input input_type_buscar field-container__input_tel" type="number" name="u-tel-fijo" autocomplete="off">
+    
+            </div>   
+  
+          </div>
+       
+          
+          <button id="agregar-tel" class="form__btn btn btn_buscar btn_add-tel">Agregar Telefono</button>
+          
+          <input id="save" class="form__btn form__btn_guardar btn btn_buscar" type="submit" value="Guardar">
+  
+        </form>
+      </section>
+
+
+
+
+
+
+  </main>
+
+  <footer class="page__footer footer">
+    <div class="footer__grupo-legal grupo-legal">
+      <p class="grupo-legal__terminos text text_terminos">
+        <a class="link link_text_terminos" href="#">Terminos y condiciones</a> | <a class="link link_text_terminos" href="#">Politica de privacidad</a>
+      </p>
+      <p class="grupo-legal__copyright text text_copyright">@2023 Bogota, co. Todos los derechos reservados</p>
+    </div>
+    <div class="footer__grupo-redes grupo-redes">
+      <p class="grupo-redes__titulo text text_redes">Siguenos en redes sociales</p>
+      <div class="grupo-redes__iconos grupo-iconos">
+        <a class="grupo-iconos__red link link_red_face" href="#"></a>
+        <a class="grupo-iconos__red link link_red_insta" href="#"></a>
+        <a class="grupo-iconos__red link link_red_x" href="#"></a>
+        <a class="grupo-iconos__red link link_red_wsup" href="#"></a>
+      </div>
+    </div>
+  </footer>
+
+ 
+  
+   <script type="module" src="../src/js/dashboard.js"></script>
+</body>
+</html>

@@ -45,6 +45,9 @@ html {
   min-height: 100vh;
   background-color: #FFFFFF;
 }
+.page_registrarse {
+  row-gap: 0rem;
+}
 .page__header {
   grid-column: 1/span 12;
   position: relative;
@@ -64,6 +67,10 @@ html {
   display: flex;
   flex-direction: row;
   min-height: 5.3rem;
+}
+
+.page__main_login {
+  margin-top: 5rem;
 }
 
 .header {
@@ -238,6 +245,10 @@ html {
   grid-column: 1/span 12;
 }
 
+.main__form-container_dashboard {
+  grid-column: 1/span 12;
+}
+
 .registrarse {
   display: flex;
   flex-direction: row;
@@ -271,6 +282,21 @@ html {
   box-shadow: 0rem 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
   width: 6rem;
   height: 2rem;
+}
+
+.btn_add-tel {
+  width: 10rem;
+  height: 1.7rem;
+}
+
+.btn_locate {
+  width: 10rem;
+  height: 1.7rem;
+}
+
+.btn_servicios {
+  width: 10rem;
+  height: 1.7rem;
 }
 
 .btn_buscar_cerca {
@@ -341,6 +367,18 @@ html {
   font-weight: 500;
 }
 
+.text_titulo_registrar {
+  font-weight: 500;
+  width: 100%;
+  text-align: center;
+}
+
+.text_micuenta {
+  font-weight: 500;
+  width: 100%;
+  text-align: left;
+}
+
 .text_ofertas_titulo {
   border: 1px solid #F4A712;
   border-radius: 1rem;
@@ -380,6 +418,11 @@ html {
   padding: 0.5rem;
 }
 
+.form-container_dashboard {
+  min-height: -moz-fit-content;
+  min-height: fit-content;
+}
+
 .form {
   display: flex;
   flex-direction: column;
@@ -390,8 +433,64 @@ html {
   row-gap: 0.75rem;
 }
 
+.form_type_registrarse {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(21.3333333333px, 1fr));
+  grid-template-rows: max-content;
+  grid-auto-rows: max-content;
+}
+
+.form_type_dashboard {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(21.3333333333px, 1fr));
+  grid-template-rows: max-content;
+  grid-auto-rows: max-content;
+  align-items: center;
+}
+
+.form_type_suscripcion {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(21.3333333333px, 1fr));
+  grid-template-rows: max-content;
+  grid-auto-rows: max-content;
+}
+
+.form__text {
+  grid-column: 1/span 12;
+}
+
+.form__label {
+  grid-column: 1/span 5;
+}
+
+.form__btn {
+  grid-column: 1/span 4;
+}
+
+.form__btn_guardar {
+  grid-column: 1/span 12;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form__input_reg {
+  grid-column: 7/span 6;
+}
+
 .form__input-container {
   position: relative;
+}
+
+.form__field-container_tel {
+  grid-column: 1/span 12;
+}
+
+.form__input_sus {
+  grid-column: 1/span 1;
+}
+
+.form__label_sus {
+  grid-column: 2/span 12;
 }
 
 .input-container {
@@ -433,6 +532,11 @@ html {
 .input_type_buscar {
   width: 100%;
   height: 2px;
+}
+
+.input_type_sus {
+  min-width: 0.5rem;
+  min-height: 0.5rem;
 }
 
 .input_js_rem-bottom {
@@ -490,6 +594,14 @@ html {
 
 .search-results {
   min-width: 100%;
+}
+
+.search-results_suscripciones {
+  padding: 0 2rem 0 2rem;
+}
+
+.search-results_hidden {
+  display: none;
 }
 
 .carrusel {
@@ -642,6 +754,32 @@ html {
   align-items: center;
 }
 
+.field-container {
+  border: none;
+}
+
+.field-container_tel {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(12, minmax(21.3333333333px, 1fr));
+  grid-template-rows: max-content;
+  grid-auto-rows: max-content;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.field-container__check_tel {
+  grid-column: 1/span 1;
+}
+
+.field-container__label_tel {
+  grid-column: 2/span 5;
+}
+
+.field-container__input_tel {
+  grid-column: 7/span 6;
+}
+
 .hide-me {
   display: none;
 }
@@ -716,6 +854,9 @@ html {
     row-gap: 3rem;
     padding-bottom: 7.5rem;
   }
+  .page_registrarse {
+    row-gap: 0rem;
+  }
   .header {
     grid-template-columns: repeat(12, minmax(48px, 1fr));
     grid-template-rows: max-content;
@@ -775,6 +916,12 @@ html {
   .form {
     height: 20rem;
     row-gap: 1.7rem;
+  }
+  .form_type_registrarse {
+    height: auto;
+  }
+  .form_type_dashboard {
+    height: auto;
   }
   .registrarse {
     display: flex;
@@ -852,9 +999,19 @@ html {
     margin-left: auto;
     margin-right: auto;
   }
+  .form-container_dashboard {
+    min-height: -moz-fit-content;
+    min-height: fit-content;
+  }
   .form {
     height: 20rem;
     row-gap: 1.7rem;
+  }
+  .form_type_registrarse {
+    height: auto;
+  }
+  .form_type_dashboard {
+    height: auto;
   }
   .unete {
     padding-right: 3rem;
@@ -957,6 +1114,12 @@ html {
     height: 20rem;
     row-gap: 1.7rem;
   }
+  .form_type_registrarse {
+    height: auto;
+  }
+  .form_type_dashboard {
+    height: auto;
+  }
   .text_registrarse {
     font-size: 1.75rem;
   }
@@ -995,6 +1158,15 @@ html {
   .main__form-container {
     grid-column: 1/span 5;
   }
+  .main__form-container_login {
+    grid-column: 4/span 6;
+  }
+  .main__form-container_dashboard {
+    grid-column: 1/span 5;
+  }
+  .main__form-container_registro {
+    grid-column: 3/span 8;
+  }
   .main__search-results {
     visibility: visible;
     grid-column: 6/span 7;
@@ -1004,8 +1176,19 @@ html {
     grid-column: 1/span 5;
   }
   .form-container {
-    max-width: 30.5rem;
+    max-width: 100%;
+    width: 100%;
     margin: 0;
+  }
+  .search-results {
+    border: 1px solid black;
+    border-radius: 1rem;
+  }
+  .search-results_background {
+    background-image: url("../images/banners/results.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
   }
   .ofertas-cont {
     width: 50%;
