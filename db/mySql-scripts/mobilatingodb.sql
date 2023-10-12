@@ -27,6 +27,15 @@ CREATE TABLE IF NOT EXISTS Configuracion (
     CONSTRAINT pk_idconfig PRIMARY KEY (idconfig)    
 );
 
+DROP TABLE IF EXISTS Planes_Mobilatingo;
+CREATE TABLE IF NOT EXISTS Planes_Mobilatingo (
+    id_plan INT NOT NULL AUTO_INCREMENT,
+    nom_plan VARCHAR(100) NOT NULL,
+    desc_plan VARCHAR(1500) NOT NULL,
+    valor_plan DECIMAL(9,2) NOT NULL,
+    CONSTRAINT pk_idplan PRIMARY KEY (id_plan) 
+);
+
 
 -- Tabla cuenta ppal
 
@@ -78,7 +87,7 @@ DROP TABLE IF EXISTS Ciudades;
 CREATE TABLE IF NOT EXISTS Ciudades (
     id_ciudad VARCHAR(15) NOT NULL,
     nom_ciudad VARCHAR(25) NOT NULL,
-    departamento VARCHAR(10) NOT NULL,
+    departamento VARCHAR(25) NOT NULL,
     CONSTRAINT pk_ciudades PRIMARY KEY (id_ciudad),
     CONSTRAINT fk_departamento_ciudades FOREIGN KEY (departamento)
     REFERENCES Departamentos (id_depto)
@@ -89,7 +98,7 @@ DROP TABLE IF EXISTS Barrios;
 CREATE TABLE IF NOT EXISTS Barrios (
     id_barrio BIGINT NOT NULL AUTO_INCREMENT,
     nom_barrio VARCHAR(25) NOT NULL,
-    ciudad VARCHAR(15) NOT NULL,
+    ciudad VARCHAR(25) NOT NULL,
     CONSTRAINT pk_barrios PRIMARY KEY (id_barrio),
     CONSTRAINT fk_ciudad_barrios FOREIGN KEY (ciudad)
     REFERENCES Ciudades (id_ciudad)
@@ -99,12 +108,13 @@ DROP TABLE IF EXISTS UbicacionEmpresas;
 
 CREATE TABLE IF NOT EXISTS UbicacionEmpresas (
     id_ubicacion BIGINT NOT NULL AUTO_INCREMENT,
-    pais VARCHAR(15) NOT NULL,
-    departamento VARCHAR(15) NOT NULL,
-    ciudad VARCHAR(15) NOT NULL,
-    barrio VARCHAR(15) NOT NULL,
-    direccion VARCHAR(50) NOT NULL,
-    coordenadas JSON NOT NULL,
+    pais VARCHAR(25) NOT NULL,
+    departamento VARCHAR(25) NOT NULL,
+    ciudad VARCHAR(25) NOT NULL,
+    barrio VARCHAR(25) NOT NULL,
+    direccion VARCHAR(100) NOT NULL,
+    latitud DOUBLE  NOT NULL,
+    longitud DOUBLE  NOT NULL,
     CONSTRAINT pk_ubicacion_empresas PRIMARY KEY (id_ubicacion)
 );
 

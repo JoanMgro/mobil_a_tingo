@@ -2,6 +2,11 @@
     font-size: $mobatingo-font-4;
 }
 
+.text_section_buscar-servicio{
+    font-weight: 500;
+}
+
+
 .text_registrarse{
     width: 70%;
     padding: 0 0.25rem 0 0.25rem;
@@ -17,12 +22,30 @@
 
 }
 
-.text_titulo_registrar{
+.text_registrarse_titulo{
     font-weight: 500;
     width: 100%;
     text-align: center;
 }
 
+.text_login_titulo{
+    font-weight: 500;
+    width: 100%;
+    text-align: center;
+
+}
+
+.text_form_titulo-seccion{
+    font-weight: 500;
+    width: 100%;
+}
+
+.text_dashboard_title{
+    font-weight: 500;
+    width: 100%;
+    text-align: center;
+
+}
 
 .text_micuenta{
     font-weight: 500;

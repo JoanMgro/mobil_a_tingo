@@ -10,16 +10,16 @@
   
     <title>MobilATingo</title>
 </head>
-<body class="page page_login">
+<body class="page">
   <header class="page__header header">
     <img class="header__logo-img logo-img" src="../src/images/logos/logo.png" alt="Logo Mobilatingo">
     <nav id="hambu-menu" class="header__nav nav nav_state_closed">
       <ul class="menu-list">
         <li class="menu-list__menu-item menu-list__menu-item_hover">
-          <a class="menu-list__menu-link link link_text_nav" href="../index.html">Inicio</a>
+          <a class="menu-list__menu-link link link_text_nav" href="">Home</a>
         </li>
         <li class="menu-list__menu-item menu-list__menu-item_hover">
-          <a class="menu-list__menu-link link-text_nav" href="./servicios.html">Servicios</a>
+          <a class="menu-list__menu-link link-text_nav" href="./suscripciones.html">Suscripciones</a>
         </li>
         <li class="menu-list__menu-item menu-list__menu-item_hover">
           <a class="menu-list__menu-link link-text_nav" href="./faq.html">Faq</a>
@@ -28,8 +28,8 @@
           <a class="menu-list__menu-link link-text_nav" href="./acercade.html">Acerca de</a>
           </li>
         <li class="menu-list__menu-item menu-list__menu-item_log-in">
-          <a class="menu-list__menu-link_log-in log-in link-text_nav" href="">
-            <span class="log-in__span">Ingresar</span>            
+          <a class="menu-list__menu-link_log-in log-in link-text_nav" href="./login.html">
+            <span class="log-in__span">Salir</span>            
             <i class="log-in__ico"></i>
           </a>
         </li>
@@ -38,22 +38,58 @@
     </nav>
     <button id="hambu"  class="header__menu-btn menu-btn menu-btn_state_closed"></button>  
   </header>
+  <main class="page__main main">
 
-  <main class="page__main page__main_login main">
+    <section class="main__section section section_dashboard">
+      <p class="text text_dashboard_title">Cuentas Activas</p>
+      <form id="suscripciones" action="" method="" class="form form_dashboard">
 
-    <section class="main__section section section_login">
-      <p class="text text_login_titulo">Log in</p>
-      <form id="registrase" action="./dasboard.html" method="" class="form form_login">
-        <p class="form__text text text_form_titulo-seccion">Ingrese su usuario y contraseña</p>
-        <label class="form__label_login" for="email">Email:</label>
-        <input id="email" class="form__input_login input input_login" type="email" name="email" autocomplete="off">
-        <label class="form__label_login" for="password">Password:</label>
-        <input id="password" class="form__input_login input input_login" type="password" name="password" autocomplete="off">
-       
-        <input id="login" class="form__btn_login btn_secondary btn_login" type="submit" value="Log in">
+        <button id="listar-hist" class="form__btn_suscripciones btn_secondary btn_suscripciones">Ver Cuentas</button>      
+        
 
       </form>
     </section>
+
+    <section id="historial" class="main__section main__section_dashboard main__section_hidden section section_hidden">
+           
+    </section>
+
+    <section class="main__section section section_dashboard">
+        <p class="text text_dashboard_title">Mis Acciones</p>
+        <form id="servicios" action="" method="" class="form-container__form form form_type_dashboard">
+          <button id="nuevo-servicio" class="form__btn_servicios btn_secondary btn_servicios">Crear Cuenta</button>
+          <button id="listar-servicio" class="form__btn_servicios btn_secondary btn_servicios">Eliminar Cuenta</button>
+                      
+        </form>
+      </section>
+
+      <section id="listado-servicios" class="main__section main__section_dashboard main__section_hidden section section_hidden">
+
+        
+      </section>
+    
+      <section class="main__section section section_dashboard">
+        <p class="text text_dashboard_title">Mi Cuenta</p>
+        <form id="cuenta" action="" method="" class="form-container__form form form_type_dashboard">
+          <p class="form__text text text_micuenta">Nombre: <span>Alan Brito Doblado</span></p>
+          <p class="form__text text text_micuenta">CC: <span>80067432</span></p>
+          <p class="form__text text text_micuenta">Rol: <span>Administrador</span></p>
+         
+          <input id="cuenta-btn" class="form__btn_cuenta btn_secondary btn_cuenta" type="submit" value="Ver Detalle">
+  
+        </form>
+      </section>
+
+
+      <section id="detalle-cuenta" class="main__section main__section_dashboard main__section_hidden section section_hidden">
+
+        
+      </section>
+
+  
+
+
+
 
 
   </main>
@@ -78,6 +114,6 @@
 
  
   
-   <script type="module" src="../src/js/login.js"></script>
+   <script type="module" src="../src/js/dashboard.js"></script>
 </body>
 </html>

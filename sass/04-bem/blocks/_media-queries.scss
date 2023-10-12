@@ -3,6 +3,7 @@
     @include header-375;
     @include nav-375;
     @include main-375;
+    @include section-375;
     @include btn-375;
     @include form-375;
     @include input-375;
@@ -17,7 +18,7 @@
     @include main-425;
     @include form-container-425;
     @include form-425;
-    @include unete-425;
+    @include section-425;
 
 
 }
@@ -36,7 +37,7 @@
     @include text-576;
     @include ofertas-cont-576;
     @include carrusel-576;
-    @include unete-576;
+    @include section-576;
 
     @include footer-576;
     @include newsletter-576;
@@ -51,7 +52,7 @@
     @include main-768;
     @include form-container-768;
     @include form-768;
-    @include unete-768;
+    @include section-768;
     @include ofertas-cont-768;
     @include carrusel-768;
     @include card-768;
@@ -82,7 +83,7 @@
     @include form-container-992;
     @include form-992;
     @include text-992;
-    @include unete-992;
+    @include section-992;
 
 }
 
@@ -95,7 +96,7 @@
     @include ofertas-cont-1200;
     @include registrarse-1200;
     
-    @include unete-1200;
+    @include section-1200;
    
 }
 

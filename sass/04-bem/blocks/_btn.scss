@@ -3,6 +3,24 @@
     font-size: $mobatingo-font-4;
     font-weight: 500;
 }
+
+.btn_secondary{
+    background-color: $bg-btn-secondary; 
+    color: $text-color-secondary;
+    font-size: $mobatingo-font-4;
+    font-weight: 500;
+    @include round;
+    @include shadow;
+
+
+}
+
+.btn_locate{
+    width: 8rem;
+    height: 1.7rem;
+}
+
+
 .btn_registrarse{
     border-color: $border-color-primary;
     background-color: $bg-btn-primary;
@@ -17,12 +35,21 @@
     
 }
 
-.btn_buscar{
-    background-color: $bg-btn-secondary; 
-    color: $text-color-secondary;
-    @include shadow;
+.btn_buscar-servicio{
+
     width: 6rem;
-    height: 2rem;   
+    height: 2rem;
+    justify-self: center;
+}
+
+.btn_registrarse_guardar{
+    width: 8rem;
+    height: 2rem;
+}
+
+.btn_login{
+    width: 8rem;
+    height: 2rem;
 
 }
 
@@ -32,12 +59,21 @@
 
 }
 
-.btn_locate{
-    width: 10rem;
-    height: 1.7rem;
-}
+
 
 .btn_servicios{
+    width: 10rem;
+    height: 1.7rem;
+
+}
+
+.btn_suscripciones{
+    width: 10rem;
+    height: 1.7rem;
+
+}
+
+.btn_cuenta{
     width: 10rem;
     height: 1.7rem;
 

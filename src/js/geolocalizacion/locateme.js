@@ -1,7 +1,8 @@
 const locateBtn = document.querySelector('#locate');
 
 //Declaro las variables que contienen los inputs del form
-const inputCoords = document.querySelector('#my-coords');
+const inputLat = document.querySelector('#lat');
+const inputLong = document.querySelector('#long');
 const autoPais = document.querySelector('#pais');
 const autoDepartamento = document.querySelector('#departamento');
 const autoCiudad = document.querySelector('#ciudad');
@@ -18,8 +19,10 @@ function addCookie(cookie, data){
 //Cargar los values de los inputs con su dato correspondiente
 async function getData(){
     const coords = await getCoords();
-    inputCoords.value = JSON.stringify(coords);
-    addCookie('mycoords',inputCoords.value);
+    inputLat.value = coords.latitud; //JSON.stringify(coords);
+    inputLong.value = coords.longitud;
+    addCookie('latitud',inputLat.value);
+    addCookie('longitud',inputLong.value);
     // let newcookie = `mycoords=${inputCoords.value}; max-age=3600; SameSite=lax; Secure`;
     // document.cookie = newcookie;
 

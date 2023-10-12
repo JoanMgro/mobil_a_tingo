@@ -1,22 +1,23 @@
 .main{
     display: grid;
     @include grid;
-    row-gap: 3rem;
+    min-height: 100%;
+    row-gap: 1rem;
+
 
 }
 
-.main__form-container{
+.main__section{
     @include pos-col(1, 12);
+    justify-self: center;
+    
 }
 
-.main__search-results{
-    visibility:visible;
-    @include pos-col(1, 12);
+.main__section_hidden{
+    visibility: hidden;
+    
 }
 
-.main__unete{
-    @include pos-col(1, 12);
-}
 
 .main__form-container_dashboard{
     @include pos-col(1, 12);
@@ -36,6 +37,10 @@
         @include grid($size:$screen-xs);
         
     }
+    .main__section{
+        @include pos-col(2, 10);
+    }
+ 
 }
 
 @mixin main-576{
@@ -43,6 +48,8 @@
         @include grid($size:$screen-s);
         
     }
+
+
  
     
  
@@ -54,6 +61,7 @@
         @include grid($size:$screen-m);
         
     }
+
  
 }
 
@@ -72,6 +80,27 @@
         padding: 0.5rem;
         
     }
+    
+    .main__section{
+        @include pos-col(1, 5);
+        justify-self: center;
+    }
+
+    .main__section_resultados-busqueda{
+        @include pos-col(6, 7);
+        @include pos-row(1, 2);
+        min-width: 40rem;
+        // justify-self: center;
+
+    }
+
+    .main__section_dashboard{
+        @include pos-col(6, 7);
+        @include pos-row(1, 2);
+        min-width: 40rem;
+
+    }
+
     .main__form-container{
         @include pos-col(1, 5);
     }
@@ -93,15 +122,15 @@
 
     }
     
-    .main__search-results{
-        visibility:visible;
-        @include pos-col(6, 7);
-        @include pos-row(1, 2);
-    }
+    // .main__search-results{
+    //     visibility:visible;
+    //     @include pos-col(6, 7);
+    //     @include pos-row(1, 2);
+    // }
     
-    .main__unete{
-        @include pos-col(1, 5);
-    }
+    // .main__unete{
+    //     @include pos-col(1, 5);
+    // }
   
 
 }

@@ -16,16 +16,16 @@
     <nav id="hambu-menu" class="header__nav nav nav_state_closed">
       <ul class="menu-list">
         <li class="menu-list__menu-item menu-list__menu-item_hover">
-          <a class="menu-list__menu-link link link_text_nav" href="#">Home</a>
+          <a class="menu-list__menu-link link link_text_nav" href="">Home</a>
         </li>
         <li class="menu-list__menu-item menu-list__menu-item_hover">
-          <a class="menu-list__menu-link link-text_nav" href="#">Suscripciones</a>
+          <a class="menu-list__menu-link link-text_nav" href="./suscripciones.html">Suscripciones</a>
         </li>
         <li class="menu-list__menu-item menu-list__menu-item_hover">
-          <a class="menu-list__menu-link link-text_nav" href="#">Faq</a>
+          <a class="menu-list__menu-link link-text_nav" href="./faq.html">Faq</a>
           </li>
         <li class="menu-list__menu-item menu-list__menu-item_hover">
-          <a class="menu-list__menu-link link-text_nav" href="./login.html">Acerca de</a>
+          <a class="menu-list__menu-link link-text_nav" href="./acercade.html">Acerca de</a>
           </li>
         <li class="menu-list__menu-item menu-list__menu-item_log-in">
           <a class="menu-list__menu-link_log-in log-in link-text_nav" href="./login.html">
@@ -40,107 +40,56 @@
   </header>
   <main class="page__main main">
 
-    <section class="main__form-container_dashboard form-container form-container_dashboard">
-      <p class="form-container__text text text_title_buscar">Suscripciones Activas</p>
-      <form id="suscripciones" action="" method="" class="form-container__form form form_type_dashboard">
-        <input id="suscripcion-01" class="form__input_sus input input_type_sus" type="checkbox" name="suscripcion" autocomplete="off">
-        <label class="form__label_sus label " for="suscripcion-01">Mobilatingo plus 6 meses</label>
-        
-        <button id="listar-hist" class="form__btn form__btn_guardar btn btn_buscar">Ver Historial</button>      
+    <section class="main__section section section_dashboard">
+      <p class="text text_dashboard_title">Suscripciones Activas</p>
+      <form id="suscripciones" action="" method="" class="form form_dashboard">
+        <!-- checkbox -->
+        <input id="suscripcion" class="form__input_suscripcion input input_suscripcion" type="checkbox" name="suscripcion" autocomplete="off">
+        <label class="form__label_suscripcion" for="suscripcion">Mobilatingo plus 6 meses</label>
+        <!-- btn -->
+        <button id="listar-hist" class="form__btn_suscripciones btn_secondary btn_suscripciones">Ver Historial</button>      
         
 
       </form>
     </section>
 
-    <section id="historial" class="main__search-results search-results search-results_suscripciones search-results_hidden">
-      <p style="text-align: left;">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        Deleniti maxime sequi eligendi dicta repellendus, repellat 
-        ut possimus similique tempora quos libero voluptates 
-        sint fuga blanditiis voluptatum harum cumque nostrum magnam!</p>
-      
+    <section id="historial" class="main__section main__section_dashboard main__section_hidden section section_hidden">
+           
     </section>
 
-    <section class="main__form-container_dashboard form-container form-container_dashboard">
-        <p class="form-container__text text text_title_buscar">Mis Servicios</p>
+    <section class="main__section section section_dashboard">
+        <p class="text text_dashboard_title">Mis Servicios</p>
         <form id="servicios" action="" method="" class="form-container__form form form_type_dashboard">
-          <button id="nuevo-servicio" class="form__btn form__btn_guardar btn btn_buscar btn_servicios">Nuevo Servicio</button>
-          <button id="listar-servicio" class="form__btn form__btn_guardar btn btn_buscar btn_servicios">Listar Servicios</button>
+          <button id="nuevo-servicio" class="form__btn_servicios btn_secondary btn_servicios">Nuevo Servicio</button>
+          <button id="listar-servicio" class="form__btn_servicios btn_secondary btn_servicios">Listar Servicios</button>
                       
         </form>
       </section>
 
-      <section id="listado-servicios" class="main__search-results search-results search-results_suscripciones search-results_hidden">
-        <p style="text-align: left;">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Deleniti maxime sequi eligendi dicta repellendus, repellat 
-          ut possimus similique tempora quos libero voluptates 
-          sint fuga blanditiis voluptatum harum cumque nostrum magnam!</p>
+      <section id="listado-servicios" class="main__section main__section_dashboard main__section_hidden section section_hidden">
+
         
       </section>
     
-      <section class="main__form-container_dashboard form-container form-container_dashboard">
-        <p class="form-container__text text text_title_buscar">Mi Cuenta</p>
+      <section class="main__section section section_dashboard">
+        <p class="text text_dashboard_title">Mi Cuenta</p>
         <form id="cuenta" action="" method="" class="form-container__form form form_type_dashboard">
           <p class="form__text text text_micuenta">Nombre: <span>Rapramos Sas</span></p>
           <p class="form__text text text_micuenta">Nit: <span>800.0090.9898</span></p>
           <p class="form__text text text_micuenta">Calificacion: <span>&#9733&#9733&#9733&#9733&#9734</span></p>
          
-          <input id="cuenta-btn" class="form__btn form__btn_guardar btn btn_buscar" type="submit" value="Ver Detalle">
+          <input id="cuenta-btn" class="form__btn_cuenta btn_secondary btn_cuenta" type="submit" value="Ver Detalle">
   
         </form>
       </section>
 
-      <section id="ver-cuenta" class="main__form-container main__form-container_registro form-container form-container_registro search-results_hidden">
-        <p class="form-container__text text text_title_buscar">Datos de Registro</p>
-        <form id="registrase" action="" method="" class="form-container__form form form_type_registrarse">
-          <p class="form__text text text_titulo_registrar">Informacion de Log in</p>
-          <label class="form__label label " for="r-email">Email:</label>
-          <input id="r-email" class="form__input_reg input input_type_buscar" type="email" name="r-email" autocomplete="off">
-          <label class="form__label label " for="r-pass">Password:</label>
-          <input id="r-pass" class="form__input_reg input input_type_buscar" type="password" name="r-pass" autocomplete="off">
-          <p class="form__text text text_titulo_registrar">Informacion de la empresa</p>
-          <label class="form__label label " for="nombre">Nombre:</label>
-          <input id="nombre" class="form__input_reg input input_type_buscar" type="text" name="nombre" autocomplete="off">
-          <label class="form__label label " for="nit">Nit:</label>
-          <input id="nit" class="form__input_reg input input_type_buscar" type="text" name="nit" autocomplete="off">
-          <label class="form__label label " for="logo">Logo:</label>
-          <input id="logo" class="form__input_reg input input_type_buscar" type="file" name="logo" autocomplete="off">
-          <p class="form__text text text_titulo_registrar">Informacion de Ubicacion</p>
-          <!-- BOTON LOCALIZAR ME -->
-          <button id="locate" class="form__btn btn btn_buscar btn_locate">Localizarme</button>
-          <label class="form__label label " for="latitud">Coord Latitud:</label>
-          <input id="latitud" class="form__input_reg input input_type_buscar" type="text" name="u-latitud" autocomplete="off">
-          <label class="form__label label " for="longitud">Coord Longitud:</label>
-          <input id="longitud" class="form__input_reg input input_type_buscar" type="text" name="u-longitud" autocomplete="off">
-          <!-- INFO UBICACION -->
-          <label class="form__label label " for="pais">Pais:</label>
-          <input id="pais" class="form__input_reg input input_type_buscar" type="text" name="pais" autocomplete="off">
-          <label class="form__label label " for="departamento">Departamento:</label>
-          <input id="departamento" class="form__input_reg input input_type_buscar" type="text" name="departamento" autocomplete="off">
-          <label class="form__label label " for="ciudad">Ciudad:</label>
-          <input id="ciudad" class="form__input_reg input input_type_buscar" type="text" name="ciudad" autocomplete="off">
-          <label class="form__label label " for="barrio">Barrio:</label>
-          <input id="barrio" class="form__input_reg input input_type_buscar" type="text" name="barrio" autocomplete="off">
-          <label class="form__label label " for="direccion">Direccion:</label>
-          <input id="direccion" class="form__input_reg input input_type_buscar" type="text" name="direccion" autocomplete="off">
-          <p class="form__text text text_titulo_registrar">Informacion de Telefonica</p>
-          <div id="telf-container" class="form__field-container_tel">
-            <div id="t-0"  class="field-container field-container_tel">
-              <input type="checkbox" name="tel-fijo" id="t-0-0" class="field-container__check_tel">
-              <label id="t-0-1" class="label field-container__label_tel" for="t-0-2">Telefono Fijo:</label>
-              <input id="t-0-2" class="input input_type_buscar field-container__input_tel" type="number" name="u-tel-fijo" autocomplete="off">
-    
-            </div>   
-  
-          </div>
-       
-          
-          <button id="agregar-tel" class="form__btn btn btn_buscar btn_add-tel">Agregar Telefono</button>
-          
-          <input id="save" class="form__btn form__btn_guardar btn btn_buscar" type="submit" value="Guardar">
-  
-        </form>
+
+      <section id="detalle-cuenta" class="main__section main__section_dashboard main__section_hidden section section_hidden">
+
+        
       </section>
 
+  
 
 
 

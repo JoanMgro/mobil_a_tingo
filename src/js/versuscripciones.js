@@ -1,48 +1,127 @@
 const verBtn = document.querySelector('#listar-hist');
-const historial = document.querySelector('#historial');
+const historialSection = document.querySelector('#historial');
+
 const verServicios = document.querySelector('#listar-servicio');
 const nuevoServicio = document.querySelector('#nuevo-servicio');
 const servicioLista = document.querySelector('#listado-servicios');
-const cuenta = document.querySelector('#ver-cuenta');
-const detalleBtn = document.querySelector('#cuenta-btn');
 
-document.addEventListener('click', (e) =>{
+const cuenta = document.querySelector('#detalle-cuenta');
+const cuentaBtn = document.querySelector('#cuenta-btn');
 
+const paragrap = `
+Lorem ipsum dolor sit amet, consectetur 
+adipiscing elit. Donec metus dui, cursus a iaculis nec, faucibus 
+et magna. Etiam sit amet arcu congue, suscipit ante ut, 
+dignissim nunc. Cras euismod odio eu commodo posuere. 
+Aenean tellus arcu, malesuada interdum nulla non, 
+faucibus interdum neque. Ut cursus ipsum a risus iaculis faucibus. 
+Donec id hendrerit urna. Ut eget auctor quam, posuere venenatis eros.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent 
+luctus convallis sem, in porttitor purus. Nulla eget feugiat nisl.`;
+
+function isClosed(element){
+    return element.classList.contains('main__section_hidden');
+}
+
+function closeElement(element){
+    if(!isClosed(element)){
+        element.classList.add('main__section_hidden');
+        element.removeChild(document.querySelector('#newnode'));
+    }
     
 
-    if(e.target.id === 'listar-hist'){
-        if(!servicioLista.classList.contains('search-results_hidden')) {
-            servicioLista.classList.toggle('search-results_hidden');
-        }
-        if(!cuenta.classList.contains('search-results_hidden')) {
-            cuenta.classList.toggle('search-results_hidden');
-        }
-        historial.classList.toggle('search-results_hidden');
+}
 
+function openElement(element){
+    element.classList.remove('main__section_hidden');
 
+}
+
+function newfragment(element){
+    const fragment = document.createDocumentFragment(); 
+    const newnode = document.createElement('p');
+    newnode.innerText = paragrap;
+    newnode.id='newnode';
+        
+    fragment.appendChild(newnode);
+    element.appendChild(fragment);
+
+}
+
+verBtn.addEventListener('click', (e) =>{
+    e.preventDefault();
+
+    closeElement(servicioLista);
+    closeElement(cuenta);
+
+    if(isClosed(historialSection)){
+
+        
+        newfragment(historialSection);
+        openElement(historialSection);
+        
     }
-    if(e.target.id === 'listar-servicio' || e.target.id === 'nuevo-servicio'){
-        if(!historial.classList.contains('search-results_hidden')) {
-            historial.classList.toggle('search-results_hidden');
-        }
-        if(!cuenta.classList.contains('search-results_hidden')) {
-            cuenta.classList.toggle('search-results_hidden');
-        }
-        servicioLista.classList.toggle('search-results_hidden');
-
+    else{
+        closeElement(historialSection);        
     }
-    if(e.target.id === 'cuenta-btn'){
-        if(!historial.classList.contains('search-results_hidden')) {
-            historial.classList.toggle('search-results_hidden');
-        }
-        if(!servicioLista.classList.contains('search-results_hidden')) {
-            servicioLista.classList.toggle('search-results_hidden');
-        }
+    
 
-        cuenta.classList.toggle('search-results_hidden');
+});
 
+verServicios.addEventListener('click', (e) =>{
+    e.preventDefault();
+    
+    closeElement(historialSection);
+    closeElement(cuenta);
+    
+
+    if(isClosed(servicioLista)){
+        
+        newfragment(servicioLista);
+        openElement(servicioLista);
+        
     }
+    else{
+        closeElement(servicioLista);        
+    }
+    
 
+});
+
+nuevoServicio.addEventListener('click', (e) =>{
+    e.preventDefault();
+    
+    closeElement(historialSection);
+    closeElement(cuenta);
+    
+    if(isClosed(servicioLista)){
+        
+        newfragment(servicioLista);
+        openElement(servicioLista);
+        
+    }
+    else{
+        closeElement(servicioLista);        
+    }
+    
+
+});
+
+cuentaBtn.addEventListener('click', (e) =>{
+    e.preventDefault();
+    
+    closeElement(historialSection);
+    closeElement(servicioLista);
+    
+    if(isClosed(cuenta)){
+        
+        newfragment(cuenta);
+        openElement(cuenta);
+        
+    }
+    else{
+        closeElement(cuenta);        
+    }
     
 
 });

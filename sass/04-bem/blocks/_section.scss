@@ -1,0 +1,131 @@
+.section{
+    min-width: 20rem;
+    min-height: fit-content;
+    @include disp-flex(column);
+    @include flex-locate($align: center);
+    @include round($color: $bg-search-box, $radio: 2.75rem);
+    @include shadow;
+    padding: 0.5rem;
+    // justify-self: center;
+}
+
+.section_planes{
+    // height: 20rem;    
+}
+
+.section_login{
+    background-color: $bg-search-box;
+    row-gap: 1rem;
+    
+}
+.section_dashboard{
+    background-color: $bg-search-box;
+        
+}
+
+.section_hidden{
+    max-height: 20rem;
+    padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+    justify-self: center;
+    overflow-y: scroll;
+}
+
+
+.section_registrarse{
+    background-color: $bg-search-box;
+    row-gap: 1rem;
+    
+}
+
+.section_buscar-servicio{
+    background-color: $bg-search-box;
+    row-gap: 1rem;
+    //min-height: 15.5rem;
+}
+
+.section_resultados-busqueda{
+    border-color:$border-color-secondary;
+    overflow-y: scroll;
+
+}
+
+.section_unete{
+    min-height: 7rem;
+    background-color: $bg-general-primary;
+    @include background-img('../images/banners/unete.png');
+    @include round($color: $border-color-primary, $radio: 1.5rem);
+    @include disp-flex;
+    @include flex-locate(flex-end, center);
+}
+
+@mixin section-375{
+    .section_unete{
+        padding-right: 3rem;
+        width: 100%;
+        
+    }
+}
+
+@mixin section-425{
+    .section_unete{
+        padding-right: 3rem;
+        width: 100%;
+        // max-width: 27rem;
+        // margin-left: auto;
+        // margin-right: auto;
+    }
+}
+
+
+@mixin section-576{
+
+    .section{
+        max-width: 30rem;
+    }
+
+    .section_buscar-servicio{
+      
+        min-height: 25rem;
+    }
+
+    .section_unete{
+        padding-right: 3rem;
+        width: 100%;
+            
+     
+    }
+
+
+}
+
+@mixin section-768{
+    .section_unete{
+        padding-right: 3rem;
+        width: 100%;
+      
+    }
+}
+
+
+
+@mixin section-992{
+    .section_unete{
+        background-position: 15%;
+        height: 10rem;
+        padding-right: 1rem;
+    }
+    
+}
+@mixin section-1200{
+
+    .section_resultados-busqueda{
+        width: 100%;
+    }
+ 
+    .section_unete{
+     width: 100%;
+     padding-right: 1rem;
+     margin: 0;
+    }
+
+}

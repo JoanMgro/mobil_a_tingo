@@ -1,18 +1,38 @@
 .form{
-    @include disp-flex(column);
-    min-width: 16rem;
-    
-    width: 80%; // Equivale a width: 16rem;
-    @include flex-locate($align: center);
-    row-gap: 0.75rem;
-
-}
-
-.form_type_registrarse{
     display: grid;
     @include grid(12, 256px);
+    min-width: 16rem;    
+    width: 80%; // Equivale a width: 16rem;   
+    row-gap: 0.75rem;
+}
+
+.form__input_buscar-servicio{
+    @include pos-col(7, 6);
+}
+.form__input_buscar-servicio_radio{
+    @include pos-col(9, 4);
 
 }
+
+.form__label-input_buscar-servicio{
+    @include pos-col(1, 4);
+}
+.form__label-input_buscar-servicio_radio{
+    @include pos-col(1, 8);
+
+}
+
+
+.form__btn_locate{
+    @include pos-col(1, 12);
+   
+}
+
+.form__btn_buscar-servicio{
+    @include pos-col(1, 12);
+
+}
+
 
 .form_type_dashboard{
     display: grid;
@@ -29,27 +49,74 @@
 
 .form__text{
     @include pos-col(1, 12);
-
+    
 }
 
 .form__label{
     @include pos-col(1, 5);
 }
 
-.form__btn{
-    @include pos-col(1, 4);
-   
+.form__label_login{
+    @include pos-col(1, 5);
+
 }
+.form__input_login{
+    @include pos-col(6, 7);
+
+}
+
+.form__btn_suscripciones{
+    @include pos-col(1, 12);
+    margin-left: auto;
+    margin-right: auto;
+}
+.form__btn_servicios{
+    @include pos-col(1, 12);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form__btn_cuenta{
+    @include pos-col(1, 12);
+    margin-left: auto;
+    margin-right: auto;
+}
+
 
 .form__btn_guardar{
     @include pos-col(1, 12);
     margin-left: auto;
     margin-right: auto;
 }
+.form__btn_login{
+    @include pos-col(1, 12);
+    margin-left: auto;
+    margin-right: auto;
+}
 
-.form__input_reg{
+.form__input_registro{
     @include pos-col(7, 6);
 }
+.form__label_registro-direccion{
+    @include pos-col(1, 4);
+}
+.form__input_registro-direccion{
+    @include pos-col(5, 8);
+}
+.form__input_registro_login-info{
+    @include pos-col(5, 8);
+}
+.form__label_registro_login-info{
+    @include pos-col(1, 4);
+}
+
+.form__btn_secondary{
+    @include pos-col(1, 7);
+    justify-self: left;
+
+}
+
+
 
 .form__input-container{
     position: relative;
@@ -62,11 +129,12 @@
 }
 
 
-.form__input_sus{
+.form__input_suscripcion{
     @include pos-col(1, 1);
+    align-self: center;
 }
 
-.form__label_sus{
+.form__label_suscripcion{
     @include pos-col(2, 12);
 
 }
@@ -80,15 +148,21 @@
 }
 
 @mixin form-576{
-    .form{
-       
+    .form{       
         height: 20rem; // Equivale a width: 16rem;
-        row-gap: 1.7rem;
-     
+        row-gap: 1.7rem;   
     
     }
 
-    .form_type_registrarse{
+    .form_dashboard{
+        height: auto;
+    }
+
+    .form_login{
+        height: auto;
+    }
+
+    .form_registrarse{
         height: auto;
     }
     .form_type_dashboard{
@@ -99,39 +173,13 @@
 }
 
 @mixin form-768{
-    .form{
-       
-        height: 20rem; // Equivale a width: 16rem;
-        row-gap: 1.7rem;
-     
-    
-    }
-    .form_type_registrarse{
-        height: auto;
-    }
-    .form_type_dashboard{
-        height: auto;
-    
-    }
+
 
 
 }
 
 @mixin form-992{
-    .form{
-       
-        height: 20rem; // Equivale a width: 16rem;
-        row-gap: 1.7rem;
-     
-    
-    }
-    .form_type_registrarse{
-        height: auto;
-    }
-    .form_type_dashboard{
-        height: auto;
-    
-    }
+
 
 
 }
