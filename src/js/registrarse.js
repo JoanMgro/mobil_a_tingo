@@ -4,4 +4,4 @@ import './autocompleteDepto.js';
 import './autocompleteCity.js';
 import './autocompleteBarrio.js';
 import './findme.js';
-import './add-tel.js';
+import './camposForms/add-tel.js';

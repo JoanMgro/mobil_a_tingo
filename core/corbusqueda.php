@@ -9,7 +9,6 @@ $long = isset($_GET['long']) ? $_GET['long'] : null;
 
 if(isset($pais))
 {
-    require_once __DIR__ . '/' . '../models/Ubicacion.php';
     require_once __DIR__ . '/' . '../models/Empresa.php';
     require_once __DIR__ . '/' . '../controllers/EmpresaController.php';
 
