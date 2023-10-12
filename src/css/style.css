@@ -287,8 +287,9 @@ html {
 }
 
 .section_resultados-busqueda {
-  border-color: #000000;
+  border-color: #F4A712;
   overflow-y: scroll;
+  width: 100%;
 }
 
 .section_unete {
@@ -437,6 +438,14 @@ html {
 
 .text {
   font-size: 1rem;
+}
+
+.text_resultado_tabla {
+  font-size: 0.75rem;
+}
+
+.text_header_tabla {
+  text-align: left;
 }
 
 .text_section_buscar-servicio {
@@ -973,6 +982,10 @@ html {
 
 .scrollbox_planes {
   height: 15rem;
+}
+
+.tabla {
+  width: 100%;
 }
 
 .hide-me {

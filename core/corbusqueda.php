@@ -9,24 +9,19 @@ $long = isset($_GET['long']) ? $_GET['long'] : null;
 
 if(isset($pais))
 {
-    require_once __DIR__ . '/' . '../models/Empresa.php';
+    require_once __DIR__ . '/' . '../models/Conexion.php';
+    require_once __DIR__ . '/' . '../models/Empresa.php';   
     require_once __DIR__ . '/' . '../controllers/EmpresaController.php';
+    require_once __DIR__ . '/' . '../views/EmpresaView.php';
 
-
-    //Instancio conexion
-    $conn = new Conexion();
-    //Instancio ubicacion 
-    $ubicacion = new Ubicacion($pais, $depto, $ciudad, $barrio, NULL, NULL, NULL);
-    
-    //Instancio bounding
-    // $boundingBox = new BoundingBox($ubicacion);
-    //Instancio el modelo y le inyecto la connexion creada.
-    $model = new Empresa($conn, $ubicacion);
    
-    $controller = new EmpresaController($model);
-    $controller->setEmpresas();
-    var_dump($model->getEmpresas());
 
+    $model = new Empresa();
+    $controller = new EmpresaController($model, new Ubicacion());
+    $controller->setUbicacion($pais, $depto, $ciudad, $barrio);
+    $controller->setEmpresas(new Conexion());
+    $view = new EmpresaView($model);
+    $view->render();
 }
 
 

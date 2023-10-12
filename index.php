@@ -27,10 +27,10 @@
 
     <?php
           $pg = isset($_GET["pg"]) ? $_GET["pg"] : NULL;
-          if(!$pg)
+          if(!$pg || $pg == '0')
           {
             require __DIR__ . '/' . './views/html/buscari.php';
-            require __DIR__ . '/' . './views/html/resultadosi.php';
+            require __DIR__ . '/' . './core/corbusqueda.php';
             require __DIR__ . '/' . './views/html/joinusi.php';
           }
           if($pg === '1001') require __DIR__ . '/' . './views/html/planes.php';

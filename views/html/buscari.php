@@ -3,7 +3,7 @@
 
       <form id="buscar-servicio" action="../index.php" method="GET" class="form">
 
-        <input id="pg" type="hidden" name="pg" value="1">
+        <input id="pg" type="hidden" name="pg" value="0">
         <button id="locate" class="form__btn_locate btn_secondary btn_locate">Localizarme</button>
         <!-- Pais -->
         <label class="form__label-input_buscar-servicio" for="pais">Pais:</label>

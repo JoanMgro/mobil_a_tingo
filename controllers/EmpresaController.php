@@ -4,11 +4,13 @@
 class EmpresaController{
     
     private $model;
+    private $ubicacion;
 
     
-    public function __construct(Empresa $model)
+    public function __construct(Empresa $model, Ubicacion $ubicacion)
     {
-        $this->model = $model;        
+        $this->model = $model; 
+        $this->ubicacion = $ubicacion;       
                  
     }
 
@@ -18,9 +20,18 @@ class EmpresaController{
         Cargo el modelo con la lista de empresas de acuerdo a la ubicacion 
         seleccionada en el filtro
     */
-    public function setEmpresas()
+    public function setUbicacion($pais, $departamento, $ciudad, $barrio)
     {
-        $this->model->setEmpresas();                                          
+
+        $this->ubicacion->setPais(empty($pais) ? null : $pais);
+        $this->ubicacion->setDepto(empty($departamento) ? null : $departamento);
+        $this->ubicacion->setCiudad(empty($ciudad) ? null : $ciudad);
+        $this->ubicacion->setBarrio(empty($barrio) ? null : $barrio);
+
+    }
+    public function setEmpresas(Conexion $conn)
+    {
+        $this->model->setEmpresas($conn, $this->ubicacion);                                          
     }
 
 }

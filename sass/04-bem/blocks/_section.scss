@@ -9,9 +9,9 @@
     // justify-self: center;
 }
 
-.section_planes{
-    // height: 20rem;    
-}
+// .section_planes{
+//     // height: 20rem;    
+// }
 
 .section_login{
     background-color: $bg-search-box;
@@ -44,8 +44,9 @@
 }
 
 .section_resultados-busqueda{
-    border-color:$border-color-secondary;
+    border-color:$border-color-primary;
     overflow-y: scroll;
+    width: 100%;
 
 }
 

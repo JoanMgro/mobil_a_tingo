@@ -1,8 +1,9 @@
 <?php
+require_once __DIR__ . '/' . '../models/PlanesMobilatingo.php';
 
 class PlanesController{
 
-    private $modelo;
+    private PlanesMobilatingo $modelo;
     
 
     public function __construct(PlanesMobilatingo $modelo)
@@ -10,9 +11,9 @@ class PlanesController{
         $this->modelo = $modelo;
     }
 
-    public function setPlanes()
+    public function setPlanes(Conexion $conn)
     {        
-        $this->modelo->setPlanes();
+        $this->modelo->setPlanes($conn);
     }
 
 }
