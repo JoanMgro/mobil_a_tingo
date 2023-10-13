@@ -1,5 +1,28 @@
--- Insertando datos a tabla Cuentas
+
 USE mobilatingodb;
+
+-- Insertando datos a menus
+INSERT INTO Menus (nom_menu)
+VALUES	('Menu Inicio'),
+		('Menu Empresa'),
+		('Menu Administrador');
+
+INSERT INTO Links_Menu (menu, nom_link)
+VALUES	(1, 'Inicio'),
+		(1, 'Planes'),
+		(1, 'Faq'),
+		(1, 'Acerca de'),
+		(1, 'Contactenos'),
+		(1, 'Ingresar'),			
+		(2, 'Inicio'),
+		(2, 'Home'),
+		(2, 'Suscripciones'),
+		(3, 'Inicio'),
+		(3, 'Home'),
+		(3, 'Cuentas'),
+		(3, 'Tablas');
+
+-- Insertando datos a tabla Cuentas
 INSERT INTO Cuentas (id_cuenta, password, tipo_cuenta, activo)
 VALUES	('admin01@mobilatingo.com', 'admin01', 0, 1),
 		('admin02@mobilatingo.com', 'admin02', 0, 1),
@@ -74,11 +97,31 @@ VALUES ('Mobilatingo Basico Mensual',
 		'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mattis vehicula risus, finibus mollis lacus efficitur eu. Quisque vitae felis tempor lacus convallis malesuada quis sed est. Pellentesque magna urna, pretium eu mollis nec, pellentesque sodales purus. Pellentesque dapibus ac nisl vitae scelerisque. Nunc egestas nec neque id dictum. Nam at volutpat odio. Aenean venenatis consectetur pulvinar. Maecenas non gravida nibh, vitae sollicitudin dui. Nullam pellentesque lorem vitae vehicula tincidunt. In eget quam mauris. Suspendisse auctor tempus mollis. Nam viverra arcu mattis augue imperdiet, quis fermentum felis imperdiet. Curabitur vehicula ipsum orci, quis aliquet mi venenatis sit amet. Integer maximus at ligula a congue. Pellentesque sit amet dui eu ante varius luctus. Aliquam risus eros, condimentum eu finibus in, tincidunt ac libero.',
 		35000.00),
 		('Mobilatingo Basico Semestral',
-		'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mattis vehicula risus, finibus mollis lacus efficitur eu. Quisque vitae felis tempor lacus convallis malesuada quis sed est. Pellentesque magna urna, pretium eu mollis nec, pellentesque sodales purus. Pellentesque dapibus ac nisl vitae scelerisque. Nunc egestas nec neque id dictum. Nam at volutpat odio. Aenean venenatis consectetur pulvinar. Maecenas non gravida nibh, vitae sollicitudin dui. Nullam pellentesque lorem vitae vehicula tincidunt. In eget quam mauris. Suspendisse auctor tempus mollis. Nam viverra arcu mattis augue imperdiet, quis fermentum felis imperdiet. Curabitur vehicula ipsum orci, quis aliquet mi venenatis sit amet. Integer maximus at ligula a congue. Pellentesque sit amet dui eu ante varius luctus. Aliquam risus eros, condimentum eu finibus in, tincidunt ac libero.',
+		'Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Pellentesque dapibus ac nisl vitae scelerisque. Nunc egestas nec neque id dictum. Nam at volutpat odio. Aenean venenatis consectetur pulvinar. Maecenas non gravida nibh, vitae sollicitudin dui. Nullam pellentesque lorem vitae vehicula tincidunt. In eget quam mauris. Suspendisse auctor tempus mollis. Nam viverra arcu mattis augue imperdiet, quis fermentum felis imperdiet. Curabitur vehicula ipsum orci, quis aliquet mi venenatis sit amet. Integer maximus at ligula a congue. Pellentesque sit amet dui eu ante varius luctus. Aliquam risus eros, condimentum eu finibus in, tincidunt ac libero.',
 		125000.00),
 		('Mobilatingo Basico Semestral Plus',
 		'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mattis vehicula risus, finibus mollis lacus efficitur eu. Quisque vitae felis tempor lacus convallis malesuada quis sed est. Pellentesque magna urna, pretium eu mollis nec, pellentesque sodales purus. Pellentesque dapibus ac nisl vitae scelerisque. Nunc egestas nec neque id dictum. Nam at volutpat odio. Aenean venenatis consectetur pulvinar. Maecenas non gravida nibh, vitae sollicitudin dui. Nullam pellentesque lorem vitae vehicula tincidunt. In eget quam mauris. Suspendisse auctor tempus mollis. Nam viverra arcu mattis augue imperdiet, quis fermentum felis imperdiet. Curabitur vehicula ipsum orci, quis aliquet mi venenatis sit amet. Integer maximus at ligula a congue. Pellentesque sit amet dui eu ante varius luctus. Aliquam risus eros, condimentum eu finibus in, tincidunt ac libero.',
 		175000.00),
 		('Mobilatingo Anual Selection',
 		'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mattis vehicula risus, finibus mollis lacus efficitur eu. Quisque vitae felis tempor lacus convallis malesuada quis sed est. Pellentesque magna urna, pretium eu mollis nec, pellentesque sodales purus. Pellentesque dapibus ac nisl vitae scelerisque. Nunc egestas nec neque id dictum. Nam at volutpat odio. Aenean venenatis consectetur pulvinar. Maecenas non gravida nibh, vitae sollicitudin dui. Nullam pellentesque lorem vitae vehicula tincidunt. In eget quam mauris. Suspendisse auctor tempus mollis. Nam viverra arcu mattis augue imperdiet, quis fermentum felis imperdiet. Curabitur vehicula ipsum orci, quis aliquet mi venenatis sit amet. Integer maximus at ligula a congue. Pellentesque sit amet dui eu ante varius luctus. Aliquam risus eros, condimentum eu finibus in, tincidunt ac libero.',
-		285000.00);			
+		285000.00);		
+
+
+INSERT INTO Faq (question, answer)
+VALUES ('Tengo que pagar para buscar una empresa?', 'No, el servicio es gratis para las busquedas'),
+	   ('Soy una empresa, debo comprar una suscripcion para anunciarme?', 'Si, como empresa hay que adquirir una suscripcion para publicar'),
+	   ('Lorem ipsum dolor sit amet, consectetur adipiscing elit.?', 'Sed mattis vehicula risus, finibus mollis lacus efficitur eu. Quisque vitae felis tempor lacus convallis malesuada quis sed est. Pellentesque magna urna, pretium eu mollis nec, pellentesque sodales purus.'),
+		('Lorem ipsum dolor sit amet, consectetur adipiscing elit.?', 'Sed mattis vehicula risus, finibus mollis lacus efficitur eu. Quisque vitae felis tempor lacus convallis malesuada quis sed est. Pellentesque magna urna, pretium eu mollis nec, pellentesque sodales purus.'),
+		('Lorem ipsum dolor sit amet, consectetur adipiscing elit.?', 'Sed mattis vehicula risus, finibus mollis lacus efficitur eu. Quisque vitae felis tempor lacus convallis malesuada quis sed est. Pellentesque magna urna, pretium eu mollis nec, pellentesque sodales purus.'),
+		('Lorem ipsum dolor sit amet, consectetur adipiscing elit.?', 'Sed mattis vehicula risus, finibus mollis lacus efficitur eu. Quisque vitae felis tempor lacus convallis malesuada quis sed est. Pellentesque magna urna, pretium eu mollis nec, pellentesque sodales purus.'),
+		('Lorem ipsum dolor sit amet, consectetur adipiscing elit.?', 'Sed mattis vehicula risus, finibus mollis lacus efficitur eu. Quisque vitae felis tempor lacus convallis malesuada quis sed est. Pellentesque magna urna, pretium eu mollis nec, pellentesque sodales purus.'),
+		('Lorem ipsum dolor sit amet, consectetur adipiscing elit.?', 'Sed mattis vehicula risus, finibus mollis lacus efficitur eu. Quisque vitae felis tempor lacus convallis malesuada quis sed est. Pellentesque magna urna, pretium eu mollis nec, pellentesque sodales purus.'),
+		('Lorem ipsum dolor sit amet, consectetur adipiscing elit.?', 'Sed mattis vehicula risus, finibus mollis lacus efficitur eu. Quisque vitae felis tempor lacus convallis malesuada quis sed est. Pellentesque magna urna, pretium eu mollis nec, pellentesque sodales purus.'),
+		('Lorem ipsum dolor sit amet, consectetur adipiscing elit.?', 'Sed mattis vehicula risus, finibus mollis lacus efficitur eu. Quisque vitae felis tempor lacus convallis malesuada quis sed est. Pellentesque magna urna, pretium eu mollis nec, pellentesque sodales purus.'),
+		('Lorem ipsum dolor sit amet, consectetur adipiscing elit.?', 'Sed mattis vehicula risus, finibus mollis lacus efficitur eu. Quisque vitae felis tempor lacus convallis malesuada quis sed est. Pellentesque magna urna, pretium eu mollis nec, pellentesque sodales purus.'),
+		('Lorem ipsum dolor sit amet, consectetur adipiscing elit.?', 'Sed mattis vehicula risus, finibus mollis lacus efficitur eu. Quisque vitae felis tempor lacus convallis malesuada quis sed est. Pellentesque magna urna, pretium eu mollis nec, pellentesque sodales purus.');
+
+INSERT INTO Acerca (id_acerca, texto_acerca)
+VALUES (1, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae urna viverra, suscipit nisi ac, aliquet nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vitae fermentum velit. In nec rutrum tellus. Praesent sem quam, euismod quis blandit eget, elementum non leo. Cras sit amet maximus tortor. Fusce lectus arcu, fermentum at mauris et, euismod volutpat nunc. Vestibulum at tortor massa. Maecenas sit amet ex dignissim, suscipit risus at, suscipit dui. Maecenas bibendum tristique nulla, quis tincidunt diam tempus et.
+
+Suspendisse potenti. Phasellus non enim mauris. Nullam sed efficitur nunc. Phasellus vestibulum bibendum dolor, quis ultricies nibh luctus ut. Nunc at velit non mi consequat ultrices. Integer eget urna est. Phasellus sem justo, euismod nec egestas commodo, elementum ac lorem.');

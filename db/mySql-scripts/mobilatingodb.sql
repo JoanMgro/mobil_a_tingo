@@ -37,6 +37,48 @@ CREATE TABLE IF NOT EXISTS Planes_Mobilatingo (
 );
 
 
+DROP TABLE IF EXISTS Faq;
+CREATE TABLE IF NOT EXISTS Faq (
+    id_faq INT NOT NULL AUTO_INCREMENT,
+    question VARCHAR(1000) NOT NULL,
+    answer VARCHAR(1000) NOT NULL,
+    
+    CONSTRAINT pk_idfaq PRIMARY KEY (id_faq) 
+);
+
+
+DROP TABLE IF EXISTS Acerca;
+CREATE TABLE IF NOT EXISTS Acerca (
+    id_acerca INT NOT NULL,
+    texto_acerca VARCHAR(2500) NOT NULL,
+    
+    CONSTRAINT pk_idacerca PRIMARY KEY (id_acerca) 
+);
+
+-- Tabla Menus 
+
+DROP TABLE IF EXISTS Menus;
+CREATE TABLE IF NOT EXISTS Menus (
+    id_menu INT NOT NULL AUTO_INCREMENT,
+    nom_menu VARCHAR(25) NOT NULL,
+    
+    CONSTRAINT pk_idmenu PRIMARY KEY (id_menu) 
+);
+
+DROP TABLE IF EXISTS Links_Menu;
+CREATE TABLE IF NOT EXISTS Links_Menu (
+    id_link INT NOT NULL AUTO_INCREMENT,
+    menu INT NOT NULL,
+    nom_link VARCHAR(15) NOT NULL,
+    
+    CONSTRAINT pk_idlink PRIMARY KEY (id_link),
+    CONSTRAINT fk_menu FOREIGN KEY (menu)
+    REFERENCES Menus (id_menu)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE 
+    
+);
+
 -- Tabla cuenta ppal
 
 DROP TABLE IF EXISTS Cuentas;

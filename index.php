@@ -34,6 +34,11 @@
             require __DIR__ . '/' . './views/html/joinusi.php';
           }
           if($pg === '1001') require __DIR__ . '/' . './views/html/planes.php';
+          if($pg === '1002') require __DIR__ . '/' . './core/corfaq.php';
+          if($pg === '1003') require __DIR__ . '/' . './core/coracerca.php';
+          if($pg === '1004') require __DIR__ . '/' . './views/html/contactoi.php';
+          if($pg === '1005') require __DIR__ . '/' . './views/html/login.php';
+          if($pg === '1006') require __DIR__ . '/' . './views/html/registrarse.php';
 
     ?>
  

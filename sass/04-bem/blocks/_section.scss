@@ -9,9 +9,10 @@
     // justify-self: center;
 }
 
-// .section_planes{
-//     // height: 20rem;    
-// }
+.section_contactenos{
+   height: 25rem; 
+   padding-top: 2.5rem;   
+}
 
 .section_login{
     background-color: $bg-search-box;
@@ -65,6 +66,7 @@
         width: 100%;
         
     }
+
 }
 
 @mixin section-425{
@@ -75,6 +77,7 @@
         // margin-left: auto;
         // margin-right: auto;
     }
+ 
 }
 
 
@@ -83,6 +86,7 @@
     .section{
         max-width: 30rem;
     }
+
 
     .section_buscar-servicio{
       
@@ -95,6 +99,12 @@
             
      
     }
+    .section_contactenos{
+        height: 30rem; 
+        padding-top: 3rem;
+        
+        // @include flex-locate($justify: center, $align: center);   
+     }
 
 
 }
