@@ -1,7 +1,7 @@
 <section class="main__section section section_registrarse">
   <p class="text text_registrarse_titulo">Datos de Registro</p>      
       
-  <form id="registrase" action="" method="" class="form form_registrarse">
+  <form id="registrase" action="#" method="" class="form form_registrarse">
     <!-- titulo seccion de login -->
     <p class="form__text text text_form_titulo-seccion">Informacion de Log in</p>
     <!-- campo Email -->

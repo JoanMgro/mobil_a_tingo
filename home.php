@@ -1,3 +1,6 @@
+<?php
+require __DIR__ . '/' . './controllers/autenticar.php';
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -16,7 +19,7 @@
     <nav id="hambu-menu" class="header__nav nav nav_state_closed">
 
       <?php        
-        require __DIR__ . '/' . './views/html/menui.php';
+        require __DIR__ . '/' . './views/html/menuh.php';
       ?>
    
     </nav>
@@ -25,24 +28,9 @@
 
   <main class="page__main main">
 
-    <?php
-          $pg = isset($_GET["pg"]) ? $_GET["pg"] : NULL;
-          if(!$pg || $pg == '0')
-          {
-            require __DIR__ . '/' . './views/html/buscari.php';
-            require __DIR__ . '/' . './core/corbusqueda.php';
-            require __DIR__ . '/' . './views/html/joinusi.php';
-          }
-
-          if($pg === '1001') require __DIR__ . '/' . './views/html/planes.php';
-          if($pg === '1002') require __DIR__ . '/' . './core/corfaq.php';
-          if($pg === '1003') require __DIR__ . '/' . './core/coracerca.php';
-          if($pg === '1004') require __DIR__ . '/' . './views/html/contactoi.php';
-          if($pg === '1005') require __DIR__ . '/' . './views/html/login.php';
-          if($pg === '1006') require __DIR__ . '/' . './views/html/registrarse.php';
-
-    ?>
- 
+  <?php
+  require __DIR__ . '/' . '/views/html/dashboard.php';
+  ?>
     
 
 

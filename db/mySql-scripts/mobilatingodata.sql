@@ -5,22 +5,19 @@ USE mobilatingodb;
 INSERT INTO Menus (nom_menu)
 VALUES	('Menu Inicio'),
 		('Menu Empresa'),
-		('Menu Administrador');
+		
 
-INSERT INTO Links_Menu (menu, nom_link)
-VALUES	(1, 'Inicio'),
-		(1, 'Planes'),
-		(1, 'Faq'),
-		(1, 'Acerca de'),
-		(1, 'Contactenos'),
-		(1, 'Ingresar'),			
-		(2, 'Inicio'),
-		(2, 'Home'),
-		(2, 'Suscripciones'),
-		(3, 'Inicio'),
-		(3, 'Home'),
-		(3, 'Cuentas'),
-		(3, 'Tablas');
+INSERT INTO Links_Menu (menu, ref_link, pg, nom_link)
+VALUES	(1, '../../index.php?', 0, 'Inicio'),
+		(1, '../../index.php?', 1001,'Planes'),
+		(1, '../../index.php?', 1002,'Faq'),
+		(1, '../../index.php?', 1003,'Acerca de'),
+		(1, '../../index.php?', 1004,'Contactenos'),
+		(1, '../../index.php?', 1005,'Ingresar'),			
+		(2, '../../index.php?', 0, 'Inicio'),
+		(2, '../../home.php?', 1, 'Home'),
+		(2, '../../home.php?', 2, 'Suscripciones');
+
 
 -- Insertando datos a tabla Cuentas
 INSERT INTO Cuentas (id_cuenta, password, tipo_cuenta, activo)

@@ -136,6 +136,20 @@ BEGIN
 END //
 DELIMITER ;
 
+DELIMITER //
+CREATE PROCEDURE validar_usuario(
+    IN user,
+    IN passw
+    )
+BEGIN
+    select c.id_cuenta, c.tipo_cuenta, e.nit, e.nom_empresa,
+	from Cuentas as c
+    inner join Empresas e on c.id_cuenta = e.id_empresa 
+    where c.id_cuenta = user and c.password = passw; 
+
+END //
+DELIMITER ;
+
 
 
 

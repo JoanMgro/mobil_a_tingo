@@ -7,7 +7,7 @@ $barrio = isset($_GET['barrio']) ? $_GET['barrio'] : null;
 $lat = isset($_GET['lat']) ? $_GET['lat'] : null;
 $long = isset($_GET['long']) ? $_GET['long'] : null;
 
-if(isset($pais))
+if(isset($pais) && !empty($pais))
 {
     require_once __DIR__ . '/' . '../models/Conexion.php';
     require_once __DIR__ . '/' . '../models/Empresa.php';   

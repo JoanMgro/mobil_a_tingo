@@ -69,6 +69,8 @@ DROP TABLE IF EXISTS Links_Menu;
 CREATE TABLE IF NOT EXISTS Links_Menu (
     id_link INT NOT NULL AUTO_INCREMENT,
     menu INT NOT NULL,
+    ref_link VARCHAR(50) NOT NULL,
+    pg INT NOT NULL,
     nom_link VARCHAR(15) NOT NULL,
     
     CONSTRAINT pk_idlink PRIMARY KEY (id_link),

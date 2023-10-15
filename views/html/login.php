@@ -1,7 +1,7 @@
 
 <section class="main__section section section_login">
   <p class="text text_login_titulo">Log in</p>
-  <form id="registrase" action="./dasboard.html" method="" class="form form_login">
+  <form id="registrase" action="../../controllers/validar.php" method="POST" class="form form_login">
     <p class="form__text text text_form_titulo-seccion">Ingrese su usuario y contraseña</p>
     <label class="form__label_login" for="email">Email:</label>
     <input id="email" class="form__input_login input input_login" type="email" name="email" autocomplete="off" required>
