@@ -9,10 +9,10 @@ $long = isset($_GET['long']) ? $_GET['long'] : null;
 
 if(isset($pais) && !empty($pais))
 {
-    require_once __DIR__ . '/' . '../models/Conexion.php';
-    require_once __DIR__ . '/' . '../models/Empresa.php';   
-    require_once __DIR__ . '/' . '../controllers/EmpresaController.php';
-    require_once __DIR__ . '/' . '../views/EmpresaView.php';
+    require_once __DIR__ . '/' . '../models/classes/Conexion.php';
+    require_once __DIR__ . '/' . '../models/classes/Empresa.php';   
+    require_once __DIR__ . '/' . './classes/EmpresaController.php';
+    require_once __DIR__ . '/' . '../views/classes/EmpresaView.php';
 
    
 

@@ -9,7 +9,7 @@ class FaqView{
 
     public function render()
     {
-        require_once __DIR__ . '/' . './html/faqi.php';
+        require_once __DIR__ . '/' . '../html/faqi.php';
 
     }
 

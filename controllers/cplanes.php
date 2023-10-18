@@ -1,8 +1,8 @@
 <?php
-require_once __DIR__ . '/' . '../models/Conexion.php';
-require_once __DIR__ . '/' . '../models/PlanesMobilatingo.php';
-require_once __DIR__ . '/' . '../controllers/PlanesController.php';
-require_once __DIR__ . '/' . '../views/PlanesView.php';
+require_once __DIR__ . '/' . '../models/classes/Conexion.php';
+require_once __DIR__ . '/' . '../models/classes/PlanesMobilatingo.php';
+require_once __DIR__ . '/' . './classes/PlanesController.php';
+require_once __DIR__ . '/' . '../views/classes/PlanesView.php';
 
 /*
     1.Instancio el modelo

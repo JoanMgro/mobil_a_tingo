@@ -9,7 +9,7 @@ class EmpresaView{
 
     public function render()
     {        
-        require __DIR__ . '/' . './html/resultadosi.php';
+        require __DIR__ . '/' . '../html/resultadosi.php';
     }
 }
 ?>

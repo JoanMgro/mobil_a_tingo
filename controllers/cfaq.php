@@ -1,8 +1,8 @@
 <?php
-require_once __DIR__ . '/' . '../models/Conexion.php';
-require_once __DIR__ . '/' . '../models/Faq.php';
-require_once __DIR__ . '/' . '../controllers/FaqController.php';
-require_once __DIR__ . '/' . '../views/FaqView.php';
+require_once __DIR__ . '/' . '../models/classes/Conexion.php';
+require_once __DIR__ . '/' . '../models/classes/Faq.php';
+require_once __DIR__ . '/' . './classes/FaqController.php';
+require_once __DIR__ . '/' . '../views/classes/FaqView.php';
 
 /*
     1.Instancio el modelo

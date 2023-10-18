@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-require_once __DIR__ . '/' . '../models/Conexion.php';
-require_once __DIR__ . '/' . '../models/Cuenta.php';
+require_once __DIR__ . '/' . '../models/classes/Conexion.php';
+require_once __DIR__ . '/' . '../models/classes/Cuenta.php';
 
 acceder();
 
