@@ -348,6 +348,11 @@ html {
   height: 1.7rem;
 }
 
+.btn_planes {
+  width: 8rem;
+  height: 1.7rem;
+}
+
 .btn_registrarse {
   border-color: #F4A712;
   background-color: #F4A712;
@@ -1004,6 +1009,10 @@ html {
   width: 100%;
 }
 
+.tabla_busqueda {
+  width: 90%;
+}
+
 .hide-me {
   display: none;
 }
@@ -1037,8 +1046,8 @@ html {
   .input_radio {
     height: 2rem;
   }
-  .carrusel__card_show_two {
-    display: block;
+  .tabla_busqueda {
+    width: 90%;
   }
 }
 @media (min-width: 425px) {
@@ -1072,6 +1081,9 @@ html {
   .section_unete {
     padding-right: 3rem;
     width: 100%;
+  }
+  .tabla_busqueda {
+    width: 95%;
   }
 }
 @media (min-width: 576px) {
@@ -1305,6 +1317,9 @@ html {
   .text_redes {
     font-size: 0.75rem;
   }
+  .text_resultado_tabla {
+    font-size: 1rem;
+  }
   .grupo-redes {
     width: 25%;
   }
@@ -1348,6 +1363,9 @@ html {
     font-size: 1.5rem;
   }
   .text_redes {
+    font-size: 1rem;
+  }
+  .text_resultado_tabla {
     font-size: 1rem;
   }
   .section_unete {
@@ -1419,6 +1437,12 @@ html {
   }
   .registrarse {
     width: 40%;
+  }
+  .text_resultado_tabla {
+    font-size: 1.25rem;
+  }
+  .text_header_tabla {
+    font-size: 1.25rem;
   }
   .section_resultados-busqueda {
     width: 100%;

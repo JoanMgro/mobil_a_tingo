@@ -33,6 +33,7 @@ class Empresa extends Cuenta{
 
     public function setEmpresas(Conexion $conn, Ubicacion $ubicacion)
     {   
+        
         $this->ubicacion = $ubicacion;
         $dbh = $conn->get_conexion();        
         $sql = "call get_empresas(:pais, :depto, :city, :barrio)";
@@ -47,6 +48,24 @@ class Empresa extends Cuenta{
         $stmt = NULL;        
 
     }
+
+    // public function setEmpresasGps(Conexion $conn, BoundingBox $box)
+    // {   
+        
+    //     $dbh = $conn->get_conexion();        
+    //     $sql = "call get_empresas_gps(:lat1, :lat2, :long1, :long2)";
+    //     $stmt = $dbh->prepare($sql);
+    //     $stmt->bindValue(':lat1', $box->getlatitudRange()[0]);
+    //     $stmt->bindValue(':lat2', $box->getlatitudRange()[1]);
+    //     $stmt->bindValue(':long1', $box->getlongitudRange()[0]);
+    //     $stmt->bindValue(':long2', $box->getlongitudRange()[1]);
+    //     $stmt->execute();
+    //     $this->empresas = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    //     $dbh = NULL;
+    //     $stmt = NULL;        
+
+    // }
+
 
     public function getEmpresas()
     {

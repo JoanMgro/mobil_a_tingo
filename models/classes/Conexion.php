@@ -4,7 +4,7 @@
     // Creamos METODO
      
      public function get_conexion(){
-        include ('../configuracion.php');
+        include (__DIR__ . '/' . '../configuracion.php');
         try{
             $conexion = new PDO("mysql:host=$host;dbname=$db",$user,$pass);
             return $conexion;

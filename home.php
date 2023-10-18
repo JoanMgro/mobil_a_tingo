@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . '/' . './controllers/autenticar.php';
+require __DIR__ . '/' . './controllers/cautenticar.php';
 ?>
 <!DOCTYPE html>
 <html lang="es">

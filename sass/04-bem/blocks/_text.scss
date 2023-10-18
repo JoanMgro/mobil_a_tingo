@@ -102,6 +102,11 @@
     .text_redes{
         font-size: $mobatingo-font-3;
     }
+
+    .text_resultado_tabla{
+    font-size: $mobatingo-font-4;
+
+    }
     
 }
 
@@ -125,8 +130,28 @@
     .text_redes{
         font-size: $mobatingo-font-4;
     }
+
+
+.text_resultado_tabla{
+    font-size: $mobatingo-font-4;
+
+}
     
 }
 
 
+
+@mixin text-1200{
+
+
+.text_resultado_tabla{
+    font-size: $mobatingo-font-5;
+
+}
+.text_header_tabla{
+    font-size: $mobatingo-font-5;
+
+}
+
+}
 
