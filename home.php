@@ -19,7 +19,7 @@ require __DIR__ . '/' . './controllers/cautenticar.php';
     <nav id="hambu-menu" class="header__nav nav nav_state_closed">
 
       <?php        
-        require __DIR__ . '/' . './views/html/menuh.php';
+        require __DIR__ . '/' . './views/html/vmenuh.php';
       ?>
    
     </nav>

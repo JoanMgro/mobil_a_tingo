@@ -14,6 +14,6 @@ require_once __DIR__ . '/' . '../views/classes/FaqView.php';
 $model = new Faq();
 $controller = new FaqController($model);
 $controller->setFaqs(new Conexion());
-$view = new FaqView($model);
-$view->render();
+// $view = new FaqView($model);
+// $view->render();
 ?>

@@ -1,10 +1,12 @@
-
+<?php
+require_once __DIR__ . '/' . '../../controllers/cfaq.php';
+?>
 <section class="main__section section">
     <h1>Preguntas Frecuentes</h1>
 </section>
 
 
-<?php foreach ($this->model->getFaqs() as $item):?>
+<?php foreach ($model->getFaqs() as $item):?>
     <section class="main__section section">
 
     <?php foreach ($item as $key => $value):?>

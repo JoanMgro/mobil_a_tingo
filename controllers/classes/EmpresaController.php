@@ -38,10 +38,11 @@ class EmpresaController{
         $this->model->setEmpresas($conn, $this->ubicacion);                                          
     }
 
-    // public function setEmpresasGps(Conexion $conn, BoundingBox $box)
-    // {
-    //     $this->model->setEmpresasGps($conn, $box);                                          
-    // }
+    public function setEmpresasGps(Conexion $conn, BoundingBox $box)
+    {
+        
+        $this->model->setEmpresasGps($conn, $box);                                          
+    }
 
 
 }

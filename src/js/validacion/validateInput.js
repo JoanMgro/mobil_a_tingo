@@ -1,6 +1,7 @@
 const pais = document.querySelector('#pais');
 const depto = document.querySelector('#departamento');
 const ciudad = document.querySelector('#ciudad');
+const rad =  document.querySelector('#radio');
 
 function setRequired(field){
 
@@ -33,3 +34,13 @@ barrio.addEventListener('input', (e)=>{
     }
     
 });
+
+
+rad.addEventListener('change', (e)=>{
+    removeRequired(pais);
+
+
+    
+});
+
+

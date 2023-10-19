@@ -1,5 +1,7 @@
 const locateBtn = document.querySelector('#locate');
 
+const inputRadio = document.querySelector('#radio');
+
 //Declaro las variables que contienen los inputs del form
 const inputLat = document.querySelector('#lat');
 const inputLong = document.querySelector('#long');
@@ -17,7 +19,7 @@ function addCookie(cookie, data){
 //Obtener los valores de Pais, Depto y ciudad de nominatin.
 //crear cookie con las posicion del cliente
 //Cargar los values de los inputs con su dato correspondiente
-async function getData(){
+async function getData(isComplete){
     const coords = await getCoords();
     inputLat.value = coords.latitud; //JSON.stringify(coords);
     inputLong.value = coords.longitud;
@@ -25,21 +27,25 @@ async function getData(){
     addCookie('longitud',inputLong.value);
     // let newcookie = `mycoords=${inputCoords.value}; max-age=3600; SameSite=lax; Secure`;
     // document.cookie = newcookie;
-
-    try {
-        const resp = await fetch(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${coords.latitud}&lon=${coords.longitud}`);
-        const json = await resp.json();
-        autoPais.value = json['address']['country'];
-
-        autoDepartamento.value = json['address']['state'];
-        autoCiudad.value = json['address']['city'];
-
-        return json['address'];
-    } catch (error) {
-        console.log('error getting data');
-        return 'error';
+    if(isComplete)
+    {
+        try {
+            const resp = await fetch(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${coords.latitud}&lon=${coords.longitud}`);
+            const json = await resp.json();
+            autoPais.value = json['address']['country'];
+    
+            autoDepartamento.value = json['address']['state'];
+            autoCiudad.value = json['address']['city'];
+    
+            return json['address'];
+        } catch (error) {
+            console.log('error getting data');
+            return 'error';
+    
+        }
 
     }
+
 }
 
 //Obtener las coordenadas del cliente.
@@ -57,7 +63,13 @@ function getCoords(){
 
 locateBtn.addEventListener('click', (e) =>{
     e.preventDefault();
-    getData();
+    getData(true);
 
+});
+
+inputRadio.addEventListener('change', (e)=>{
+    e.preventDefault();
+    getData(false);
+    
 });
 

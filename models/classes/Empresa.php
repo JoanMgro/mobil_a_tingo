@@ -49,22 +49,26 @@ class Empresa extends Cuenta{
 
     }
 
-    // public function setEmpresasGps(Conexion $conn, BoundingBox $box)
-    // {   
+    public function setEmpresasGps(Conexion $conn, BoundingBox $box)
+    {   
         
-    //     $dbh = $conn->get_conexion();        
-    //     $sql = "call get_empresas_gps(:lat1, :lat2, :long1, :long2)";
-    //     $stmt = $dbh->prepare($sql);
-    //     $stmt->bindValue(':lat1', $box->getlatitudRange()[0]);
-    //     $stmt->bindValue(':lat2', $box->getlatitudRange()[1]);
-    //     $stmt->bindValue(':long1', $box->getlongitudRange()[0]);
-    //     $stmt->bindValue(':long2', $box->getlongitudRange()[1]);
-    //     $stmt->execute();
-    //     $this->empresas = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    //     $dbh = NULL;
-    //     $stmt = NULL;        
+        $dbh = $conn->get_conexion();        
+        $sql = "SELECT e.nom_empresa, ub.direccion FROM Empresas e";
+        $sql .= " INNER JOIN UbicacionEmpresas ub ON e.ubicacion = ub.id_ubicacion";
+        $sql .= " WHERE ub.latitud BETWEEN :lat1 AND :lat2";
+        $sql .= " AND ub.longitud BETWEEN :long1 AND :long2;";
+        $stmt = $dbh->prepare($sql);
+        $stmt->bindValue(':lat1', $box->getlatitudRange()[0]);
+        $stmt->bindValue(':lat2', $box->getlatitudRange()[1]);
+        $stmt->bindValue(':long1', $box->getlongitudRange()[0]);
+        $stmt->bindValue(':long2', $box->getlongitudRange()[1]);
+        $stmt->execute();
+        $this->empresas = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $dbh = NULL;
+        $stmt = NULL;  
+            
 
-    // }
+    }
 
 
     public function getEmpresas()

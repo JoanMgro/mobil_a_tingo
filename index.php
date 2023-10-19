@@ -16,7 +16,7 @@
     <nav id="hambu-menu" class="header__nav nav nav_state_closed">
 
       <?php        
-        require __DIR__ . '/' . './views/html/menui.php';
+        require __DIR__ . '/' . './views/html/vmenui.php';
       ?>
    
     </nav>
@@ -29,17 +29,17 @@
           $pg = isset($_GET["pg"]) ? $_GET["pg"] : NULL;
           if(!$pg || $pg == '0')
           {
-            require __DIR__ . '/' . './views/html/buscari.php';
-            require __DIR__ . '/' . './controllers/cbusqueda.php';
-            require __DIR__ . '/' . './views/html/joinusi.php';
+            require __DIR__ . '/' . './views/html/vbuscar.php';
+            require __DIR__ . '/' . './views/html/vresultados.php';
+            require __DIR__ . '/' . './views/html/vjoinus.php';
           }
 
-          if($pg === '1001') require __DIR__ . '/' . './views/html/planes.php';
-          if($pg === '1002') require __DIR__ . '/' . './controllers/cfaq.php';
-          if($pg === '1003') require __DIR__ . '/' . './controllers/cacerca.php';
-          if($pg === '1004') require __DIR__ . '/' . './views/html/contactoi.php';
-          if($pg === '1005') require __DIR__ . '/' . './views/html/login.php';
-          if($pg === '1006') require __DIR__ . '/' . './views/html/registrarse.php';
+          if($pg === '1001') require __DIR__ . '/' . './views/html/vplanes.php';
+          if($pg === '1002') require __DIR__ . '/' . './views/html/vfaq.php';
+          if($pg === '1003') require __DIR__ . '/' . './views/html/vacercade.php';
+          if($pg === '1004') require __DIR__ . '/' . './views/html/vcontacto.php';
+          if($pg === '1005') require __DIR__ . '/' . './views/html/vlogin.php';
+          if($pg === '1006') require __DIR__ . '/' . './views/html/vregistrarse.php';
 
     ?>
  
