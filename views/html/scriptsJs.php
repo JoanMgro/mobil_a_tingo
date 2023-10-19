@@ -1,4 +1,4 @@
-<?php if(!$pg || $pg == '0'):?>
+<?php if(!$pg || $pg == '1000'):?>
 <script type='module' src='./src/js/index.js'></script>
 <?php endif;?>
 <?php if($pg == '1001'):?>

@@ -27,7 +27,7 @@
 
     <?php
           $pg = isset($_GET["pg"]) ? $_GET["pg"] : NULL;
-          if(!$pg || $pg == '0')
+          if(!$pg || $pg == '1000')
           {
             require __DIR__ . '/' . './views/html/vinicio.php';
           }

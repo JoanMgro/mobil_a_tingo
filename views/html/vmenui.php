@@ -1,6 +1,6 @@
 <ul class="menu-list">
         <li class="menu-list__menu-item menu-list__menu-item_hover">
-          <a class="menu-list__menu-link link link_text_nav" href="../../index.php?pg=0">Inicio</a>
+          <a class="menu-list__menu-link link link_text_nav" href="../../index.php?pg=1000">Inicio</a>
         </li>
         <li class="menu-list__menu-item menu-list__menu-item_hover">
           <a class="menu-list__menu-link link-text_nav" href="../../index.php?pg=1001">Planes</a>
