@@ -30,6 +30,7 @@ require __DIR__ . '/' . './controllers/cautenticar.php';
 
   <?php
   require __DIR__ . '/' . '/views/html/dashboard.php';
+  
   ?>
     
 

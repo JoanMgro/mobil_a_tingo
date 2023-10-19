@@ -22,7 +22,19 @@ function acceder()
             }
             $_SESSION['validated'] = '@1r;:**3';
             
-        } 
+        }
+        $perfil = $_SESSION['pefnom'];
+        $data = Cuenta::cargarSesion($conn, $perfil, $user);
+        if(isset($data))
+        {
+            foreach ($data as $key => $value)
+            {
+                $_SESSION[$key] = $value;
+            }
+                        
+        }
+        
+
         echo "<script type='application/javascript'>window.location='../home.php'</script>";
          
         

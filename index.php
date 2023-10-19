@@ -29,9 +29,7 @@
           $pg = isset($_GET["pg"]) ? $_GET["pg"] : NULL;
           if(!$pg || $pg == '0')
           {
-            require __DIR__ . '/' . './views/html/vbuscar.php';
-            require __DIR__ . '/' . './views/html/vresultados.php';
-            require __DIR__ . '/' . './views/html/vjoinus.php';
+            require __DIR__ . '/' . './views/html/vinicio.php';
           }
 
           if($pg === '1001') require __DIR__ . '/' . './views/html/vplanes.php';

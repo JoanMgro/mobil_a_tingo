@@ -15,7 +15,7 @@ if(isset($pais))
     require_once __DIR__ . '/' . '../models/classes/Empresa.php';
     require_once __DIR__ . '/' . './classes/BoundingBox.php';   
     require_once __DIR__ . '/' . './classes/EmpresaController.php';
-    // require_once __DIR__ . '/' . '../views/classes/EmpresaView.php';
+   
 
    
     
@@ -27,7 +27,7 @@ if(isset($pais))
     /* le indico al modelo que busque las empresas con los filtros indicados*/
     if(!((empty($lat) && empty($long)) || empty($radioKm)))
     {
-        // echo "emtre aca";
+       
         $radioKm = $radioKm/1000; 
         $boundingBox = new BoundingBox($ubicacion);
         $boundingBox->setLatitudRange($radioKm);
@@ -39,10 +39,6 @@ if(isset($pais))
         $controller->setEmpresas(new Conexion());
     }  
 
-    // $controller->setEmpresas(new Conexion());
-    
-    // $view = new EmpresaView($model);
-    // $view->render();
 }
 
 

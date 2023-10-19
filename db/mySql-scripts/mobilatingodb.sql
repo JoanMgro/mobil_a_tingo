@@ -81,6 +81,45 @@ CREATE TABLE IF NOT EXISTS Links_Menu (
     
 );
 
+-- Tabla Agregada Pagina
+
+DROP TABLE IF EXISTS Pagina;
+-- Esta tabla nos indica si una pagina con id se muestra o no a un usuario
+CREATE TABLE IF NOT EXISTS Pagina (
+    pagid BIGINT,
+    pagnom VARCHAR(40),
+    pagarc VARCHAR(100),
+    pagmos INT,
+    pagord INT, -- orden en el menu
+    pagmen VARCHAR(30), -- Pag menu
+    
+    CONSTRAINT pk_pagid PRIMARY KEY (pagid),
+    -- Aca inserto como llave foranea mi tabla cuenta
+
+);
+
+-- Tabla Agregada Perfil
+
+DROP TABLE IF EXISTS Perfil;
+
+CREATE TABLE IF NOT EXISTS Perfil (
+    pefid BIGINT,
+    pefnom VARCHAR(50),
+    CONSTRAINT pk_pefid PRIMARY KEY (pefid)
+);
+
+-- Tabla Agregada Pagper
+DROP TABLE IF EXISTS Pagper;
+-- Join table
+CREATE TABLE IF NOT EXISTS Pagper (
+    pagid BIGINT,
+    pefid BIGINT,
+    CONSTRAINT pk_pagper PRIMARY KEY (pagid, pefid),
+    CONSTRAINT fk_pagid_pagper  FOREIGN KEY (pagid) REFERENCES Pagina (pagid),
+    CONSTRAINT fk_pefid_pagper FOREIGN KEY (pefid) REFERENCES Perfil (pefid)
+    
+);
+
 -- Tabla cuenta ppal
 
 DROP TABLE IF EXISTS Cuentas;
@@ -89,9 +128,10 @@ CREATE TABLE IF NOT EXISTS Cuentas (
     id_cuenta VARCHAR(50) NOT NULL,
     password VARCHAR(50) NOT NULL,
     fecha_registro DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    tipo_cuenta INT,
-    activo INT,
-    CONSTRAINT pk_cuentas PRIMARY KEY (id_cuenta)
+    perfil BIGINT,
+    CONSTRAINT pk_cuentas PRIMARY KEY (id_cuenta),
+    CONSTRAINT fk_perfil_cuentas FOREIGN KEY (perfil)
+    REFERENCES Perfil (pefid)
 );
 
 DROP TABLE IF EXISTS Admins;
@@ -199,45 +239,7 @@ CREATE TABLE IF NOT EXISTS Ubicacion (
 );
 
 
--- Tabla Agregada Pagina
 
-DROP TABLE IF EXISTS Pagina;
--- Esta tabla nos indica si una pagina con id se muestra o no a un usuario
-CREATE TABLE IF NOT EXISTS Pagina (
-    pagid BIGINT,
-    pagnom VARCHAR(40),
-    pagarc VARCHAR(100),
-    pagmos INT,
-    pagord INT,
-    pagmen VARCHAR(30),
-    cuenta VARCHAR(50),
-    CONSTRAINT pk_pagid PRIMARY KEY (pagid),
-    -- Aca inserto como llave foranea mi tabla cuenta
-    CONSTRAINT fk_cuenta_pagina FOREIGN key (cuenta)
-    REFERENCES Cuentas (id_cuenta)
-);
-
--- Tabla Agregada Perfil
-
-DROP TABLE IF EXISTS Perfil;
-
-CREATE TABLE IF NOT EXISTS Perfil (
-    pefid BIGINT,
-    pefnom VARCHAR(50),
-    CONSTRAINT pk_pefid PRIMARY KEY (pefid)
-);
-
--- Tabla Agregada Pagper
-DROP TABLE IF EXISTS Pagper;
--- Join table
-CREATE TABLE IF NOT EXISTS Pagper (
-    pagid BIGINT,
-    pefid BIGINT,
-    CONSTRAINT pk_pagper PRIMARY KEY (pagid, pefid),
-    CONSTRAINT fk_pagid_pagper  FOREIGN KEY (pagid) REFERENCES Pagina (pagid),
-    CONSTRAINT fk_pefid_pagper FOREIGN KEY (pefid) REFERENCES Perfil (pefid)
-    
-);
 
 
 

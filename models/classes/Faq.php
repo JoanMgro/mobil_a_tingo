@@ -37,10 +37,12 @@ class Faq{
     public function setFaqs(Conexion $conn)
     {   
         $dbh = $conn->get_conexion();        
-        $sql = "call get_faq()";
+        $sql = "SELECT fq.id_faq, fq.question, fq.answer";
+        $sql .= " FROM Faq fq;";
         $stmt = $dbh->prepare($sql);
         $stmt->execute();
         $this->faqs = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        
         $dbh = NULL;
         $stmt = NULL;        
 

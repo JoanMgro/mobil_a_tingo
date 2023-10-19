@@ -16,7 +16,7 @@ class Acerca{
     public function readTextoAcerca(Conexion $conn)
     {   
         $dbh = $conn->get_conexion();        
-        $sql = "call get_texto_acerca()";
+        $sql = "SELECT ac.texto_acerca FROM Acerca ac";
         $stmt = $dbh->prepare($sql);
         $stmt->execute();
         $this->textoAcerca = $stmt->fetchColumn();

@@ -35,8 +35,13 @@ class Empresa extends Cuenta{
     {   
         
         $this->ubicacion = $ubicacion;
-        $dbh = $conn->get_conexion();        
-        $sql = "call get_empresas(:pais, :depto, :city, :barrio)";
+        $dbh = $conn->get_conexion();
+        $sql = "SELECT e.nom_empresa, ub.direccion FROM Empresas e";
+        $sql .= " INNER JOIN UbicacionEmpresas ub ON e.ubicacion = ub.id_ubicacion";
+        $sql .= " WHERE ub.pais = :pais AND ub.departamento LIKE (ifnull(:depto,'%'))";
+        $sql .= " AND ub.ciudad LIKE (ifnull(:city,'%'))";
+        $sql .= " AND ub.barrio LIKE (ifnull(:barrio,'%'));";        
+        // $sql = "call get_empresas(:pais, :depto, :city, :barrio)";
         $stmt = $dbh->prepare($sql);
         $stmt->bindValue(':pais', $this->ubicacion->getPais());
         $stmt->bindValue(':depto', $this->ubicacion->getDepto());

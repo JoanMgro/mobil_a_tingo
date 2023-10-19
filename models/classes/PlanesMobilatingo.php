@@ -19,8 +19,9 @@ class PlanesMobilatingo{
     public function setPlanes (Conexion $conn)
     {
         $dbh = $conn->get_conexion(); 
-        
-        $sql = "call get_planes()";
+        $sql = "SELECT pm.id_plan, pm.nom_plan, pm.desc_plan, pm.valor_plan";
+        $sql .= " FROM Planes_Mobilatingo pm;";
+        // $sql = "call get_planes()";
         $stmt = $dbh->prepare($sql);
         $stmt->execute();
         $this->planes = $stmt->fetchAll(PDO::FETCH_ASSOC);

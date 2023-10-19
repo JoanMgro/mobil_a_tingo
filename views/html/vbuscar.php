@@ -1,10 +1,10 @@
 <section class="main__section section section_buscar-servicio">
       <p class="text text_section_buscar-servicio">Busqueda de servicios</p>
 
-      <form id="buscar-servicio" action="../index.php" method="GET" class="form">
+      <form id="buscar-servicio" action="../../index.php" method="GET" class="form">
 
         <input id="pg" type="hidden" name="pg" value="0">
-        <button id="locate" class="form__btn_locate btn_secondary btn_locate">Localizarme</button>
+        <!-- <button id="locate" class="form__btn_locate btn_secondary btn_locate">Localizarme</button> -->
         <!-- Pais -->
         <label class="form__label-input_buscar-servicio" for="pais">Pais:</label>
         <input id="pais" class="form__input_buscar-servicio input input_buscar-servicio" type="text" name="pais" autocomplete="off" required>

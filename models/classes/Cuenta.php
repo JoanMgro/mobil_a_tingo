@@ -5,8 +5,8 @@ class Cuenta{
     protected $idCuenta;
     protected $password;
     protected $fechaRegistro;
-    protected $tipoCuenta;
-    protected $isActive;
+    protected $perfil;
+    
 
     
 
@@ -42,6 +42,30 @@ class Cuenta{
             $stmt = $dbh->prepare($sql);
             $stmt->bindValue(':user', $user);
             $stmt->bindValue(':pass', $pass);
+            $stmt->execute();
+            $session =  $stmt->fetch(PDO::FETCH_ASSOC);
+            $dbh = null;
+            $stmt = null;           
+      
+            return $session;
+
+
+    }
+
+    static function cargarSesion(Conexion $conn, $perfil, $user)
+    {
+            $dbh = $conn->get_conexion(); 
+            if($perfil == 'Empresa')
+            {
+                $sql = "call cargar_empresa(:user)";
+            }
+            if($perfil == 'Admin')
+            {
+                $sql = "call cargar_admin(:user)";
+            }        
+            
+            $stmt = $dbh->prepare($sql);
+            $stmt->bindValue(':user', $user);
             $stmt->execute();
             $session =  $stmt->fetch(PDO::FETCH_ASSOC);
             $dbh = null;
