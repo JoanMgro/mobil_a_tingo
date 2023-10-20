@@ -1,5 +1,5 @@
 <?php
-
+if($_GET["pg"] == '99') require __DIR__ . '/views/html/logout.php';
 require __DIR__ . '/' . './controllers/cautenticar.php';
 ?>
 <!DOCTYPE html>
@@ -30,8 +30,12 @@ require __DIR__ . '/' . './controllers/cautenticar.php';
   <main class="page__main main">
 
   <?php
-  require __DIR__ . '/' . '/views/html/dashboard.php';
-  
+  $pg = isset($_GET["pg"]) ? $_GET["pg"] : NULL;
+  if($pg == '10') require __DIR__ . '/' . './views/html/vcuenta.php';
+  if($pg == '11') require __DIR__ . '/' . './views/html/vsuscripcion.php';
+  if($pg == '12') require __DIR__ . '/' . './views/html/vservicios.php';
+  if($pg == '13') require __DIR__ . '/' . './views/html/vcontacto.php';
+  if($pg == '100') require __DIR__ . '/' . './views/html/vlogout.php';
   ?>
     
 

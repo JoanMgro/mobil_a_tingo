@@ -35,7 +35,7 @@ function acceder()
         }
         
 
-        echo "<script type='application/javascript'>window.location='../home.php'</script>";
+        echo "<script type='application/javascript'>window.location='../home.php?pg=10'</script>";
          
         
     }

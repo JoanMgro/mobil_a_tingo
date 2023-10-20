@@ -13,3 +13,16 @@
 <?php if($pg == '1006'):?>
 <script type='module' src='./src/js/registrarse.js'></script>
 <?php endif;?>
+<?php if($pg == '10'):?>
+<script type='module' src='./src/js/home.js'></script>
+<?php endif;?>
+<?php if($pg == '11'):?>
+<script type='module' src='./src/js/suscripciones.js'></script>
+<?php endif;?>
+<?php if($pg == '12'):?>
+<script type='module' src='./src/js/servicios.js'></script>
+<?php endif;?>
+<?php if($pg == '13'):?>
+<script type='module' src='./src/js/contactenos.js'></script>
+<?php endif;?>
+
