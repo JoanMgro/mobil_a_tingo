@@ -1,3 +1,9 @@
+<?php
+  require_once __DIR__ . '/' . '../../controllers/cpaginas.php';
+  // echo "<script type='application/javascript'>console.log('{$model->getPaginas()[0]}')</script>";
+?>
+
+
 <ul class="menu-list">
         <li class="menu-list__menu-item menu-list__menu-item_hover">
           <a class="menu-list__menu-link link link_text_nav" href="../../index.php?pg=1000">Inicio</a>
@@ -21,3 +27,6 @@
           </a>
         </li>
       </ul> 
+
+
+     

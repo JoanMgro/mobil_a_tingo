@@ -15,7 +15,7 @@
     <img class="header__logo-img logo-img" src="./src/images/logos/logo.png" alt="Logo Mobilatingo">
     <nav id="hambu-menu" class="header__nav nav nav_state_closed">
 
-      <?php        
+      <?php           
         require __DIR__ . '/' . './views/html/vmenui.php';
       ?>
    
