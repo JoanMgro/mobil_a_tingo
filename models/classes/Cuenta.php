@@ -1,5 +1,6 @@
 <?php
 
+
 class Cuenta{
 
     protected $idCuenta;
@@ -55,11 +56,11 @@ class Cuenta{
     static function cargarSesion(Conexion $conn, $perfil, $user)
     {
             $dbh = $conn->get_conexion(); 
-            if($perfil == 'Empresa')
+            if($perfil == 2)
             {
                 $sql = "call cargar_empresa(:user)";
             }
-            if($perfil == 'Admin')
+            if($perfil == 1)
             {
                 $sql = "call cargar_admin(:user)";
             }        

@@ -10,6 +10,8 @@ function acceder()
 {
     $user= isset($_POST["email"])? $_POST["email"]:NULL;
     $pass= isset($_POST["password"])? $_POST["password"]:NULL;
+    // $user= 'info@reparamos.com';
+    // $pass= 'reparamos';
     if($user && $pass)
     {
         $conn = new Conexion();
@@ -23,7 +25,7 @@ function acceder()
             $_SESSION['validated'] = '@1r;:**3';
             
         }
-        $perfil = $_SESSION['pefnom'];
+        $perfil = $_SESSION['pefid'];
         $data = Cuenta::cargarSesion($conn, $perfil, $user);
         if(isset($data))
         {

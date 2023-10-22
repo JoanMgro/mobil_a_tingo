@@ -20,7 +20,7 @@ require __DIR__ . '/' . './controllers/cautenticar.php';
     <nav id="hambu-menu" class="header__nav nav nav_state_closed">
 
       <?php        
-        require __DIR__ . '/' . './views/html/vmenuh.php';
+        require __DIR__ . '/' . './views/html/vmenui.php';
       ?>
    
     </nav>
@@ -31,9 +31,9 @@ require __DIR__ . '/' . './controllers/cautenticar.php';
 
   <?php
   $pg = isset($_GET["pg"]) ? $_GET["pg"] : NULL;
-  if($pg == '10') require __DIR__ . '/' . './views/html/vcuenta.php';
-  if($pg == '11') require __DIR__ . '/' . './views/html/vsuscripcion.php';
-  if($pg == '12') require __DIR__ . '/' . './views/html/vservicios.php';
+  if($pg == '10') require __DIR__ . '/' . './views/html/vdashboard.php';
+  if($pg == '11') require __DIR__ . '/' . './views/html/vmisuscripcion.php';
+  if($pg == '12') require __DIR__ . '/' . './views/html/vmiservicios.php';
   if($pg == '13') require __DIR__ . '/' . './views/html/vcontacto.php';
   if($pg == '100') require __DIR__ . '/' . './views/html/vlogout.php';
   ?>

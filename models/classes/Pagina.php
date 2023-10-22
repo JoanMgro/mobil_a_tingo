@@ -2,13 +2,13 @@
 
 class Pagina
 {
-    private $pagid;
-    private $pagnom;
-    private $pagarc;
-    private $pagord;
-    private $pagmen;
+    protected $pagid;
+    protected $pagnom;
+    protected $pagarc;
+    protected $pagord;
+    protected $pagmen;
 
-    private Array $paginas; 
+    protected Array $paginas; 
 
     public function __construct($pagid = null, $pagnom = null, $pagarc = null, $pagord = null,
                                 $pagmen = null)
