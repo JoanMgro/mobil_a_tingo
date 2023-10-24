@@ -13,10 +13,12 @@ addBtn.addEventListener('click', (e)=>{
     
     let innerCount=0;
     const newTel= currTel.cloneNode(true);
+    
 
     newTel.id = 't-' + (currentNodes.children.length);
     for(const node of newTel.children){
         node.id = newTel.id + '-' + innerCount;
+        node.removeAttribute('required');
         innerCount+=1;        
         if(node.hasAttribute('for'))node.setAttribute('for', newTel.id + '-' + innerCount);
     }

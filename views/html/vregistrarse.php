@@ -50,16 +50,18 @@
         
     <!-- titulo seccion de informacion Telefonica -->
     <p class="form__text text text_form_titulo-seccion">Informacion de Telefonica</p>
-    <div id="telf-container" class="form__field-container_tel">
-      <div id="t-0"  class="field-container field-container_tel">
-        <input type="checkbox" name="tel-fijo" id="t-0-0" class="field-container__check_tel">
-        <label id="t-0-1" class="label field-container__label_tel" for="t-0-2">Telefono Fijo:</label>
-        <input id="t-0-2" class="input input_registro field-container__input_tel" type="number" name="u-tel-fijo" autocomplete="off" required>
-        <!-- arreglar los nombres asignacion dinamica -->
-      </div>   
+    
+  <div id="telf-container" class="form__field-container_tel">
+    <div id="t-0"  class="field-container field-container_tel">        
+      <?php require __DIR__ . '/' . './vtelefonos.php' ?>    
+      <input id="t-0-2" class="input input_registro field-container__input_tel" type="number" name="u-tel-fijo" autocomplete="off" required>
+      <!-- arreglar los nombres asignacion dinamica -->
+      
+    </div>   
 
-    </div>
-     
+</div>
+
+
         
     <button id="agregar-tel" class="form__btn_registrarse-secondary btn_secondary  btn_add-tel">Agregar Telefono</button>
         

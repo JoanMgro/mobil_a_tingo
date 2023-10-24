@@ -11,13 +11,11 @@ class Cuenta{
 
     
 
-    // public function __construct($idCuenta, $password, $fechaRegistro, $tipoCuenta, $isActive)
+    // public function __construct($idCuenta = null, $password = null, $perfil = null)
     // {
     //     $this->idCuenta = $idCuenta;
     //     $this->password = $password;
-    //     $this->fechaRegistro = $fechaRegistro;
-    //     $this->tipoCuenta = $tipoCuenta;
-    //     $this->$isActive = $isActive;        
+    //     $this->perfil = $tipoCuenta;    //            
     // }
 
     protected function crearCuenta()

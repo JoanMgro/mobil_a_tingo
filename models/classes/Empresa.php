@@ -13,9 +13,12 @@ class Empresa extends Cuenta{
     private $empresas;
     
     // private BoundingBox $boundingBox;
-    
 
-   
+
+    public function __construct()
+    {
+        
+    }   
 
 
     public function crearCuenta()

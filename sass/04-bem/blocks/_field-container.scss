@@ -15,7 +15,7 @@
 }
 
 .field-container__label_tel{
-    @include pos-col(2, 5);
+    @include pos-col(1, 5);
 }
 .field-container__input_tel{
     @include pos-col(7, 6);

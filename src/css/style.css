@@ -986,7 +986,7 @@ html {
 }
 
 .field-container__label_tel {
-  grid-column: 2/span 5;
+  grid-column: 1/span 5;
 }
 
 .field-container__input_tel {
