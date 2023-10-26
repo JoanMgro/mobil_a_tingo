@@ -1,7 +1,7 @@
 <section class="main__section section section_registrarse">
   <p class="text text_registrarse_titulo">Datos de Registro</p>      
       
-  <form id="registrase" action="#" method="" class="form form_registrarse">
+  <form id="registrarse" action="../../controllers/cempresa.php" method="POST" class="form form_registrarse">
     <!-- titulo seccion de login -->
     <p class="form__text text text_form_titulo-seccion">Informacion de Log in</p>
     <!-- campo Email -->
@@ -51,17 +51,14 @@
     <!-- titulo seccion de informacion Telefonica -->
     <p class="form__text text text_form_titulo-seccion">Informacion de Telefonica</p>
     
-  <div id="telf-container" class="form__field-container_tel">
-    <div id="t-0"  class="field-container field-container_tel">        
-      <?php require __DIR__ . '/' . './vtelefonos.php' ?>    
-      <input id="t-0-2" class="input input_registro field-container__input_tel" type="number" name="u-tel-fijo" autocomplete="off" required>
-      <!-- arreglar los nombres asignacion dinamica -->
-      
-    </div>   
-
-</div>
-
-
+    <div id="telf-container" class="form__field-container_tel">
+      <div id="tel-0"  class="field-container field-container_tel"> 
+        <!-- llamo la vista de telefonos        -->
+        <?php require __DIR__ . '/' . './vtelefonos.php' ?>    
+        <input id="tel_num-0" class="input input_registro field-container__input_tel" type="number"  autocomplete="off" required>
+      </div>   
+    </div>
+    <input type="hidden" name="telefonos" id="num-tel" value="1">
         
     <button id="agregar-tel" class="form__btn_registrarse-secondary btn_secondary  btn_add-tel">Agregar Telefono</button>
         

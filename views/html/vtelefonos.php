@@ -3,7 +3,7 @@
 require __DIR__ . '/' . '../../controllers/ctipotelefonos.php';
 ?>
         
-<select name="telefonos" id="t-0-1" class="label field-container__label_tel">
+<select  id="tel_tipo-0" class="label field-container__label_tel">
   <option value="">-- Elegir Opcion --</option>
   <?php foreach($tipTelModel->getTipoTelefonos() as $item): ?>
   <option value="<?= $item['desc_tipo_telefono'] ?>" ><?= $item['desc_tipo_telefono'] ?></option>

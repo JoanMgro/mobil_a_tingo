@@ -5,21 +5,29 @@ class Cuenta{
 
     protected $idCuenta;
     protected $password;
-    protected $fechaRegistro;
+    private $fechaRegistro;
     protected $perfil;
-    
+       
 
-    
-
-    // public function __construct($idCuenta = null, $password = null, $perfil = null)
-    // {
-    //     $this->idCuenta = $idCuenta;
-    //     $this->password = $password;
-    //     $this->perfil = $tipoCuenta;    //            
-    // }
-
-    protected function crearCuenta()
+    public function __construct($idCuenta, $password, $perfil)
     {
+        $this->idCuenta = $idCuenta;
+        $this->password = $password;
+        $this->perfil = $perfil;             
+    }
+
+    protected function crearCuenta(Conexion $conn)
+    {
+            //Enrcriptamos pass
+            $pp = password_hash($this->password, PASSWORD_DEFAULT);
+  
+            $dbh = $conn->get_conexion();        
+            $sql = "call crear_usuario(:user, :pass, :perfil)";
+            $stmt = $dbh->prepare($sql);
+            $stmt->bindValue(':user', $this->idCuenta);
+            $stmt->bindValue(':pass', $pp);
+            $stmt->bindValue(':perfil', $this->perfil);
+            $stmt->execute();
 
     }
     protected function listarCuenta()
@@ -33,20 +41,31 @@ class Cuenta{
 
     static function autenticar(Conexion $conn, $user, $pass)
     {
-            //Enrcriptamos pass
-            // $pp = password_hash($pass, PASSWORD_DEFAULT);
-  
+           
+            
+            
             $dbh = $conn->get_conexion();        
-            $sql = "call validar_usuario(:user, :pass)";
+            // $sql = "call validar_usuario(:user, :pass)";
+            $sql = "call validar_hash_usr(:user)";
             $stmt = $dbh->prepare($sql);
             $stmt->bindValue(':user', $user);
-            $stmt->bindValue(':pass', $pass);
+            // $stmt->bindValue(':pass', $pp);
             $stmt->execute();
             $session =  $stmt->fetch(PDO::FETCH_ASSOC);
             $dbh = null;
-            $stmt = null;           
+            $stmt = null; 
+            if(password_verify($pass, $session['password']))
+            {
+                unset($session['password']);
+                return $session;
+
+            }
+
+            return null;
+                
+                  
       
-            return $session;
+            
 
 
     }

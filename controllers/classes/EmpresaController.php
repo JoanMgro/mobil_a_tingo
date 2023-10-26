@@ -5,12 +5,14 @@ class EmpresaController{
     
     private $model;
     private $ubicacion;
+    private $telefono;
 
     
-    public function __construct(Empresa $model, Ubicacion $ubicacion)
+    public function __construct(Empresa $model, Ubicacion $ubicacion, Telefono $telefono = NULL)
     {
         $this->model = $model; 
-        $this->ubicacion = $ubicacion;       
+        $this->ubicacion = $ubicacion;
+        $this->telefono = $telefono;       
                  
     }
 
@@ -32,16 +34,11 @@ class EmpresaController{
 
     }
 
-    public function setEmpresas(Conexion $conn)
-    {
-       
-        $this->model->setEmpresas($conn, $this->ubicacion);                                          
-    }
+  
 
-    public function setEmpresasGps(Conexion $conn, BoundingBox $box)
+    public function crearEmpresa(Conexion $conn)
     {
         
-        $this->model->setEmpresasGps($conn, $box);                                          
     }
 
 

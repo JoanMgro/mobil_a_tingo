@@ -10,8 +10,7 @@ function acceder()
 {
     $user= isset($_POST["email"])? $_POST["email"]:NULL;
     $pass= isset($_POST["password"])? $_POST["password"]:NULL;
-    // $user= 'info@reparamos.com';
-    // $pass= 'reparamos';
+
     if($user && $pass)
     {
         $conn = new Conexion();
@@ -24,28 +23,28 @@ function acceder()
             }
             $_SESSION['validated'] = '@1r;:**3';
             
-        }
-        $perfil = $_SESSION['pefid'];
-        $data = Cuenta::cargarSesion($conn, $perfil, $user);
-        if(isset($data))
-        {
-            foreach ($data as $key => $value)
+            $perfil = $_SESSION['pefid'];
+            $dataSesion = Cuenta::cargarSesion($conn, $perfil, $user);
+            foreach ($dataSesion as $key => $value)
             {
                 $_SESSION[$key] = $value;
             }
-                        
+            echo "<script type='application/javascript'>window.location='../home.php?pg=10'</script>";
         }
-        
-
-        echo "<script type='application/javascript'>window.location='../home.php?pg=10'</script>";
-         
-        
+        else
+        {
+            session_destroy();
+            echo "<script type='application/javascript'>window.location='../index.php?pg=1005'</script>";
+            
+        }
     }
     else
     {
         
         //regresar a pagina login
+        
         session_destroy();
+        echo "<script type='application/javascript'>window.location='../index.php?pg=1005'</script>";
     }
     
 

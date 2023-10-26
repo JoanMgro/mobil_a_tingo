@@ -126,7 +126,7 @@ DROP TABLE IF EXISTS Cuentas;
 CREATE TABLE IF NOT EXISTS Cuentas (
     -- El id de la cuenta es el correo electronico.
     id_cuenta VARCHAR(50) NOT NULL,
-    password VARCHAR(50) NOT NULL,
+    password VARCHAR(255) NOT NULL,
     fecha_registro DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     perfil BIGINT,
     CONSTRAINT pk_cuentas PRIMARY KEY (id_cuenta),

@@ -9,20 +9,20 @@ class Ubicacion{
     private $direccion;
     private $latitud;
     private $longitud;
+    
 
-    // public function __construct($id = NULL, $pais = NULL, $departamento = NULL,
-    //                             $ciudad = NULL, $barrio= NULL, $direccion = NULL,
-    //                             $latitud = NULL, $longitud = NULL)
-    // {
-    //     $this->idUbicacion = $id;
-    //     $this->pais = $pais;
-    //     $this->departamento = $departamento;
-    //     $this->ciudad = $ciudad;
-    //     $this->barrio = $barrio;
-    //     $this->direccion =  $direccion;
-    //     $this->latitud = $latitud;
-    //     $this->longitud = $longitud;
-    // }
+    public function __construct($pais, $departamento,
+                                $ciudad, $barrio, $direccion,
+                                $latitud, $longitud)
+    {
+        $this->pais = empty($pais) ? 'Not defined' : $pais;
+        $this->departamento = empty($departamento) ? 'Not defined' : $departamento;
+        $this->ciudad = empty($ciudad) ? 'Not defined' : $ciudad;
+        $this->barrio = empty($barrio) ? 'Not defined' : $barrio;
+        $this->direccion =  empty($direccion) ? 'Not defined' : $direccion;
+        $this->latitud = empty($latitud) ? 0.0: $latitud;
+        $this->longitud = empty($longitud) ? 0.0 : $longitud;
+    }
 
     public function getLatitud(){
         return $this->latitud;
@@ -72,5 +72,28 @@ class Ubicacion{
     public function getIdUbicacion(){
         return $this->idUbicacion;
     }
+
+    public function crearUbicacion(Conexion $conn)
+    {
+        $dbh = $conn->get_conexion();        
+        $sql = "INSERT INTO UbicacionEmpresas (pais, departamento, ciudad, barrio, direccion, latitud, longitud) ";
+        $sql .= "VALUES (:pais, :departamento, :ciudad, :barrio, :direccion, :latitud, :longitud)";
+        $stmt = $dbh->prepare($sql);
+        $stmt->bindValue(':pais', $this->pais);
+        $stmt->bindValue(':departamento', $this->departamento);
+        $stmt->bindValue(':ciudad', $this->ciudad);
+        $stmt->bindValue(':barrio', $this->barrio);
+        $stmt->bindValue(':direccion', $this->direccion);
+        $stmt->bindValue(':latitud', $this->latitud);
+        $stmt->bindValue(':longitud', $this->longitud);
+        $stmt->execute();
+        $this->idUbicacion = $dbh->lastInsertId();
+        $dbh = null;
+        $stmt = null;
+        return $this->idUbicacion;
+
+    }
+
+
 }
 ?>

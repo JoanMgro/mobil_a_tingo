@@ -1,38 +1,49 @@
 <?php
-require_once __DIR__ . '/Conexion.php';
 
 class Busqueda {
 
-    private $conn;
-    private $empresas;
-    private $boundingBox;
-    
+    private $empresas;  
 
-    public function setEmpresas(Conexion $conn, $pais = null, $depto = null, $city = null, $barrio = null, $lat = null, $long = null)
+
+    public function setEmpresas(Conexion $conn, Ubicacion $ubicacion)
     {   
-
-        $this->conn= $conn->get_conexion();        
-        $sql = "call get_empresas(:pais, :depto, :city, :barrio)";
-        $stmt = $this->conn->prepare($sql);
-        $stmt->bindValue(':pais', $pais);
-        $stmt->bindValue(':depto', $depto);
-        $stmt->bindValue(':city', $city);
-        $stmt->bindValue(':barrio', $barrio);
+        $dbh = $conn->get_conexion();
+        $sql = "SELECT e.nom_empresa, ub.direccion FROM Empresas e";
+        $sql .= " INNER JOIN UbicacionEmpresas ub ON e.ubicacion = ub.id_ubicacion";
+        $sql .= " WHERE ub.pais = :pais AND ub.departamento LIKE (ifnull(:depto,'%'))";
+        $sql .= " AND ub.ciudad LIKE (ifnull(:city,'%'))";
+        $sql .= " AND ub.barrio LIKE (ifnull(:barrio,'%'));";        
+        // $sql = "call get_empresas(:pais, :depto, :city, :barrio)";
+        $stmt = $dbh->prepare($sql);
+        $stmt->bindValue(':pais', $ubicacion->getPais());
+        $stmt->bindValue(':depto', $ubicacion->getDepto());
+        $stmt->bindValue(':city', $ubicacion->getCiudad());
+        $stmt->bindValue(':barrio', $ubicacion->getBarrio());
         $stmt->execute();
-        $this->empresas = $stmt->fetchAll(PDO::FETCH_ASSOC);        
+        $this->empresas = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $dbh = NULL;
+        $stmt = NULL;        
 
     }
 
-
-    public function setByLocation(Conexion $conn, BoundingBox $box)
+    public function setEmpresasGps(Conexion $conn, BoundingBox $box)
     {   
-
-        $this->conn= $conn->get_conexion();        
-        $sql = "call get_empresas(:pais, :depto, :city, :barrio)";
-        $stmt = $this->conn->prepare($sql);
-        // $stmt->bindValue(':pais', $pais);
-         $stmt->execute();
-        $this->empresas = $stmt->fetchAll(PDO::FETCH_ASSOC);        
+        
+        $dbh = $conn->get_conexion();        
+        $sql = "SELECT e.nom_empresa, ub.direccion FROM Empresas e";
+        $sql .= " INNER JOIN UbicacionEmpresas ub ON e.ubicacion = ub.id_ubicacion";
+        $sql .= " WHERE ub.latitud BETWEEN :lat1 AND :lat2";
+        $sql .= " AND ub.longitud BETWEEN :long1 AND :long2;";
+        $stmt = $dbh->prepare($sql);
+        $stmt->bindValue(':lat1', $box->getlatitudRange()[0]);
+        $stmt->bindValue(':lat2', $box->getlatitudRange()[1]);
+        $stmt->bindValue(':long1', $box->getlongitudRange()[0]);
+        $stmt->bindValue(':long2', $box->getlongitudRange()[1]);
+        $stmt->execute();
+        $this->empresas = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $dbh = NULL;
+        $stmt = NULL;  
+            
 
     }
 
@@ -40,7 +51,6 @@ class Busqueda {
     {
         return $this->empresas;
     }
-
  
 }
 ?>

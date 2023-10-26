@@ -1,10 +1,12 @@
 <?php
 require_once __DIR__ . '/' . '../../controllers/cbusqueda.php';
-if(isset($model)):
+
+if(isset($searchModel)):
+    
 ?>
 <section id="resultados" class="main__section main__section_resultados-busqueda  section section_resultados-busqueda">
 <!-- contenido creado dinamicamente con resultados de la busqueda main__section_hidden -->
-    <?php if(!empty($model->getEmpresas())):?>    
+    <?php if(!empty($searchModel->getEmpresas())):?>    
         <table class="tabla_busqueda">
             <thead class="text text_header_tabla">
                 <tr>
@@ -14,7 +16,7 @@ if(isset($model)):
                 </tr>
             </thead>
             <tbody class="text_resultado_tabla">
-                <?php foreach($model->getEmpresas() as $item): ?>
+                <?php foreach($searchModel->getEmpresas() as $item): ?>
                     <tr>
                         <?php foreach($item as $key => $value):?>
 
