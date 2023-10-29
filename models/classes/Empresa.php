@@ -11,14 +11,15 @@ class Empresa extends Cuenta{
     private $idUbicacion;
     private  $telefonos;
     const PERFIL = 2;
+    public string $mensaje;
     
     
     
     // private BoundingBox $boundingBox;
 
 
-    public function __construct($idEmpresa, $password, $nit, 
-                                $nombre, $urlLogo)
+    public function __construct($idEmpresa, $password, $nombre, 
+                                $nit, $urlLogo = 'http//')
     {
         parent::__construct($idEmpresa, $password, self::PERFIL);
         $this->idEmpresa = $idEmpresa;
@@ -47,18 +48,30 @@ class Empresa extends Cuenta{
         $dbh = null;
 
         $telefonos->crearTelefono($conn, $this->idEmpresa);
-
+        
+        $this->mensaje = 'Usuario Creado con exito, ya puede hacer log-in';
         /* Crear Telefonos*/
         
     }
-    public function listarEmpresa()
-    {
-        /* */
-    }
+
     public function listarEmpresas()
     {
         /* */
     }
+
+    public static function listarEmpresa(Conexion $conn, $idEmpresa)
+    {
+        $dbh = $conn->get_conexion();        
+        $sql = "SELECT * FROM Empresas WHERE id_admin = :idEmpresa";
+        $stmt = $dbh->prepare($sql);
+        $stmt->bindValue(':idEmpresa', $idEmpresa);
+        $stmt->execute();
+        $matched = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $dbh = NULL;
+        $stmt = NULL;
+        return $matched;
+    }
+    
 
    
 

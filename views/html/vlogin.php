@@ -1,3 +1,10 @@
+<?php
+  if(isset($_GET['newreg']) && $_GET['newreg'])
+  {
+    require __DIR__ . '/' . './vmodal.php';
+  }
+?>
+
 
 <section class="main__section section section_login">
   <p class="text text_login_titulo">Log in</p>

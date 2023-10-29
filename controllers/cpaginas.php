@@ -10,11 +10,16 @@ function loadPaginas(Conexion $conn, Pagina $model, $pagina)
 
 }
 
+
+
+
+
 $mpagina = new Pagina(); 
 $pattern = "/[\/\.\?]/";
 $data = $_SERVER['REQUEST_URI'];
 $pagina = preg_split($pattern, $data);
 
 loadPaginas(new Conexion(), $mpagina, $pagina[1]);
+
 
 ?>

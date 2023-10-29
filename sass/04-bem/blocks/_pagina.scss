@@ -1,0 +1,27 @@
+.pagina
+{
+    display: grid;
+    @include grid;
+}
+.pagina__registro
+{
+    @include pos-col(2, 7);
+}
+.pagina__checkbox
+{
+    @include pos-col(9, 3);
+    justify-self: center;
+    align-self: center;
+
+}
+
+.pagina__info
+{
+    @include pos-col(2, 7);
+    justify-self: center;
+}
+.pagina__activa
+{
+    @include pos-col(9, 3);
+    justify-self: center;
+}

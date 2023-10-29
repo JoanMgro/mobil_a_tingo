@@ -15,11 +15,11 @@ class Ubicacion{
                                 $ciudad, $barrio, $direccion,
                                 $latitud, $longitud)
     {
-        $this->pais = empty($pais) ? 'Not defined' : $pais;
-        $this->departamento = empty($departamento) ? 'Not defined' : $departamento;
-        $this->ciudad = empty($ciudad) ? 'Not defined' : $ciudad;
-        $this->barrio = empty($barrio) ? 'Not defined' : $barrio;
-        $this->direccion =  empty($direccion) ? 'Not defined' : $direccion;
+        $this->pais = empty($pais) ? null : $pais;
+        $this->departamento = empty($departamento) ? null : $departamento;
+        $this->ciudad = empty($ciudad) ? null : $ciudad;
+        $this->barrio = empty($barrio) ? null : $barrio;
+        $this->direccion =  empty($direccion) ? null : $direccion;
         $this->latitud = empty($latitud) ? 0.0: $latitud;
         $this->longitud = empty($longitud) ? 0.0 : $longitud;
     }

@@ -13,6 +13,19 @@
     
 }
 
+.main__paginas_title{
+    @include pos-col(1, 12);
+    justify-self: center;
+    
+}
+
+.main__paginas_body{
+    @include pos-col(1, 12);
+    
+    justify-self: center;
+    
+}
+
 .main__section_hidden{
     visibility: hidden;
     

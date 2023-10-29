@@ -58,8 +58,8 @@
         <input id="tel_num-0" class="input input_registro field-container__input_tel" type="number"  autocomplete="off" required>
       </div>   
     </div>
-    <input type="hidden" name="telefonos" id="num-tel" value="1">
-        
+    <input type="hidden" name="telefonos" id="num-tel" value="1" readonly>
+    <input type="hidden" name="action" id="crear_empresa" value="crearEmpresa" readonly>        
     <button id="agregar-tel" class="form__btn_registrarse-secondary btn_secondary  btn_add-tel">Agregar Telefono</button>
         
     <input id="save" class="form__btn_guardar btn_secondary btn_registrarse_guardar" type="submit" value="Guardar">

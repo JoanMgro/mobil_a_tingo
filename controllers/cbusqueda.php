@@ -28,6 +28,7 @@ function loadSearchModel(Conexion $conn, Busqueda $searchModel, Ubicacion $ubica
     }
     else
     {
+
         $searchModel->setEmpresas($conn, $ubicacion);
     } 
 
@@ -41,6 +42,7 @@ if(isset($pais))
     loadSearchModel(new Conexion, $searchModel, $ubicacion, $radioKm);
 
 }
+
 
 
 

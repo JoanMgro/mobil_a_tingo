@@ -30,14 +30,55 @@ class Cuenta{
             $stmt->execute();
 
     }
-    protected function listarCuenta()
+    public static function listarCuentas(Conexion $conn, $limite, $filtro )
     {
+        $dbh = $conn->get_conexion();
+        $sql = "SELECT COUNT(id_cuenta) FROM Cuentas";
+        $stmt = $dbh->prepare($sql);
+        $stmt->execute();
+        $currentRows = $stmt->fetchColumn();
+        $totalPag = ceil($currentRows);
+
+
+        // Si hay limite             
+        if(isset($limite))
+        {
+            $dbh->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+            $filtros = " WHERE id_cuenta LIKE :idCuenta OR fecha_registro LIKE :fecha_registro OR perfil LIKE :perfil ORDER BY id_cuenta LIMIT :limite";
+            $filtro = isset($filtro) ? (empty($filtro) ? '%' : ('%' . $filtro . '%')) : '%';
+            $sql = "SELECT * FROM Cuentas" . $filtros;
+            $stmt = $dbh->prepare($sql);
+           
+            $stmt->bindValue(':idCuenta', $filtro);
+            $stmt->bindValue(':fecha_registro', $filtro);
+            $stmt->bindValue(':perfil', $filtro);
+            $stmt->bindValue(':limite', $limite);
+
+            $stmt->execute();
+            $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $dbh = null;
+            $stmt = null;
+        }
+
+        else
+        {
+            $filtros = " WHERE id_cuenta LIKE :idCuenta OR fecha_registro LIKE :fecha_registro OR perfil LIKE :perfil ORDER BY id_cuenta";
+            $filtro = isset($filtro) ? (empty($filtro) ? '%' : ('%' . $filtro . '%')) : '%';
+            $sql = "SELECT * FROM Cuentas" . $filtros;
+            $stmt = $dbh->prepare($sql);
+            $stmt->bindValue(':idCuenta', $filtro);
+            $stmt->bindValue(':fecha_registro', $filtro);
+            $stmt->bindValue(':perfil', $filtro);
+            $stmt->execute();
+            $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $dbh = null;
+            $stmt = null;
+        }
+
+        return $usuarios;
 
     }
-    protected function listarCuentas()
-    {
 
-    }
 
     static function autenticar(Conexion $conn, $user, $pass)
     {

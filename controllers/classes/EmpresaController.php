@@ -1,11 +1,10 @@
 <?php
 
-
 class EmpresaController{
     
-    private $model;
-    private $ubicacion;
-    private $telefono;
+    private Empresa $model;
+    private Ubicacion $ubicacion;
+    private Telefono $telefono;
 
     
     public function __construct(Empresa $model, Ubicacion $ubicacion, Telefono $telefono = NULL)

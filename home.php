@@ -36,6 +36,10 @@ require __DIR__ . '/' . './controllers/cautenticar.php';
   if($pg == '12') require __DIR__ . '/' . './views/html/vmiservicios.php';
   if($pg == '13') require __DIR__ . '/' . './views/html/vcontacto.php';
   if($pg == '100') require __DIR__ . '/' . './views/html/vlogout.php';
+  if($pg == '102') require __DIR__ . '/' . './views/html/vusuarios.php';
+  if($pg == '104') require __DIR__ . '/' . './views/html/vpaginas.php';
+  if($pg == '105') require __DIR__ . '/' . './views/html/vperfiles.php';
+  
   ?>
     
 
@@ -61,7 +65,8 @@ require __DIR__ . '/' . './controllers/cautenticar.php';
     </div>
   </footer>
   <!-- Script -->
-  <?php require __DIR__ . '/views/html/scriptsJs.php'; ?>
+  <script type="text/javascript" src="./src/js/menu/hamburguer.js"></script>
+  <!-- <?php //require __DIR__ . '/views/html/scriptsJs.php'; ?> -->
   
 </body>
 </html>

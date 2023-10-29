@@ -29,6 +29,7 @@
           $pg = isset($_GET["pg"]) ? $_GET["pg"] : NULL;
           if(!$pg || $pg == '1000')
           {
+
             require __DIR__ . '/' . './views/html/vinicio.php';
           }
 
@@ -65,6 +66,7 @@
     </div>
   </footer>
   <!-- Script -->
+  <script type="text/javascript" src="./src/js/menu/hamburguer.js"></script>
   <?php require __DIR__ . '/views/html/scriptsJs.php'; ?>
   
 </body>

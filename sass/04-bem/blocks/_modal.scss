@@ -1,0 +1,41 @@
+.modal
+{
+    @include absolute;
+    background-color: white;
+    width: 20rem;
+    height: 10rem;
+    @include disp-flex(column);
+    @include flex-locate($align: center, $justify: center);
+    @include round($color: $bg-search-box, $radio: 2.75rem);
+    @include shadow;
+    padding: 0.5rem;
+    row-gap: 1rem;
+    left:50%;
+    margin-left: -10rem;
+
+}
+
+.modal_btn
+{
+    background-color: $bg-btn-secondary; 
+    color: $text-color-secondary;
+    font-size: $mobatingo-font-4;
+    font-weight: 500;
+    @include round;
+    @include shadow;
+    width: 6rem;
+    height: 2rem;      
+}
+
+.modal_text
+{
+    text-align: center;
+}
+
+.modal_hidden
+{
+    display: none;
+}
+
+
+
