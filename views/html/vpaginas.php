@@ -7,11 +7,14 @@ require __DIR__ . '/' . '../../controllers/cadminpag.php';
   
 </section>
 <section class="main__paginas_body section section_paginas_body">
-    <form id="pagBuscar" action="<?php echo $_SERVER['PHP_SELF'];?>">
-        <label for="buscar">Buscar</label>
-        <input name="filtro" id="buscar" type="text" autocomplete="off" onchange="this.form.submit()" value="<?php echo isset($_GET['filtro']) ? $_GET['filtro'] : '';?>">
-        <label for="registros">Registros</label>
-        <input name="limite" id="registros" type="text" autocomplete="off" onchange="this.form.submit()" value="<?php echo isset($_GET['limite']) ? $_GET['limite'] : '';?>">
+    <form id="pagBuscar" action="<?php echo $_SERVER['PHP_SELF'];?>" class="form form_admin">
+        <label for="buscar" class="form__label_admin">Buscar</label> 
+        <input class="form__input_admin" name="filtro" id="buscar" type="text" autocomplete="off" onchange="this.form.submit()" value="<?php echo isset($_GET['filtro']) ? $_GET['filtro'] : '';?>">
+        <label for="registros" class="form__label_admin">Registros</label>
+        <input class="form__input_admin" name="limite" id="registros" type="number" autocomplete="off" onchange="this.form.submit()" value="<?php echo isset($_GET['limite']) ? $_GET['limite'] : $limite;?>">
+        <label for="page" class="form__label_admin">Mostrando</label>
+        <input class="form__input_admin" name="page" id="page" type="number" autocomplete="off" onchange="this.form.submit()" value="<?php echo $page;?>">
+        <p class="form__label_admin">de <?=$totalPages?></p>
         <input type="hidden" name="pg" value="104">
     </form>
    

@@ -584,6 +584,18 @@ html {
   row-gap: 0.75rem;
 }
 
+.form_admin {
+  height: 7.5rem;
+}
+
+.form__label_admin {
+  grid-column: 1/span 4;
+}
+
+.form__input_admin {
+  grid-column: 5/span 8;
+}
+
 .form__input_contactenos {
   grid-column: 1/span 12;
 }
@@ -1244,6 +1256,9 @@ html {
   .form {
     height: 20rem;
     row-gap: 1.7rem;
+  }
+  .form_admin {
+    height: 7.5rem;
   }
   .form_dashboard {
     height: auto;

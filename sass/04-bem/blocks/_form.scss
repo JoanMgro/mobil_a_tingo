@@ -5,6 +5,19 @@
     width: 80%; // Equivale a width: 16rem;   
     row-gap: 0.75rem;
 }
+.form_admin{
+    height: 7.5rem;
+}
+.form__label_admin{
+    @include pos-col(1, 4);
+
+
+}
+.form__input_admin{
+    @include pos-col(5, 8);
+    
+
+}
 
 .form__input_contactenos{
     @include pos-col(1, 12);
@@ -157,6 +170,9 @@
         height: 20rem; // Equivale a width: 16rem;
         row-gap: 1.7rem;   
     
+    }
+    .form_admin{
+        height: 7.5rem;
     }
 
     .form_dashboard{

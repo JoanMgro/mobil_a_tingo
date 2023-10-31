@@ -9,7 +9,7 @@ class Pagina
     protected $pagmen;
 
     protected Array $paginas; 
-    private $currentRows;
+    public $currentRows;
 
     public function __construct($pagid = null, $pagnom = null, $pagarc = null, $pagord = null,
                                 $pagmen = null)
@@ -81,15 +81,9 @@ class Pagina
         return $this->paginas;
     }
 
-    public function listarPaginas(Conexion $conn, $limite = null, $filtro)
+    public function listarPaginas(Conexion $conn, $limite = null, $filtro, $offset)
     {
         $dbh = $conn->get_conexion();
-        $sql = "SELECT COUNT(pagid) FROM Pagina";
-        $stmt = $dbh->prepare($sql);
-        $stmt->execute();
-        $this->currentRows = $stmt->fetchColumn();
-        $totalPag = ceil($this->currentRows);
-
 
         // Si hay limite             
         if(isset($limite))
@@ -125,7 +119,7 @@ class Pagina
             $dbh = null;
             $stmt = null;
         }
-
+       
         return $this->paginas;
     }
 
@@ -142,13 +136,32 @@ class Pagina
         $stmt = null;
     }
 
+    public function getNumberOfRegisters(Conexion $conn, $filtro)
+    {
+        $dbh = $conn->get_conexion();
+        $filtros = " WHERE pagid LIKE :pagid OR pagnom LIKE :pagnom OR pagmen LIKE :pagmen";
+        $filtro = isset($filtro) ? (empty($filtro) ? '%' : ('%' . $filtro . '%')) : '%';
+        $sql = "SELECT COUNT(pagid) FROM Pagina" . $filtros;
+        $stmt = $dbh->prepare($sql);
+        $stmt->bindValue(':pagid', $filtro);
+        $stmt->bindValue(':pagnom', $filtro);
+        $stmt->bindValue(':pagmen', $filtro);
+        $stmt->execute();
+        $this->currentRows = $stmt->fetchColumn();
+        $dbh = null;
+        $stmt = null;
+        return $this->currentRows;
+    }
+    
+
 
 
 }
 // require_once __DIR__ . '/' . './Conexion.php';
 // $model = new Pagina();
-// $model->listarPaginas(new Conexion, 2, '');
+// $model->listarPaginas(new Conexion, 5, '', 0);
 
-// var_dump($model->getPaginas());
+
+// var_dump(count($model->getPaginas()));
 
 ?>
