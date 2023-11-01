@@ -89,7 +89,7 @@ class Pagina
         if(isset($limite))
         {
             $dbh->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-            $filtros = " WHERE pagid LIKE :pagid OR pagnom LIKE :pagnom OR pagmen LIKE :pagmen ORDER BY pagid LIMIT :limite";
+            $filtros = " WHERE pagid LIKE :pagid OR pagnom LIKE :pagnom OR pagmen LIKE :pagmen ORDER BY pagid LIMIT :offset, :limite";
             $filtro = isset($filtro) ? (empty($filtro) ? '%' : ('%' . $filtro . '%')) : '%';
             $sql = "SELECT * FROM Pagina" . $filtros;
             $stmt = $dbh->prepare($sql);
@@ -97,6 +97,7 @@ class Pagina
             $stmt->bindValue(':pagid', $filtro);
             $stmt->bindValue(':pagnom', $filtro);
             $stmt->bindValue(':pagmen', $filtro);
+            $stmt->bindValue(':offset', $offset);
             $stmt->bindValue(':limite', $limite);
 
             $stmt->execute();

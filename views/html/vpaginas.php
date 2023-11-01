@@ -14,7 +14,11 @@ require __DIR__ . '/' . '../../controllers/cadminpag.php';
         <input class="form__input_admin" name="limite" id="registros" type="number" autocomplete="off" onchange="this.form.submit()" value="<?php echo isset($_GET['limite']) ? $_GET['limite'] : $limite;?>">
         <label for="page" class="form__label_admin">Mostrando</label>
         <input class="form__input_admin" name="page" id="page" type="number" autocomplete="off" onchange="this.form.submit()" value="<?php echo $page;?>">
-        <p class="form__label_admin">de <?=$totalPages?></p>
+        <p id="totalpages" class="form__label_admin">de <?=$totalPages?></p>
+        <!-- Manipulamos la var page -->
+        <input id="prev" name="prev" type="button" value="<">
+        <input id="next" name="next" type="button" value=">">
+        <script type="text/javascript" src="../../src/js/paginacion/paginacion.js"></script>
         <input type="hidden" name="pg" value="104">
     </form>
    
