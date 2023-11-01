@@ -19,6 +19,45 @@
 
 }
 
+.form__label_limite{
+    @include pos-col(1, 10); 
+
+}
+.form__input_limite{
+    @include pos-col(11, 2);
+    
+
+}
+
+.form__label_paginacion{
+    @include pos-col(1, 4); 
+
+}
+.form__input_paginacion{
+    @include pos-col(5, 2);
+    
+
+}
+
+.form__parrafo_paginacion{
+    @include pos-col(7, 2);
+    text-align: center
+    
+
+}
+.form__prev_paginacion{
+    @include pos-col(10, 1);
+   
+
+}
+.form__next_paginacion{
+    @include pos-col(12, 1);
+   
+
+}
+
+
+
 .form__input_contactenos{
     @include pos-col(1, 12);
 

@@ -596,6 +596,35 @@ html {
   grid-column: 5/span 8;
 }
 
+.form__label_limite {
+  grid-column: 1/span 10;
+}
+
+.form__input_limite {
+  grid-column: 11/span 2;
+}
+
+.form__label_paginacion {
+  grid-column: 1/span 4;
+}
+
+.form__input_paginacion {
+  grid-column: 5/span 2;
+}
+
+.form__parrafo_paginacion {
+  grid-column: 7/span 2;
+  text-align: center;
+}
+
+.form__prev_paginacion {
+  grid-column: 10/span 1;
+}
+
+.form__next_paginacion {
+  grid-column: 12/span 1;
+}
+
 .form__input_contactenos {
   grid-column: 1/span 12;
 }

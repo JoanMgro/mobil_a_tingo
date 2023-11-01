@@ -7,17 +7,23 @@ require __DIR__ . '/' . '../../controllers/cadminpag.php';
   
 </section>
 <section class="main__paginas_body section section_paginas_body">
+    <form action="">
+
+    </form>
+  
+</section>
+<section class="main__paginas_body section section_paginas_body">
     <form id="pagBuscar" action="<?php echo $_SERVER['PHP_SELF'];?>" class="form form_admin">
-        <label for="buscar" class="form__label_admin">Buscar</label> 
+        <label for="buscar" class="form__label_admin">Filtrar</label> 
         <input class="form__input_admin" name="filtro" id="buscar" type="text" autocomplete="off" onchange="this.form.submit()" value="<?php echo isset($_GET['filtro']) ? $_GET['filtro'] : '';?>">
-        <label for="registros" class="form__label_admin">Registros</label>
-        <input class="form__input_admin" name="limite" id="registros" type="number" autocomplete="off" onchange="this.form.submit()" value="<?php echo isset($_GET['limite']) ? $_GET['limite'] : $limite;?>">
-        <label for="page" class="form__label_admin">Mostrando</label>
-        <input class="form__input_admin" name="page" id="page" type="number" autocomplete="off" onchange="this.form.submit()" value="<?php echo $page;?>">
-        <p id="totalpages" class="form__label_admin">de <?=$totalPages?></p>
+        <label for="registros" class="form__label_limite">Registros por pagina</label>
+        <input class="form__input_limite" name="limite" id="registros" type="number" autocomplete="off" onchange="this.form.submit()" value="<?php echo isset($_GET['limite']) ? $_GET['limite'] : $limite;?>">
+        <label for="page" class="form__label_paginacion">Mostrando</label>
+        <input class="form__input_paginacion" name="page" id="page" type="number" autocomplete="off" onchange="this.form.submit()" value="<?php echo $page;?>">
+        <p id="totalpages" class="form__parrafo_paginacion">de <?=$totalPages?></p>
         <!-- Manipulamos la var page -->
-        <input id="prev" name="prev" type="button" value="<">
-        <input id="next" name="next" type="button" value=">">
+        <input class="form__prev_paginacion" id="prev" name="prev" type="button" value="<">
+        <input class="form__next_paginacion" id="next" name="next" type="button" value=">">
         <script type="text/javascript" src="../../src/js/paginacion/paginacion.js"></script>
         <input type="hidden" name="pg" value="104">
     </form>
