@@ -20,6 +20,12 @@
     row-gap: 1rem;
 
 }
+.section_paginas_update
+{
+    min-height: 18rem;
+    
+
+}
 
 
 .section_contactenos{
@@ -118,6 +124,13 @@
         
         // @include flex-locate($justify: center, $align: center);   
      }
+
+     .section_paginas_update
+    {
+        height: 25rem;
+    
+
+    }
 
 
 }

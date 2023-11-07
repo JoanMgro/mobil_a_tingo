@@ -1,6 +1,6 @@
 <?php
 
-$page = isset($_GET['page']) ? (empty($_GET['page']) ? 1 : $_GET['page']) : 1;
+$page = isset($_POST['page']) ? (empty($_POST['page']) ? 1 : $_POST['page']) : 1;
 function totalPages($model, $limite, $filtro)
 {   
    

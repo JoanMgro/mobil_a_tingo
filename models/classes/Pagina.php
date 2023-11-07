@@ -81,7 +81,7 @@ class Pagina
         return $this->paginas;
     }
 
-    public function listarPaginas(Conexion $conn, $limite = null, $filtro, $offset)
+    public function listar(Conexion $conn, $limite = null, $filtro, $offset)
     {
         $dbh = $conn->get_conexion();
 
@@ -124,7 +124,7 @@ class Pagina
         return $this->paginas;
     }
 
-    public function updatePaginas(Conexion $conn, $idPagina, $pagMos)
+    public function activar(Conexion $conn, $idPagina, $pagMos)
     {
         $dbh = $conn->get_conexion();
         
@@ -132,6 +132,24 @@ class Pagina
         $stmt = $dbh->prepare($sql);
         $stmt->bindValue(':idPagina', $idPagina);
         $stmt->bindValue(':pagMos', $pagMos);
+        $stmt->execute();
+        $dbh = null;
+        $stmt = null;
+    }
+
+    public function crear(Conexion $conn, $id, $nombre, $archivo, $mostrar, $orden, $menu)
+    {
+        $dbh = $conn->get_conexion();
+        
+        $sql = "INSERT INTO Pagina (pagid, pagnom, pagarc, pagmos, pagord, pagmen) ";
+        $sql .= "VALUES (:pagid, :pagnom, :pagarc, :pagmos, :pagord, :pagmen)";
+        $stmt = $dbh->prepare($sql);
+        $stmt->bindValue(':pagid', $id);
+        $stmt->bindValue(':pagnom', $nombre);
+        $stmt->bindValue(':pagarc', $archivo);
+        $stmt->bindValue(':pagmos', $mostrar);
+        $stmt->bindValue(':pagord', $orden);
+        $stmt->bindValue(':pagmen', $menu);
         $stmt->execute();
         $dbh = null;
         $stmt = null;
@@ -153,6 +171,38 @@ class Pagina
         $stmt = null;
         return $this->currentRows;
     }
+
+    public function eliminar(Conexion $conn, $id)
+    {
+        $dbh = $conn->get_conexion();
+        $sql = "DELETE FROM Pagina WHERE pagid = :pagid";
+        $stmt = $dbh->prepare($sql);
+        $stmt->bindValue(':pagid', $id);
+        $stmt->execute();
+        $dbh = null;
+        $stmt = null;
+    }
+
+    public function actualizar(Conexion $conn, $newId, $oldId, $nombre, $archivo, $orden, $menu)
+    {
+        $dbh = $conn->get_conexion();
+        
+        $sql = "UPDATE Pagina SET pagid = :newPagid, pagnom = :pagnom, ";
+        $sql .= "pagarc = :pagarc, pagord = :pagord, pagmen = :pagmen WHERE pagid = :oldid";
+        $stmt = $dbh->prepare($sql);
+        $stmt->bindValue(':newPagid', $newId);
+        $stmt->bindValue(':oldid', $oldId);
+        $stmt->bindValue(':pagnom', $nombre);
+        $stmt->bindValue(':pagarc', $archivo);
+        $stmt->bindValue(':pagord', $orden);
+        $stmt->bindValue(':pagmen', $menu);
+        $stmt->execute();
+        $dbh = null;
+        $stmt = null;
+    }
+
+
+    
     
 
 

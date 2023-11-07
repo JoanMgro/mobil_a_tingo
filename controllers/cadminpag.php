@@ -4,44 +4,85 @@ require_once __DIR__ . '/' . '../models/classes/Pagina.php';
 require_once __DIR__ . '/' . './cpaginacion.php';
 
 
-function listarPaginas(Conexion $conn, Pagina $model, $limite, $filtro, $offSet)
+function listarRegistros(Conexion $conn, Pagina $model, $limite, $filtro, $offSet)
 {   
     
-    return $model->listarPaginas($conn, $limite, $filtro, $offSet);
+    return $model->listar($conn, $limite, $filtro, $offSet);
 
 }
 
-function updatePaginas(Conexion $conn, Pagina $model, $idPagina, $pagMos)
+function activarRegistro(Conexion $conn, Pagina $model, $idRegistro, $activarRegistro)
 {
-    $model->updatePaginas($conn, $idPagina, $pagMos);
+    if(isset($idRegistro) && isset($activarRegistro))
+    $model->activar($conn, $idRegistro, $activarRegistro);
 }
+
+function actualizarRegistro(Conexion $conn, Pagina $modelo, $newId, $oldId, $nombre, $archivo, $orden, $menu)
+{
+    $modelo->actualizar($conn, $newId, $oldId, $nombre, $archivo, $orden, $menu);
+}
+function eliminarRegistro(Conexion $conn, Pagina $modelo, $id)
+{
+    $modelo->eliminar($conn, $id);
+}
+function crearRegistro(Conexion $conn, Pagina $modelo, $id, $nombre, $archivo, $mostrar, $orden, $menu)
+{
+    $modelo->crear($conn, $id, $nombre, $archivo, $mostrar, $orden, $menu);
+    
+}
+
+
 
 //Creo la instancia
 $pagina = new Pagina();
 
-// if($_GET['pg'] == 104)
-   
-if(isset($_GET['pagmos']) && isset($_GET['pagid']))
+//llamamos la funcion correspondiente
+if($_POST['controller'] == 'activar')
 {
-    updatePaginas(new Conexion, new Pagina, $_GET['pagid'], $_GET['pagmos']);
+    activarRegistro(new Conexion, new Pagina, $_POST['pagid'], $_POST['pagmos']);
+}   
+if($_POST['controller'] == 'actualizar')
+{
+    actualizarRegistro(new Conexion, new Pagina, $_POST['pagid'], $_POST['oldid'], $_POST['pagnom'], $_POST['pagarc'], $_POST['pagord'], $_POST['pagmen']);
 }
+
+if($_POST['controller'] == 'eliminar')
+{
+    if(isset($_POST['pagid']))
+    {
+        
+        eliminarRegistro(new Conexion, $pagina, $_POST['pagid']);
+    }
     
-$filtro = isset($_GET['filtro']) ? (empty($_GET['filtro']) ? null : $_GET['filtro']) : null; 
+}
+if($_POST['controller'] == 'crear')
+{
+    if(isset($_POST['id'], $_POST['nombre'], $_POST['archivo'], $_POST['orden'], $_POST['menu']))
+    {
+    
+        
+            $mostrar = isset($_POST['activo']) ? isset($_POST['activo']) : 0;
+            crearRegistro(new Conexion, $pagina, $_POST['id'], $_POST['nombre'], $_POST['archivo'], $mostrar,$_POST['orden'], $_POST['menu']);
+              
 
-$limite = isset($_GET['limite']) ? (empty($_GET['limite']) ? $pagina->getNumberOfRegisters(new Conexion, $filtro) : $_GET['limite']) : $pagina->getNumberOfRegisters(new Conexion, $filtro); 
+    }
+    
+}
 
 
 
-//obtebgo el total de paginas para mostrar los registros
+    
+$filtro = isset($_POST['filtro']) ? (empty($_POST['filtro']) ? null : $_POST['filtro']) : null; 
+
+$limite = isset($_POST['limite']) ? (empty($_POST['limite']) ? $pagina->getNumberOfRegisters(new Conexion, $filtro) : $_POST['limite']) : $pagina->getNumberOfRegisters(new Conexion, $filtro); 
+
+
+
+//obtengo el total de paginas para mostrar los registros
 
 $totalPages = totalPages($pagina, $limite, $filtro);
 //calcular el offset
 $offSet = offSet($limite, $page); 
-$listadoPaginas = listarPaginas(new Conexion, $pagina, $limite, $filtro, $offSet);
-
-   
-    
-
-
+$listadoRegistros = listarRegistros(new Conexion, $pagina, $limite, $filtro, $offSet);
 
 ?>

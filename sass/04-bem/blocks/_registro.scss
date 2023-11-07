@@ -1,0 +1,48 @@
+.registro
+{
+    display: grid;
+    @include grid($size: 160px);
+    row-gap: 0.5rem;
+}
+
+.registro__btn_crear
+{
+    @include pos-col(4, 5);
+
+}
+
+.registro__label
+{
+    @include pos-col(1, 5);
+}
+
+.registro__input
+{
+    @include pos-col(6, 7);
+    
+}
+.registro__input_short
+{
+    
+    width: 6rem;
+}
+.registro__input_long
+{
+    
+    width: 10rem;
+}
+.registro__input_check
+{
+    @include pos-col(6, 1);
+    width: 1rem;
+    
+}
+
+.registro__btn_actualizar
+{
+    @include pos-col(1, 5);
+}
+.registro__btn_eliminar
+{
+    @include pos-col(7, 5);
+}
