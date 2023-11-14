@@ -48,7 +48,7 @@ require __DIR__ . '/' . '../../controllers/cadminpag.php';
     <div class="pagina">
             <h4 class="pagina__info">-- Info Pagina --</h4>
             <h4 class="pagina__activa">-- Activa --</h4>
-        </div>
+    </div>
     
     <?php foreach($listadoRegistros as $registro):?>
     <div class="pagina">

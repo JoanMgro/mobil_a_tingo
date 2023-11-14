@@ -16,6 +16,11 @@
     @include pos-col(1, 5);
 }
 
+.registro__perfil
+{
+    @include pos-col(3, 3);
+}
+
 .registro__input
 {
     @include pos-col(6, 7);

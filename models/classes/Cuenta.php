@@ -7,9 +7,10 @@ class Cuenta{
     protected $password;
     private $fechaRegistro;
     protected $perfil;
+    public $currentRows;
        
 
-    public function __construct($idCuenta, $password, $perfil)
+    public function __construct($idCuenta = null, $password = null, $perfil= null)
     {
         $this->idCuenta = $idCuenta;
         $this->password = $password;
@@ -30,7 +31,7 @@ class Cuenta{
             $stmt->execute();
 
     }
-    public static function listarCuentas(Conexion $conn, $limite, $filtro )
+    public static function listarCuentas(Conexion $conn, $limite = null, $filtro, $offset )
     {
         $dbh = $conn->get_conexion();
         $sql = "SELECT COUNT(id_cuenta) FROM Cuentas";
@@ -44,7 +45,7 @@ class Cuenta{
         if(isset($limite))
         {
             $dbh->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-            $filtros = " WHERE id_cuenta LIKE :idCuenta OR fecha_registro LIKE :fecha_registro OR perfil LIKE :perfil ORDER BY id_cuenta LIMIT :limite";
+            $filtros = " WHERE id_cuenta LIKE :idCuenta OR fecha_registro LIKE :fecha_registro OR perfil LIKE :perfil ORDER BY id_cuenta LIMIT :offset, :limite";
             $filtro = isset($filtro) ? (empty($filtro) ? '%' : ('%' . $filtro . '%')) : '%';
             $sql = "SELECT * FROM Cuentas" . $filtros;
             $stmt = $dbh->prepare($sql);
@@ -53,6 +54,7 @@ class Cuenta{
             $stmt->bindValue(':fecha_registro', $filtro);
             $stmt->bindValue(':perfil', $filtro);
             $stmt->bindValue(':limite', $limite);
+            $stmt->bindValue(':offset', $offset);
 
             $stmt->execute();
             $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -134,6 +136,40 @@ class Cuenta{
 
 
     }
+
+    public function getNumberOfRegisters(Conexion $conn, $filtro)
+    {
+        $dbh = $conn->get_conexion();
+        $filtros = " WHERE id_cuenta LIKE :idCuenta OR fecha_registro LIKE :fecha_registro OR perfil LIKE :perfil";
+        $filtro = isset($filtro) ? (empty($filtro) ? '%' : ('%' . $filtro . '%')) : '%';
+        $sql = "SELECT COUNT(id_cuenta) FROM Cuentas" . $filtros;
+        $stmt = $dbh->prepare($sql);
+        $stmt->bindValue(':idCuenta', $filtro);
+        $stmt->bindValue(':fecha_registro', $filtro);
+        $stmt->bindValue(':perfil', $filtro);
+        $stmt->execute();
+        $this->currentRows = $stmt->fetchColumn();
+        $dbh = null;
+        $stmt = null;
+        return $this->currentRows;
+    }
+
+    public function activar(Conexion $conn, $idCuenta, $activo)
+    {
+        $dbh = $conn->get_conexion();
+        
+        $sql = "UPDATE Cuentas SET activo = :activo WHERE id_cuenta = :idCuenta";
+        $stmt = $dbh->prepare($sql);
+        $stmt->bindValue(':idCuenta', $idCuenta);
+        $stmt->bindValue(':activo', $activo);
+        $stmt->execute();
+        $dbh = null;
+        $stmt = null;
+    }
+
+
+
+
         
 }
 
