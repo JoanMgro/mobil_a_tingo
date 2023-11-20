@@ -1182,6 +1182,11 @@ html {
   grid-column: 1/span 5;
 }
 
+.registro__nuevasus {
+  grid-column: 1/span 12;
+  width: 100%;
+}
+
 .registro__perfil {
   grid-column: 3/span 3;
 }

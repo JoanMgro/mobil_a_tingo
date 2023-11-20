@@ -37,6 +37,7 @@ require __DIR__ . '/' . './controllers/cautenticar.php';
   if($pg == '13') require __DIR__ . '/' . './views/html/vcontacto.php';
   if($pg == '100') require __DIR__ . '/' . './views/html/vlogout.php';
   if($pg == '102') require __DIR__ . '/' . './views/html/vusuarios.php';
+  if($pg == '103') require __DIR__ . '/' . './views/html/vservicios.php';
   if($pg == '104') require __DIR__ . '/' . './views/html/vpaginas.php';
   if($pg == '105') require __DIR__ . '/' . './views/html/vperfiles.php';
   

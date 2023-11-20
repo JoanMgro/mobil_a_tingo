@@ -15,6 +15,11 @@
 {
     @include pos-col(1, 5);
 }
+.registro__nuevasus
+{
+    @include pos-col(1, 12);
+    width: 100%;
+}
 
 .registro__perfil
 {
