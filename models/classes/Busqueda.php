@@ -10,7 +10,8 @@ class Busqueda {
         $dbh = $conn->get_conexion();
         $sql = "SELECT e.nom_empresa, ub.direccion FROM Empresas e";
         $sql .= " INNER JOIN UbicacionEmpresas ub ON e.ubicacion = ub.id_ubicacion";
-        $sql .= " WHERE ub.pais = :pais AND ub.departamento LIKE (ifnull(:depto,'%'))";
+        $sql .= " INNER JOIN Suscripciones sus ON e.id_empresa = sus.empresa";
+        $sql .= " WHERE sus.estado_suscripcion = 1 AND ub.pais = :pais AND ub.departamento LIKE (ifnull(:depto,'%'))";
         $sql .= " AND ub.ciudad LIKE (ifnull(:city,'%'))";
         $sql .= " AND ub.barrio LIKE (ifnull(:barrio,'%'));";        
         // $sql = "call get_empresas(:pais, :depto, :city, :barrio)";
@@ -32,7 +33,8 @@ class Busqueda {
         $dbh = $conn->get_conexion();        
         $sql = "SELECT e.nom_empresa, ub.direccion FROM Empresas e";
         $sql .= " INNER JOIN UbicacionEmpresas ub ON e.ubicacion = ub.id_ubicacion";
-        $sql .= " WHERE ub.latitud BETWEEN :lat1 AND :lat2";
+        $sql .= " INNER JOIN Suscripciones sus ON e.id_empresa = sus.empresa";
+        $sql .= " WHERE sus.estado_suscripcion = 1 AND ub.latitud BETWEEN :lat1 AND :lat2";
         $sql .= " AND ub.longitud BETWEEN :long1 AND :long2;";
         $stmt = $dbh->prepare($sql);
         $stmt->bindValue(':lat1', $box->getlatitudRange()[0]);

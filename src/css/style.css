@@ -279,6 +279,10 @@ html {
   row-gap: 1rem;
 }
 
+.section_info_update {
+  min-height: 45rem;
+}
+
 .section_paginas_update {
   min-height: 18rem;
 }
@@ -480,6 +484,10 @@ html {
   font-size: 1rem;
 }
 
+.text_indicador {
+  font-size: 0.75rem;
+}
+
 .text_resultado_tabla {
   font-size: 0.75rem;
 }
@@ -592,6 +600,10 @@ html {
   height: 7.5rem;
 }
 
+.form_admin_empresa {
+  min-height: 30rem;
+}
+
 .form__label_admin {
   grid-column: 1/span 4;
 }
@@ -702,6 +714,18 @@ html {
 
 .form__btn_cuenta {
   grid-column: 1/span 12;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form__btn_actualizar {
+  grid-column: 1/span 5;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form__btn_eliminar {
+  grid-column: 7/span 6;
   margin-left: auto;
   margin-right: auto;
 }
@@ -1054,7 +1078,8 @@ html {
 }
 
 .field-container__input_tel {
-  grid-column: 7/span 6;
+  grid-column: 1/span 12;
+  height: 4rem;
 }
 
 .block_hidden {

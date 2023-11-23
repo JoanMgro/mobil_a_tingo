@@ -19,8 +19,8 @@ $nombre = isset($_POST['nombre']) ? (empty($_POST['nombre']) ? null : $_POST['no
 $nit = isset($_POST['nit']) ? (empty($_POST['nit']) ? null : $_POST['nit']) : null;
 $logo = isset($_POST['logo']) ? (empty($_POST['logo']) ? null : $_POST['logo']) : null;
 
-$telefonosJson = isset($_POST['telefonos']) ? (empty($_POST['telefonos']) ? null : $_POST['telefonos']) : null;
-//$numtel = '{"0":{"Fijo":"4545"},"1":{"Celular":"4545"},"2":{"Celular":"45454"}}';
+$infoContacto = isset($_POST['info_contacto']) ? (empty($_POST['info_contacto']) ? null : $_POST['info_contacto']) : null;
+$servicios = isset($_POST['servicios']) ? (empty($_POST['servicios']) ? null : $_POST['servicios']) : null;
 
 
 
@@ -28,23 +28,16 @@ $telefonosJson = isset($_POST['telefonos']) ? (empty($_POST['telefonos']) ? null
 if(isset($_POST['action']) && ($_POST['action'] == 'crearEmpresa'))
 {
     if(isset($pais, $departamento, $ciudad, $barrio, $direccion, $latitud, $longitud,
-        $idEmpresa, $password, $nombre, $nit, $telefonosJson))
+        $idEmpresa, $password, $nombre, $nit))
     {
-        //Se decodifica el Json de telefonos que viene del formulario.
-        $telefonos = [];
-        foreach(json_decode($telefonosJson) as $index => $value)
-        {
-            foreach($value as $tipo => $numero)
-            {
-                $telefonos[$index][$tipo] = $numero;
-            }    
-        }
+        
+        
         //Se crean las instancias de Ubicacion, cuenta, empresa y telefonos
         $ubicacion = new Ubicacion($pais, $departamento, $ciudad, $barrio, $direccion,
         $latitud, $longitud);
-        $nuTelefonos =  new Telefono($telefonos);
-        $nuevaEmpresa = new Empresa($idEmpresa, $password, $nombre, $nit, $logo);
-        $nuevaEmpresa->crearEmpresa(new Conexion, $ubicacion, $nuTelefonos);
+        
+        $nuevaEmpresa = new Empresa($idEmpresa, $password, $nombre, $nit, $logo, $infoContacto, $servicios);
+        $nuevaEmpresa->crearEmpresa(new Conexion, $ubicacion);
             
         
     

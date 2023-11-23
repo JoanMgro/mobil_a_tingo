@@ -15,6 +15,6 @@ comprarBtn.addEventListener('click', () => {
         
     httpRequest.send(`controller=comprar&id_plan=${encodeURIComponent(plan)}&dias_vigencia=${encodeURIComponent(vigencia)}&empresa=${encodeURIComponent(empresa)}`);
     window.location='../home.php?pg=10';
-    window.location='../home.php?pg=11';
+    // window.location='../home.php?pg=11';
 
 });

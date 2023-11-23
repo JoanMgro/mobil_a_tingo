@@ -8,6 +8,11 @@
 .form_admin{
     height: 7.5rem;
 }
+
+.form_admin_empresa{
+    min-height: 30rem;
+}
+
 .form__label_admin{
     @include pos-col(1, 4);
 
@@ -137,6 +142,22 @@
     @include pos-col(1, 12);
     margin-left: auto;
     margin-right: auto;
+}
+
+.form__btn_actualizar
+{
+    @include pos-col(1, 5);
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.form__btn_eliminar
+{
+    @include pos-col(7, 6);
+    margin-left: auto;
+    margin-right: auto;
+
 }
 
 

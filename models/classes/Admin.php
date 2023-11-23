@@ -6,7 +6,7 @@ class Admin extends Cuenta
     private string $idAdmin;
     private string $nombre;
 
-    public function __construct(string $idAdmin, string $password, string $nombre)
+    public function __construct(string $idAdmin = null, string $password = null, string $nombre = null)
     {
         parent::__construct($idAdmin, $password, 1);
         $this->idAdmin = $idAdmin;
@@ -39,7 +39,8 @@ class Admin extends Cuenta
         $stmt = NULL;
         return $matched;
     }
-    
+
+
 }
 
 // $admin = new Admin('admin@mobilatingo.com', 'admin', 'Alan Brito');

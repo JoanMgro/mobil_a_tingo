@@ -49,18 +49,26 @@
     <input id="direccion" class="form__input_registro-direccion input input_registro" type="text" name="direccion" autocomplete="off" required>
         
     <!-- titulo seccion de informacion Telefonica -->
-    <p class="form__text text text_form_titulo-seccion">Informacion de Telefonica</p>
+    <p class="form__text text text_form_titulo-seccion">Informacion de contacto</p>
     
     <div id="telf-container" class="form__field-container_tel">
       <div id="tel-0"  class="field-container field-container_tel"> 
         <!-- llamo la vista de telefonos        -->
-        <?php require __DIR__ . '/' . './vtelefonos.php' ?>    
-        <input id="tel_num-0" class="input input_registro field-container__input_tel" type="number"  autocomplete="off" required>
+        <textarea class="input input_registro field-container__input_tel" name="info_contacto" id="info_contacto" cols="30" rows="10"></textarea>   
+        
+      </div>   
+    </div>
+    <p class="form__text text text_form_titulo-seccion">Resumen Servicios</p>
+    <div id="serv-container" class="form__field-container_tel">
+      <div id="serv-0"  class="field-container field-container_tel"> 
+        <!-- llamo la vista de telefonos        -->
+        <textarea class="input input_registro field-container__input_tel" name="servicios" id="servicios" cols="30" rows="10"></textarea>   
+        
       </div>   
     </div>
     <input type="hidden" name="telefonos" id="num-tel" value="1" readonly>
     <input type="hidden" name="action" id="crear_empresa" value="crearEmpresa" readonly>        
-    <button id="agregar-tel" class="form__btn_registrarse-secondary btn_secondary  btn_add-tel">Agregar Telefono</button>
+   
         
     <input id="save" class="form__btn_guardar btn_secondary btn_registrarse_guardar" type="submit" value="Guardar">
 

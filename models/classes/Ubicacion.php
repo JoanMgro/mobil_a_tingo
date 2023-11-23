@@ -94,6 +94,27 @@ class Ubicacion{
 
     }
 
+    public function updateUbicacion(Conexion $conn, $id)
+    {
+        $dbh = $conn->get_conexion();
+        $sql = "UPDATE UbicacionEmpresas SET pais = :pais, departamento = :departamento, ";
+        $sql .= "ciudad = :ciudad, barrio = :barrio, direccion = :direccion, latitud = :latitud, longitud = :longitud ";
+        $sql .= "WHERE id_ubicacion = :id";
+        $stmt = $dbh->prepare($sql);
+        $stmt->bindValue(':id', $id);
+        $stmt->bindValue(':pais', $this->pais);
+        $stmt->bindValue(':departamento', $this->departamento);
+        $stmt->bindValue(':ciudad', $this->ciudad);
+        $stmt->bindValue(':barrio', $this->barrio);
+        $stmt->bindValue(':direccion', $this->direccion);
+        $stmt->bindValue(':latitud', $this->latitud);
+        $stmt->bindValue(':longitud', $this->longitud);
+        $stmt->execute();
+        $dbh = null;
+        $stmt = null; 
+
+    }
+
 
 }
 ?>

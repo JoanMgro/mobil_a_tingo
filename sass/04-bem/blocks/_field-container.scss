@@ -18,5 +18,6 @@
     @include pos-col(1, 5);
 }
 .field-container__input_tel{
-    @include pos-col(7, 6);
+    @include pos-col(1, 12);
+    height: 4rem;
 }
