@@ -35,15 +35,7 @@
  @mixin header-576{
     .header {
        @include grid($size:$screen-s);
-       &__menu-btn{
-        display: none;
-       }
-       &__nav{
-        position: static;
-        border: none;
-        @include pos-col(5, 8);
 
-       }
  
 
   }
@@ -62,6 +54,16 @@
  @mixin header-992{
     .header {
        @include grid($size:$screen-l);
+       &__menu-btn{
+        display: none;
+       }
+       &__nav{
+        position: static;
+        border: none;
+        // @include pos-col(5, 8);
+        @include pos-col(1, 12);
+
+       }
  
    }
 

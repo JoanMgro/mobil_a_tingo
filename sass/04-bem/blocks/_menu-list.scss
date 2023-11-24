@@ -22,30 +22,30 @@
 }
 
 @mixin menu-list-576{
-    .menu-list{
-    @include disp-flex;
-    @include flex-locate($justify:space-around, $align:center);
-    height: 100%;
-    }
+    // .menu-list{
+    // @include disp-flex;
+    // @include flex-locate($justify:space-around, $align:center);
+    // height: 100%;
+    // }
 
-    .menu-list__menu-item{
-        border-top:0;
+    // .menu-list__menu-item{
+    //     border-top:0;
         
-        padding:0;
-            &_hover:hover{
-                border-bottom: 1px solid $border-color-primary;
-            }
-            &_log-in{
-                padding:0;
+    //     padding:0;
+    //         &_hover:hover{
+    //             border-bottom: 1px solid $border-color-primary;
+    //         }
+    //         &_log-in{
+    //             padding:0;
                 
-            }
+    //         }
            
-        }   
+    //     }   
     
-        .menu-list__menu-link_log-in{
-            @include round($color:$border-color-primary, $radio:1.25rem);
-            @include shadow;
-        }
+    //     .menu-list__menu-link_log-in{
+    //         @include round($color:$border-color-primary, $radio:1.25rem);
+    //         @include shadow;
+    //     }
 
    
     
@@ -59,6 +59,34 @@
  }
  
  @mixin menu-list-992{
+    .menu-list{
+        @include disp-flex;
+        @include flex-locate($justify:space-around, $align:center);
+        height: 100%;
+        }
+    
+        .menu-list__menu-item{
+            border-top:0;
+            
+            padding:0;
+                &_hover:hover{
+                    border-bottom: 1px solid $border-color-primary;
+                }
+                &_log-in{
+                    padding:0;
+                    
+                }
+               
+            }   
+        
+            .menu-list__menu-link_log-in{
+                @include round($color:$border-color-primary, $radio:1.25rem);
+                @include shadow;
+            }
+    
+       
+        
+    
 
  }
  

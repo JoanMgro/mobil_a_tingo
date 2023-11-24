@@ -500,6 +500,10 @@ html {
   font-size: 1rem;
 }
 
+.text_info_mobil {
+  font-size: 0.75rem;
+}
+
 .text_indicador {
   font-size: 0.75rem;
 }
@@ -1038,7 +1042,7 @@ html {
   justify-content: center;
   align-items: center;
   row-gap: 0.75rem;
-  padding: 0;
+  padding-top: 1rem;
   border-top: 2px solid #F4A712;
 }
 
@@ -1228,6 +1232,10 @@ html {
   grid-column: 1/span 5;
 }
 
+.registro__label_check-conf {
+  grid-column: 1/span 8;
+}
+
 .registro__nuevasus {
   grid-column: 1/span 12;
   width: 100%;
@@ -1249,9 +1257,14 @@ html {
   width: 10rem;
 }
 
+.registro__input_check-conf {
+  grid-column: 9/span 1;
+  width: 0.75rem;
+}
+
 .registro__input_check {
   grid-column: 6/span 1;
-  width: 1rem;
+  width: 0.75rem;
 }
 
 .registro__btn_actualizar {
@@ -1351,43 +1364,6 @@ html {
     grid-template-rows: max-content;
     grid-auto-rows: max-content;
   }
-  .header__menu-btn {
-    display: none;
-  }
-  .header__nav {
-    position: static;
-    border: none;
-    grid-column: 5/span 8;
-  }
-  .nav {
-    display: block;
-    padding: 0;
-    min-width: -moz-min-content;
-    min-width: min-content;
-    width: 100%;
-  }
-  .menu-list {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    height: 100%;
-  }
-  .menu-list__menu-item {
-    border-top: 0;
-    padding: 0;
-  }
-  .menu-list__menu-item_hover:hover {
-    border-bottom: 1px solid #F4A712;
-  }
-  .menu-list__menu-item_log-in {
-    padding: 0;
-  }
-  .menu-list__menu-link_log-in {
-    border: 1px solid #F4A712;
-    border-radius: 1.25rem;
-    box-shadow: 0rem 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
-  }
   .log-in {
     min-height: 1.25rem;
   }
@@ -1476,6 +1452,9 @@ html {
   }
   .footer__grupo-legal {
     order: 2;
+  }
+  .footer__grupo-info {
+    order: 1;
   }
   .newsletter {
     width: 60%;
@@ -1596,6 +1575,36 @@ html {
     grid-template-rows: max-content;
     grid-auto-rows: max-content;
   }
+  .header__menu-btn {
+    display: none;
+  }
+  .header__nav {
+    position: static;
+    border: none;
+    grid-column: 1/span 12;
+  }
+  .menu-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+  }
+  .menu-list__menu-item {
+    border-top: 0;
+    padding: 0;
+  }
+  .menu-list__menu-item_hover:hover {
+    border-bottom: 1px solid #F4A712;
+  }
+  .menu-list__menu-item_log-in {
+    padding: 0;
+  }
+  .menu-list__menu-link_log-in {
+    border: 1px solid #F4A712;
+    border-radius: 1.25rem;
+    box-shadow: 0rem 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
+  }
   .log-in {
     width: 8rem;
   }
@@ -1633,6 +1642,13 @@ html {
     background-position: 15%;
     height: 10rem;
     padding-right: 1rem;
+  }
+  .nav {
+    display: block;
+    padding: 0;
+    min-width: -moz-min-content;
+    min-width: min-content;
+    width: 100%;
   }
 }
 @media (min-width: 1200px) {

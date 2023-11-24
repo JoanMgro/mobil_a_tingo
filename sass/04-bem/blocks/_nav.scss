@@ -26,13 +26,13 @@
  }
 
  @mixin nav-576{
-    .nav{
-        display: block;
-        padding: 0;
-        min-width: min-content;
-        width: 100%;
+    // .nav{
+    //     display: block;
+    //     padding: 0;
+    //     min-width: min-content;
+    //     width: 100%;
 
-    }
+    // }
 
 
     
@@ -46,6 +46,15 @@
  }
  
  @mixin nav-992{
+    .nav{
+        display: block;
+        padding: 0;
+        min-width: min-content;
+        width: 100%;
+    
+    
+
+    }
 
 
  }

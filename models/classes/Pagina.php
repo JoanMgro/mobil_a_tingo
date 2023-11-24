@@ -76,6 +76,20 @@ class Pagina
 
     }
 
+    public function mostrarPag(Conexion $conn)
+    {
+        $dbh = $conn->get_conexion();
+        $sql = "SELECT * FROM Pagina WHERE pagid = :pagid AND pagmos = 1";
+        $stmt = $dbh->prepare($sql);
+        $stmt->bindValue(':pagid', $this->pagid);
+        $stmt->execute();
+        $this->paginas = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $dbh = null;
+        $stmt = null;
+        return $this->paginas;  
+
+    }
+
     public function getPaginas()
     {
         return $this->paginas;

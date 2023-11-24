@@ -42,6 +42,7 @@ require __DIR__ . '/' . './controllers/cautenticar.php';
   if($pg == '105') require __DIR__ . '/' . './views/html/vperfiles.php';
   if($pg == '106') require __DIR__ . '/' . './views/html/vadminfaq.php';
   if($pg == '107') require __DIR__ . '/' . './views/html/vadminacerca.php';
+  if($pg == '108') require __DIR__ . '/' . './views/html/vconfig.php';
   
   ?>
     
