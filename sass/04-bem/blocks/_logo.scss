@@ -4,3 +4,19 @@
     width: 100%;    
     min-height: 2.5rem;
 }
+
+.logo_img_empresa{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.logo_empresa{
+    max-width: 3rem;
+    width: 3rem;        
+    height: 3rem;
+    object-fit: contain;
+    object-position: center;
+    
+}

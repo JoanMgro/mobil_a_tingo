@@ -5,16 +5,20 @@ require_once __DIR__ . '/' . '../../controllers/cdashboard.php';
 <section class="main__paginas_title section section_paginas_title">
     <?php if(isset($_SESSION['nombre'])): ?>
       <h3>Bienvenido <?=$_SESSION['nombre']?></h3>            
-    <?php else: ?>
-      <h3>Bienvenido <?=$_SESSION['nom_empresa']?></h3>
+    <?php else: ?><h
+      3>Bienvenido <?=$_SESSION['nom_empresa']?></h3>
       <?php if($listaRegistros[0]['estado_suscripcion'] == 1):?>   
       <p>Tu suscripcion esta <b>Activa</b></p>
       <?php else:?>
       <p>No tienes suscripcion activa</p>
-      <?php endif;?>    
+      
+      <?php endif;?> 
+      <div class="logo_img_empresa"><img class="logo_empresa" src="<?=$_SESSION['url_logo']?>" alt=""></div>   
     <?php endif;?>
-
-
+    
+     
+    
+  
     
 </section>
 <?php if($_SESSION['pefid'] == 1):?>
@@ -30,9 +34,9 @@ require_once __DIR__ . '/' . '../../controllers/cdashboard.php';
 <?php else:?>
 <section class="main__paginas_body section section_paginas_body section_info_update">
 <p class="text text_dashboard_title">Mi Cuenta</p>
-<p class="text_indicador">*doble click en campo que desea actualizar a exepcion de id, nombre y nit</p>
+<p class="text_indicador">cambiar campo que desea actualizar a exepcion de id, nombre y nit</p>
 
-    <form action="#" class="form form_admin_empresa" method="post" id="cuentareg">
+    <form action="#" class="form form_admin_empresa" method="post" id="cuentareg" enctype="multipart/form-data">
         <!-- Email -->
         <label class="registro__label" for="id"><b>Id:</b></label>
         <input disabled class="registro__input registro__input_long type="text" id="id" value="<?=$listaRegistros[0]['id_empresa']?>">
@@ -43,8 +47,9 @@ require_once __DIR__ . '/' . '../../controllers/cdashboard.php';
         <label class="registro__label" for="nit"><b>Nit:</b></label>
         <input disabled class="registro__input registro__input_long type="text" name="nit" id="nit" value="<?=$listaRegistros[0]['nit']?>">
         <!-- logo -->
-        <label class="registro__label" for="urlLogo"><b>Logo:</b></label>
-        <input class="registro__input registro__input_long" type="file" name="url_logo" id="urlLogo" value="<?=$listaRegistros[0]['url_logo']?>" accept=".png, .jpg, .jpeg">
+        <label class="registro__label" for="logo"><b>Logo:</b></label>
+        <input class="registro__input registro__input_long" type="file" name="logo" id="logo" accept=".png, .jpg, .jpeg">
+        <script type="text/javascript" src="../../src/js/validacion/validatelogo.js"></script>
         <!-- Latitud -->
         <label class="registro__label" for="lat"><b>Latitud:</b></label>
         <input  required class="registro__input registro__input_long type="number" name="latitud" id="lat" value="<?=$listaRegistros[0]['latitud']?>">

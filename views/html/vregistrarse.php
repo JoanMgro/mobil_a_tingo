@@ -1,7 +1,7 @@
 <section class="main__section section section_registrarse">
   <p class="text text_registrarse_titulo">Datos de Registro</p>      
       
-  <form id="registrarse" action="../../controllers/cempresa.php" method="POST" class="form form_registrarse">
+  <form id="registrarse" action="../../controllers/cempresa.php" method="POST" class="form form_registrarse" enctype="multipart/form-data">
     <!-- titulo seccion de login -->
     <p class="form__text text text_form_titulo-seccion">Informacion de Log in</p>
     <!-- campo Email -->
@@ -21,8 +21,9 @@
     <input id="nit" class="form__input_registro_login-info input input_registro" type="text" name="nit" autocomplete="off" required>
     <!-- campo logo -->
     <label class="form__label_registro_login-info" for="logo">Logo:</label>
-    <input id="logo" class="form__input_registro_login-info input input_registro" type="file" name="logo" autocomplete="off">
-        
+    <input id="logo" class="form__input_registro_login-info input input_registro" type="file" name="logo" accept=".png, .jpg, .jpeg">
+    <script type="text/javascript" src="../../src/js/validacion/validatelogo.js"></script>
+    
     <!-- titulo seccion de informacion Ubicacion -->
     <p class="form__text text text_form_titulo-seccion">Informacion de Ubicacion</p>
     <!-- Boton localizarme -->

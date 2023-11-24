@@ -21,3 +21,9 @@
     @include pos-col(1, 12);
     height: 4rem;
 }
+
+.field-container__input_acerca
+{
+    @include pos-col(1, 12);
+    height: 25rem;
+}

@@ -8,7 +8,7 @@ class Busqueda {
     public function setEmpresas(Conexion $conn, Ubicacion $ubicacion)
     {   
         $dbh = $conn->get_conexion();
-        $sql = "SELECT e.nom_empresa, ub.direccion FROM Empresas e";
+        $sql = "SELECT e.nom_empresa, ub.direccion, e.id_empresa FROM Empresas e";
         $sql .= " INNER JOIN UbicacionEmpresas ub ON e.ubicacion = ub.id_ubicacion";
         $sql .= " INNER JOIN Suscripciones sus ON e.id_empresa = sus.empresa";
         $sql .= " WHERE sus.estado_suscripcion = 1 AND ub.pais = :pais AND ub.departamento LIKE (ifnull(:depto,'%'))";
@@ -31,7 +31,7 @@ class Busqueda {
     {   
         
         $dbh = $conn->get_conexion();        
-        $sql = "SELECT e.nom_empresa, ub.direccion FROM Empresas e";
+        $sql = "SELECT e.nom_empresa, ub.direccion, e.id_empresa FROM Empresas e";
         $sql .= " INNER JOIN UbicacionEmpresas ub ON e.ubicacion = ub.id_ubicacion";
         $sql .= " INNER JOIN Suscripciones sus ON e.id_empresa = sus.empresa";
         $sql .= " WHERE sus.estado_suscripcion = 1 AND ub.latitud BETWEEN :lat1 AND :lat2";

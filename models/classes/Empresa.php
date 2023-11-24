@@ -132,6 +132,24 @@ class Empresa extends Cuenta{
         $dbh = null;
         $stmt = null;
     }
+
+    public function listarDetalleRes(Conexion $conn)
+    {
+
+        $dbh = $conn->get_conexion();
+        $sql = "SELECT e.id_empresa, e.nom_empresa, e.nit, e.url_logo, e.contacto, e.servicios, ub.pais, ub.departamento, ub.ciudad, ub.barrio, ub.direccion FROM Empresas e";
+        $sql .= " INNER JOIN UbicacionEmpresas ub ON e.ubicacion = ub.id_ubicacion";
+        $sql .= " INNER JOIN Suscripciones sus ON e.id_empresa = sus.empresa";
+        $sql .= " WHERE e.id_empresa = :empresa";      
+        $stmt = $dbh->prepare($sql);
+        $stmt->bindValue(':empresa', $this->idEmpresa);
+        $stmt->execute();
+        $listaRegistros = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+ 
+        
+        return $listaRegistros;        
+    }
     
 
    

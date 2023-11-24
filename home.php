@@ -40,6 +40,8 @@ require __DIR__ . '/' . './controllers/cautenticar.php';
   if($pg == '103') require __DIR__ . '/' . './views/html/vservicios.php';
   if($pg == '104') require __DIR__ . '/' . './views/html/vpaginas.php';
   if($pg == '105') require __DIR__ . '/' . './views/html/vperfiles.php';
+  if($pg == '106') require __DIR__ . '/' . './views/html/vadminfaq.php';
+  if($pg == '107') require __DIR__ . '/' . './views/html/vadminacerca.php';
   
   ?>
     
@@ -48,23 +50,7 @@ require __DIR__ . '/' . './controllers/cautenticar.php';
   </main>
 
   <!-- Footer -->
-  <footer class="page__footer footer">
-    <div class="footer__grupo-legal grupo-legal">
-      <p class="grupo-legal__terminos text text_terminos">
-        <a class="link link_text_terminos" href="#">Terminos y condiciones</a> | <a class="link link_text_terminos" href="#">Politica de privacidad</a>
-      </p>
-      <p class="grupo-legal__copyright text text_copyright">@2023 Bogota, co. Todos los derechos reservados</p>
-    </div>
-    <div class="footer__grupo-redes grupo-redes">
-      <p class="grupo-redes__titulo text text_redes">Siguenos en redes sociales</p>
-      <div class="grupo-redes__iconos grupo-iconos">
-        <a class="grupo-iconos__red link link_red_face" href="#"></a>
-        <a class="grupo-iconos__red link link_red_insta" href="#"></a>
-        <a class="grupo-iconos__red link link_red_x" href="#"></a>
-        <a class="grupo-iconos__red link link_red_wsup" href="#"></a>
-      </div>
-    </div>
-  </footer>
+  <?php require __DIR__ . '/views/html/vfooter.php'; ?>
   <!-- Script -->
   <script type="text/javascript" src="./src/js/menu/hamburguer.js"></script>
   <!-- <?php //require __DIR__ . '/views/html/scriptsJs.php'; ?> -->

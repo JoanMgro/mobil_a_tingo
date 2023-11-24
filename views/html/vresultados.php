@@ -19,11 +19,17 @@ if(isset($searchModel)):
                 <?php foreach($searchModel->getEmpresas() as $item): ?>
                     <tr>
                         <?php foreach($item as $key => $value):?>
-
+                            <?php if($key != 'id_empresa'):?>
                             <td><?= $value ?></td>
+                            <?php else:?>
+                            <td><a href="index.php?pg=1020&id=<?=urlencode($value)?>">VER</a></td> 
+                            <?php endif;?>
                         <?php endforeach;?>
+                        
                     </tr>
+                    
                 <?php endforeach; ?>
+                
 
             </tbody>   
             

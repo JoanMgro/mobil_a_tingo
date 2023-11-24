@@ -5,6 +5,7 @@ require_once __DIR__ . '/' . '../models/classes/Empresa.php';
 require_once __DIR__ . '/' . '../models/classes/Ubicacion.php';
 require_once __DIR__ . '/' . '../models/classes/Suscripcion.php';
 require_once __DIR__ . '/' . '../models/classes/Admin.php';
+require_once __DIR__ . '/' . '../controllers/cpreparelogo.php';
 
 function listarEmpresa(Conexion $conn, Empresa $model)
 {
@@ -34,7 +35,9 @@ if($_SESSION['pefid'] == 2)
     {
       $ubicacion = new Ubicacion($_POST['pais'], $_POST['departamento'], $_POST['ciudad'], $_POST['barrio'], $_POST['direccion'], $_POST['latitud'], $_POST['longitud']);
       
-      $empresa = new Empresa($_SESSION['id_empresa'],null, null, null, $_POST['url_logo'],  $_POST['contacto'], $_POST['servicios']);
+      $logo = isset($_FILES['logo']) ? prepararLogo() : null;
+
+      $empresa = new Empresa($_SESSION['id_empresa'],null, null, null, $logo,  $_POST['contacto'], $_POST['servicios']);
       actualizarEmpresa(new Conexion, $empresa, $ubicacion, $_POST['id_ubicacion']);
       echo "<script type='text/javascript'>window.location='../home.php?pg=10'</script>";
           
