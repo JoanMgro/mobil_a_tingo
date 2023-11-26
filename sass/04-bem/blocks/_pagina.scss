@@ -31,9 +31,22 @@
 {
     @include pos-col(2, 7);
 }
+
+.pagina__registro_servicio
+{
+    @include pos-col(2, 8);
+}
 .pagina__checkbox
 {
     @include pos-col(9, 3);
+    justify-self: center;
+    align-self: center;
+
+}
+
+.pagina__checkbox_servicio
+{
+    @include pos-col(10, 3);
     justify-self: center;
     align-self: center;
 

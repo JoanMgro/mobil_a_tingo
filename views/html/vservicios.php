@@ -51,19 +51,19 @@ require __DIR__ . '/' . '../../controllers/cadminplanes.php';
     <?php foreach($listadoRegistros as $registro):?>
     <div class="pagina">
         
-        <form id="<?php echo 'updateform' . $registro['id_plan'];?>" class="pagina__registro registro" action="" method="post">
+        <form id="<?php echo 'updateform' . $registro['id_plan'];?>" class="pagina__registro_servicio registro" action="" method="post">
             <label class="registro__label" for="<?php echo 'id-' . $registro['id_plan'];?>"><b>Id:</b></label>
             <input type="hidden" name="id_plan" value="<?=$registro['id_plan']?>">
-            <input class="registro__input registro__input_short type="number" name="id_plan" id="<?php echo 'id-' . $registro['id_plan'];?>" value="<?=$registro['id_plan']?>" disabled>
+            <input class="registro__input_smallbox registro__input_shorter type="number" name="id_plan" id="<?php echo 'id-' . $registro['id_plan'];?>" value="<?=$registro['id_plan']?>" disabled>
             
             <label class="registro__label" for="<?php echo $registro['nom_plan'];?>"><b>Nombre:</b></label>
-            <input class="registro__input registro__input_short ng type="text" name="nom_plan" id="<?php echo $registro['nom_plan'];?>" value="<?=$registro['nom_plan']?>">
+            <input class="registro__input registro__input_short" type="text" name="nom_plan" id="<?php echo $registro['nom_plan'];?>" value="<?=$registro['nom_plan']?>">
             <label class="registro__label" for="<?php echo $registro['desc_plan'];?>"><b>Descripcion:</b></label>
-            <textarea class="registro__input registro__input_short ng type="text" name="desc_plan" id="<?php echo $registro['desc_plan'];?>"><?=$registro['desc_plan']?></textarea>
+            <textarea rows="5" cols="10" class="registro__input_servicio registro__input_longer"  type="text" name="desc_plan" id="<?php echo $registro['desc_plan'];?>"><?=$registro['desc_plan']?></textarea>
             <label class="registro__label" for="<?php echo $registro['valor_plan'];?>"><b>Valor:</b></label>
-            <input class="registro__input registro__input_short ng type="text" name="valor_plan" id="<?php echo $registro['valor_plan'];?>" value="<?=$registro['valor_plan']?>">
-            <label class="registro__label" for="<?php echo $registro['dias_vigencia'];?>"><b>Dias Vigencia:</b></label>
-            <input class="registro__input registro__input_short ng type="number" name="dias_vigencia" id="<?php echo $registro['dias_vigencia'];?>" value="<?=$registro['dias_vigencia']?>">
+            <input class="registro__input registro__input_short" type="text" name="valor_plan" id="<?php echo $registro['valor_plan'];?>" value="<?=$registro['valor_plan']?>">
+            <label class="registro__label_long" for="<?php echo $registro['dias_vigencia'];?>"><b>Dias Vigencia:</b></label>
+            <input class="registro__input_smallbox registro__input_shorter" type="number" name="dias_vigencia" id="<?php echo $registro['dias_vigencia'];?>" value="<?=$registro['dias_vigencia']?>">
             
             <!-- <p class="registro__col col col_id_plan"></p> -->
             <input class="registro__btn_actualizar" id="<?php echo 'actualizar-' . $registro['id_plan'];?>" type="button" value="Actualizar">
@@ -72,7 +72,8 @@ require __DIR__ . '/' . '../../controllers/cadminplanes.php';
 
         </form>
         
-        <form id="<?php echo 'form' . $registro['id_plan'];?>" action="#" method="post" class="pagina__checkbox">
+        <form id="<?php echo 'form' . $registro['id_plan'];?>" action="#" method="post" class="pagina__checkbox_servicio">
+            <label for="<?php echo 'id'. $registro['id_plan'];?>">Activo</label>
             <?php if($registro['activo'] == 1):?>            
                 <input type="checkbox" name="" id=<?php echo 'id'. $registro['id_plan']; ?> value=<?=$registro['id_plan']?> checked onchange="<?php echo "document.querySelector('#form{$registro['id_plan']}').submit()"?>">  
                 <input type="hidden" name="activo" value="0"> 

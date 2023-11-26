@@ -48,15 +48,15 @@ require __DIR__ . '/' . '../../controllers/cadminfaq.php';
     <?php foreach($listadoRegistros as $registro):?>
     <div class="pagina">
         
-        <form id="<?php echo 'updateform' . $registro['id_faq'];?>" class="pagina__registro registro" action="" method="post">
+        <form id="<?php echo 'updateform' . $registro['id_faq'];?>" class="pagina__registro_servicio registro" action="" method="post">
             <label class="registro__label" for="<?php echo 'id-' . $registro['id_faq'];?>"><b>Id:</b></label>
             <input type="hidden" name="id_faq" value="<?=$registro['id_faq']?>">
-            <input class="registro__input registro__input_short type="number" name="id_faq" id="<?php echo 'id-' . $registro['id_faq'];?>" value="<?=$registro['id_faq']?>" disabled>
+            <input class="registro__input registro__input_short" type="number" name="id_faq" id="<?php echo 'id-' . $registro['id_faq'];?>" value="<?=$registro['id_faq']?>" disabled>
             
             <label class="registro__label" for="<?php echo $registro['question'];?>"><b>Pregunta:</b></label>
-            <input class="registro__input registro__input_short ng type="text" name="question" id="<?php echo $registro['question'];?>" value="<?=$registro['question']?>">
+            <input class="registro__input_servicio registro__input_longer" type="text" name="question" id="<?php echo $registro['question'];?>" value="<?=$registro['question']?>">
             <label class="registro__label" for="<?php echo $registro['answer'];?>"><b>Respuesta:</b></label>
-            <textarea class="registro__input registro__input_short ng type="text" name="answer" id="<?php echo $registro['answer'];?>"><?=$registro['answer']?></textarea>
+            <textarea rows="5" cols="10" class="registro__input_servicio registro__input_longer" type="text" name="answer" id="<?php echo $registro['answer'];?>"><?=$registro['answer']?></textarea>
             
             
             <!-- <p class="registro__col col col_id_faq"></p> -->
@@ -66,7 +66,8 @@ require __DIR__ . '/' . '../../controllers/cadminfaq.php';
 
         </form>
         
-        <form id="<?php echo 'form' . $registro['id_faq'];?>" action="#" method="post" class="pagina__checkbox">
+        <form id="<?php echo 'form' . $registro['id_faq'];?>" action="#" method="post" class="pagina__checkbox_servicio">
+            <label for="<?php echo 'id'. $registro['id_faq'];?>">Activo</label>
             <?php if($registro['activo'] == 1):?>            
                 <input type="checkbox" name="" id=<?php echo 'id'. $registro['id_faq']; ?> value=<?=$registro['id_faq']?> checked onchange="<?php echo "document.querySelector('#form{$registro['id_faq']}').submit()"?>">  
                 <input type="hidden" name="activo" value="0"> 

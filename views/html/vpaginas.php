@@ -73,6 +73,7 @@ require __DIR__ . '/' . '../../controllers/cadminpag.php';
         </form>
         
         <form id="<?php echo 'form' . $registro['pagid'];?>" action="#" method="post" class="pagina__checkbox">
+            
             <?php if($registro['pagmos'] == 1):?>            
                 <input type="checkbox" name="" id=<?php echo 'id'. $registro['pagid']; ?> value=<?=$registro['pagid']?> checked onchange="<?php echo "document.querySelector('#form{$registro['pagid']}').submit()"?>">  
                 <input type="hidden" name="pagmos" value="0"> 

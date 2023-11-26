@@ -1081,7 +1081,7 @@ html {
   justify-content: center;
   align-items: center;
   row-gap: 0.75rem;
-  padding-top: 1rem;
+  padding-top: 2rem;
   border-top: 2px solid #F4A712;
 }
 
@@ -1239,8 +1239,18 @@ html {
   grid-column: 2/span 7;
 }
 
+.pagina__registro_servicio {
+  grid-column: 2/span 8;
+}
+
 .pagina__checkbox {
   grid-column: 9/span 3;
+  justify-self: center;
+  align-self: center;
+}
+
+.pagina__checkbox_servicio {
+  grid-column: 10/span 3;
   justify-self: center;
   align-self: center;
 }
@@ -1271,6 +1281,10 @@ html {
   grid-column: 1/span 5;
 }
 
+.registro__label_long {
+  grid-column: 1/span 7;
+}
+
 .registro__label_check-conf {
   grid-column: 1/span 8;
 }
@@ -1288,12 +1302,28 @@ html {
   grid-column: 6/span 7;
 }
 
+.registro__input_servicio {
+  grid-column: 1/span 12;
+}
+
+.registro__input_smallbox {
+  grid-column: 9/span 4;
+}
+
 .registro__input_short {
   width: 6rem;
 }
 
+.registro__input_shorter {
+  width: 3rem;
+}
+
 .registro__input_long {
   width: 10rem;
+}
+
+.registro__input_longer {
+  width: 11.5rem;
 }
 
 .registro__input_check-conf {

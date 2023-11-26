@@ -15,6 +15,12 @@
 {
     @include pos-col(1, 5);
 }
+
+.registro__label_long
+{
+    @include pos-col(1, 7);
+}
+
 .registro__label_check-conf
 {
     @include pos-col(1, 8);
@@ -35,15 +41,40 @@
     @include pos-col(6, 7);
     
 }
+
+.registro__input_servicio
+{
+    @include pos-col(1, 12);
+    
+}
+
+.registro__input_smallbox
+{
+    @include pos-col(9, 4);
+    
+}
+
 .registro__input_short
 {
     
     width: 6rem;
 }
+
+.registro__input_shorter
+{
+    
+    width: 3rem;
+}
 .registro__input_long
 {
     
     width: 10rem;
+}
+
+.registro__input_longer
+{
+    
+    width: 11.5rem;
 }
 .registro__input_check-conf{
     @include pos-col(9, 1);
