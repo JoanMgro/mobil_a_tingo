@@ -1,15 +1,17 @@
 <?php
-require __DIR__ . '/' . '../../controllers/cdetallesres.php';
 
-?>
+include __DIR__ . '/' . '../../controllers/cdetallesres.php';
+
+?>  
+
 <section class="main__paginas_title section section_paginas_title">
     <h1>Detalles Consulta</h1>
-  
+
 </section>
 <section class="main__paginas_body section section_paginas_body section_info_update">
 <div class="logo_img_empresa"><img class="logo_empresa" src="<?=$registro[0]['url_logo']?>" alt=""></div>
 
-    <form action="#" class="form form_admin_empresa" method="post" id="cuentareg" enctype="multipart/form-data">
+    <form  class="form form_admin_empresa">
         <!-- Email -->
         <label class="registro__label" for="id"><b>Email:</b></label>
         <input readonly class="registro__input registro__input_long type="text" id="id" value="<?=$registro[0]['id_empresa']?>">

@@ -40,7 +40,8 @@ if(e.target.id.split('-')[0] === 'actualizar')
     }
             
     httpRequest.send(`controller=actualizar&pagid=${object.pagid}&oldid=${object.oldid}&pagarc=${object.pagarc}&pagmen=${object.pagmen}&pagnom=${object.pagnom}&pagord=${object.pagord}`);
-    location.reload();
+    // location.reload();
+    window.location='../home.php?pg=10';
    
 
 }

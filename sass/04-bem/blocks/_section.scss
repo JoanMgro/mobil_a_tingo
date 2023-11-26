@@ -9,6 +9,12 @@
     // justify-self: center;
 }
 
+.section_precio{
+    @include disp-flex();
+    @include flex-locate($justify: space-around);
+    width: 90%;
+}
+
 .section_paginas_title
 {
     width: 100%;

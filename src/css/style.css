@@ -122,6 +122,16 @@ html {
      object-position: center;
 }
 
+.logo_carrito {
+  max-width: 1rem;
+  width: 1rem;
+  height: 1rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+}
+
 .menu-btn {
   min-width: 2rem;
   min-height: 2rem;
@@ -187,6 +197,27 @@ html {
   min-width: 1rem;
   min-height: 0.75rem;
   background-image: url("../images/icons/login.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.carrito {
+  display: flex;
+  flex-direction: row;
+  justify-content: normal;
+  align-items: center;
+  padding: 0 0.5rem 0 0.5rem;
+  min-width: 5rem;
+  min-height: 2.25rem;
+  width: 8rem;
+  text-align: center;
+}
+.carrito__compras {
+  min-width: 1rem;
+  width: 2rem;
+  height: 2rem;
+  background-image: url("../images/icons/carrito.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -284,6 +315,14 @@ html {
   border-radius: 2.75rem;
   box-shadow: 0rem 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
   padding: 0.5rem;
+}
+
+.section_precio {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: normal;
+  width: 90%;
 }
 
 .section_paginas_title {

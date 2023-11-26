@@ -79,7 +79,8 @@ class Pagina
     public function mostrarPag(Conexion $conn)
     {
         $dbh = $conn->get_conexion();
-        $sql = "SELECT * FROM Pagina WHERE pagid = :pagid AND pagmos = 1";
+        // $sql = "SELECT * FROM Pagina WHERE pagid = :pagid AND pagmos = 1";
+        $sql = "SELECT * FROM Pagina WHERE pagid = :pagid";
         $stmt = $dbh->prepare($sql);
         $stmt->bindValue(':pagid', $this->pagid);
         $stmt->execute();
@@ -223,10 +224,10 @@ class Pagina
 
 }
 // require_once __DIR__ . '/' . './Conexion.php';
-// $model = new Pagina();
-// $model->listarPaginas(new Conexion, 5, '', 0);
+// $model = new Pagina(1000);
 
 
-// var_dump(count($model->getPaginas()));
+
+// var_dump($model->mostrarPag(new Conexion));
 
 ?>

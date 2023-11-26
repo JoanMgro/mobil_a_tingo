@@ -1,20 +1,49 @@
-const comprarBtn = document.querySelector('#comprar');
 
-comprarBtn.addEventListener('click', () => {
-    const plan = document.querySelector('#planSelect').value;
-    const vigencia = document.querySelector('#vigencia').value;
-    const empresa = document.querySelector('#empresa').value;
-    const httpRequest = new XMLHttpRequest();
+
+document.addEventListener('click', (e) => {
     
-    httpRequest.open('POST', '../../controllers/cadminsuscripciones.php', true);
-    httpRequest.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    httpRequest.onload = () =>{
-    console.log(httpRequest.status);
-    }
-    // httpRequest.send(JSON.stringify(payload));
+
+    if(e.target.id === 'comprar')
+    {
+        const httpRequest = new XMLHttpRequest();
         
-    httpRequest.send(`controller=comprar&id_plan=${encodeURIComponent(plan)}&dias_vigencia=${encodeURIComponent(vigencia)}&empresa=${encodeURIComponent(empresa)}`);
-    window.location='../home.php?pg=10';
-    // window.location='../home.php?pg=11';
+        httpRequest.open('POST', '../../controllers/cadminsuscripciones.php', true);
+        httpRequest.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        httpRequest.onload = () =>{
+            console.log(httpRequest.status);
+            if(httpRequest.status === 200)
+            {
+                window.location='../home.php?pg=10';
+            }
+            
+        }
+        // httpRequest.send(JSON.stringify(payload));
+            
+        httpRequest.send(`controller=comprar&empresa=${encodeURIComponent(e.target.dataset.empresa)}&id_plan=${encodeURIComponent(e.target.dataset.plan)}&dias_vigencia=${encodeURIComponent(e.target.dataset.vigencia)}`);
+        
+
+    }
+    if(e.target.id === 'borrar')
+    {
+        const httpRequest = new XMLHttpRequest();
+    
+        httpRequest.open('POST', '../../controllers/cadminsuscripciones.php', true);
+        httpRequest.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        httpRequest.onload = () =>{
+        console.log(httpRequest.status);
+            if(httpRequest.status === 200)
+            {
+                window.location='../home.php?pg=10';
+            }
+        }
+        // httpRequest.send(JSON.stringify(payload));
+            
+        httpRequest.send(`controller=borrarcarrito`);
+
+
+    }
+    
+    
 
 });
+

@@ -9,10 +9,12 @@ function showPage(Conexion $conn, Pagina $pag)
 
 }
 
+$pg = isset($_GET['pg']) ? $_GET['pg'] : 1000;
 
-$pag = new Pagina(isset($_GET['pagid']) ? $_GET['pagid'] : 1000); 
+$pag = new Pagina($pg); 
 
 $showReg = showPage(new Conexion, $pag);
+
 
 
 

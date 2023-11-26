@@ -87,5 +87,7 @@ $totalPages = totalPages($plan, $limite, $filtro);
 $offSet = offSet($limite, $page); 
 $listadoRegistros = listarRegistros(new Conexion, $plan, $limite, $filtro, $offSet);
 
+$carrito = isset($_SESSION['carrito']) ? 1 : 0;
+
 // var_dump(listarRegistros(new Conexion, $plan, $limite, 'test', $offSet));
 ?>

@@ -8,7 +8,13 @@
   <?php foreach($mMenu->getPaginas() as $item): ?>
   <?php if(($item['pagnom'] !== 'Ingresar') && ($item['pagnom'] !== 'Salir')):?>
   <li class="menu-list__menu-item menu-list__menu-item_hover">
+          <?php if($item['pagnom'] == 'Carrito'):?>
+            <a class="menu-list__menu-link carrito link-text_nav" href= <?="../../{$item['pagmen']}.php?pg={$item['pagid']}" ?>>
+            <i class="carrito__compras"></i><?=$products?>
+          </a>
+          <?php else:?>
           <a class="menu-list__menu-link link link_text_nav" href= <?="../../{$item['pagmen']}.php?pg={$item['pagid']}" ?>><?= $item['pagnom'] ?></a>
+          <?php endif;?>
   </li>
   <?php else: ?> 
   <li class="menu-list__menu-item menu-list__menu-item_log-in">

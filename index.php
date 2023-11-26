@@ -25,21 +25,33 @@
 
   <main class="page__main main">
 
+
     <?php
-          $pg = isset($_GET["pg"]) ? $_GET["pg"] : NULL;
-          if(!$pg || $pg == '1000')
-          {
 
-            require __DIR__ . '/' . './views/html/vinicio.php';
-          }
+            include __DIR__ . '/' . './controllers/crouter.php';
+         
+            include __DIR__ . '/' . $showReg[0]['pagarc'];
+            
+            
+  
+            
+     
 
-          if($pg === '1001') require __DIR__ . '/' . './views/html/vplanes.php';
-          if($pg === '1002') require __DIR__ . '/' . './views/html/vfaq.php';
-          if($pg === '1003') require __DIR__ . '/' . './views/html/vacercade.php';
-          if($pg === '1004') require __DIR__ . '/' . './views/html/vcontacto.php';
-          if($pg === '1005') require __DIR__ . '/' . './views/html/vlogin.php';
-          if($pg === '1006') require __DIR__ . '/' . './views/html/vregistrarse.php';
-          if($pg === '1020') require __DIR__ . '/' . './views/html/vdetresul.php';
+                
+          // $pg = isset($_GET["pg"]) ? $_GET["pg"] : NULL;
+          // if(!$pg || $pg == '1000')
+          // {
+
+          //   require __DIR__ . '/' . './views/html/vinicio.php';
+          // }
+
+          // if($pg === '1001') require __DIR__ . '/' . './views/html/vplanes.php';
+          // if($pg === '1002') require __DIR__ . '/' . './views/html/vfaq.php';
+          // if($pg === '1003') require __DIR__ . '/' . './views/html/vacercade.php';
+          // if($pg === '1004') require __DIR__ . '/' . './views/html/vcontacto.php';
+          // if($pg === '1005') require __DIR__ . '/' . './views/html/vlogin.php';
+          // if($pg === '1006') require __DIR__ . '/' . './views/html/vregistrarse.php';
+          // if($pg === '1020') require __DIR__ . '/' . './views/html/vdetresul.php';
 
     ?>
  

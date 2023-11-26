@@ -5,7 +5,7 @@ $auth = isset($_SESSION['validated']) ? $_SESSION['validated'] : NULL;
 if($auth != '@1r;:**3')
 {
     session_destroy();
-    header('location: ../index.php');
+    header('location: ../index.php?pg=1000');
     exit();
 }
 
