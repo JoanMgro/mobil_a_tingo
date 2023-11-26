@@ -15,6 +15,8 @@ logoInput.addEventListener('change', (e) => {
         alert(`Tamaño de archivo execede limite de ${maxsize} Kbytes`);
         logoInput.value = '';
     }
+
+    console.log(logoInput.files);
     
    
 });

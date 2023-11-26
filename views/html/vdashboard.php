@@ -3,6 +3,9 @@ require_once __DIR__ . '/' . '../../controllers/cdashboard.php';
 ?>
 
 <section class="main__paginas_title section section_paginas_title">
+  <?php
+
+  ?>
     <?php if(isset($_SESSION['nombre'])): ?>
       <h3>Bienvenido <?=$_SESSION['nombre']?></h3>            
     <?php else: ?><h

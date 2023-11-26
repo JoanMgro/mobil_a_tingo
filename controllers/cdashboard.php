@@ -5,7 +5,7 @@ require_once __DIR__ . '/' . '../models/classes/Empresa.php';
 require_once __DIR__ . '/' . '../models/classes/Ubicacion.php';
 require_once __DIR__ . '/' . '../models/classes/Suscripcion.php';
 require_once __DIR__ . '/' . '../models/classes/Admin.php';
-require_once __DIR__ . '/' . '../controllers/cpreparelogo.php';
+require_once __DIR__ . '/' . '../controllers/cpreparelogo.php'; 
 
 function listarEmpresa(Conexion $conn, Empresa $model)
 {
@@ -23,6 +23,7 @@ function eliminarEmpresa(Conexion $conn, Empresa $model, $idUbicacion)
   $model->eliminar($conn, $idUbicacion);
 
 }
+
 
 
 if($_SESSION['pefid'] == 2)
