@@ -11,14 +11,15 @@ function loadMenus(Conexion $conn, Menu $model, $pagina, $pefid)
 
 }
 
-if(isset($_SESSION['carrito']))
-{
-    $products = strval(count($_SESSION['carrito']) - 3);
-}
-else
-{
-    $products = ''; 
-}
+$products = isset($_SESSION['carrito']) ? '1' : ''; 
+// if(isset($_SESSION['carrito']))
+// {
+//     $products = strval(count($_SESSION['carrito']));
+// }
+// else
+// {
+//     $products = ''; 
+// }
 
 $mMenu = new Menu(); 
 $mPattern = "/[\/\.\?]/";

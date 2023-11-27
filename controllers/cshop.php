@@ -1,7 +1,4 @@
 <?php
-require_once __DIR__ . '/' . '../models/classes/Conexion.php';
-require_once __DIR__ . '/' . '../models/classes/Suscripcion.php';
-require_once __DIR__ . '/' . '../models/classes/PlanesMobilatingo.php';
 
 
 //la sesion ya debe estar inicalizada

@@ -31,7 +31,7 @@ class Cuenta{
             $stmt->execute();
 
     }
-    public static function listarCuentas(Conexion $conn, $limite = null, $filtro, $offset )
+    public static function listarCuentas(Conexion $conn, $limite = null, $filtro = null, $offset = null )
     {
         $dbh = $conn->get_conexion();
         $sql = "SELECT COUNT(id_cuenta) FROM Cuentas";

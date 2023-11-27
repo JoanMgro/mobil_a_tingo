@@ -17,7 +17,7 @@ document.addEventListener('click', (e) => {
       
         const httpRequest = new XMLHttpRequest();
     
-        httpRequest.open('POST', '../../controllers/cshop.php', true);
+        httpRequest.open('POST', '../../controllers/cadminplanes.php', true);
         httpRequest.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
         httpRequest.onload = () =>{
         if(httpRequest.status === 200)

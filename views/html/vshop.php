@@ -7,7 +7,8 @@
 <section class="main__section section">
     <h1>Mobilatingo eShop</h1>
     <?php
-    //var_dump($carrito);
+    var_dump($_SESSION);
+    
     ?>
 
 </section>
@@ -20,8 +21,10 @@
     <div>Valor: <?=$registro['valor_plan']?></div>
     <div>Vigencia: <?=$registro['dias_vigencia']?> dias</div>
     <input type="hidden" name="valor_plan" value="<?=$registro['valor_plan']?>" id="<?php echo 'inVal-' . $registro['valor_plan'];?>">
+    <input type="hidden" name="dias_vigencia" value="<?=$registro['dias_vigencia']?>" id="<?php echo 'inVig-' . $registro['dias_vigencia'];?>">
     <button id="<?php echo 'verdetalle-' . $registro['id_plan'];?>" class='btn_secondary btn_planes'>Ver Detalle</button>
     <div id="<?php echo 'detalle-' . $registro['id_plan'];?>" class='block_hidden scrollbox scrollbox_planes'><?=$registro['desc_plan']?></div> 
+    
     <button id="<?php echo 'comprar-' . $registro['id_plan'];?>" data-id="<?=$registro['id_plan']?>" data-nom="<?=$registro['nom_plan']?>" data-val="<?=$registro['valor_plan']?>" data-vigen="<?=$registro['dias_vigencia']?>" data-carrito="<?=$carrito?>" class='btn_secondary btn_planes'>Comprar</button>
 </section>
 <?php endforeach;?>

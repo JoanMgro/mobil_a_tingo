@@ -2,19 +2,16 @@
 require_once __DIR__ . '/' . '../models/classes/Conexion.php';
 require_once __DIR__ . '/' . '../models/classes/PlanesMobilatingo.php';
 
-
+function listarEshop(Conexion $conn, PlanesMobilatingo $model)
+{
+    return $model->listarEshop($conn);
+}
 
 function listarRegistros(Conexion $conn, PlanesMobilatingo $model, $limite, $filtro, $offSet)
 {   
     
-    if($_SESSION['pefid'] == 2)
-    {
-        return $model->listarEshop($conn);
-    }
-    else
-    {
         return $model->listar($conn, $limite, $filtro, $offSet);
-    }
+    
    
 
 }
@@ -88,21 +85,44 @@ if(isset($_POST['controller']))
 // actualizarRegistro(new Conexion, $plan, 6, 'plan actualizado', 'dec actualizada', 150000, 15);
 // eliminarRegistro(new Conexion, $plan, 6);
 
-$filtro = isset($_POST['filtro']) ? (empty($_POST['filtro']) ? null : $_POST['filtro']) : null; 
+if($_SESSION['pefid'] == 1)
+{
+    $filtro = isset($_POST['filtro']) ? (empty($_POST['filtro']) ? null : $_POST['filtro']) : null; 
 
-// $limite = isset($_POST['limite']) ? (empty($_POST['limite']) ? $pagina->getNumberOfRegisters(new Conexion, $filtro) : $_POST['limite']) : $pagina->getNumberOfRegisters(new Conexion, $filtro); 
-$limite = isset($_POST['limite']) ? (empty($_POST['limite']) ? 5 : $_POST['limite']) : 5; 
+    // $limite = isset($_POST['limite']) ? (empty($_POST['limite']) ? $pagina->getNumberOfRegisters(new Conexion, $filtro) : $_POST['limite']) : $pagina->getNumberOfRegisters(new Conexion, $filtro); 
+    $limite = isset($_POST['limite']) ? (empty($_POST['limite']) ? 5 : $_POST['limite']) : 5; 
 
-$resetPage = !isset($filtro) ? false : (isset($resetPage) ? false : true); 
-require_once __DIR__ . '/' . './cpaginacion.php';
-//obtengo el total de paginas para mostrar los registros
+    $resetPage = !isset($filtro) ? false : (isset($resetPage) ? false : true); 
+    require_once __DIR__ . '/' . './cpaginacion.php';
+    //obtengo el total de paginas para mostrar los registros
 
-$totalPages = totalPages($plan, $limite, $filtro);
-//calcular el offset
-$offSet = offSet($limite, $page); 
-$listadoRegistros = listarRegistros(new Conexion, $plan, $limite, $filtro, $offSet);
+    $totalPages = totalPages($plan, $limite, $filtro);
+    //calcular el offset
+    $offSet = offSet($limite, $page); 
+    $listadoRegistros = listarRegistros(new Conexion, $plan, $limite, $filtro, $offSet);
+
+}
+else{
+    $listadoRegistros = listarEshop(new Conexion, $plan);
+}
+
 
 //preguntamos si carrito esta seteado .. si no enrtonces vale 0.
+if(isset($_POST['controller']))
+{
+    if($_POST['controller'] == 'carrito')
+    {
+        session_start();
+        $_SESSION['carrito']['id_plan'] = $_POST['id_plan'];
+        $_SESSION['carrito']['nom_plan'] = $_POST['nom_plan'];
+        $_SESSION['carrito']['valor_plan'] = $_POST['valor_plan'];
+        $_SESSION['carrito']['dias_vigencia'] = $_POST['dias_vigencia'];
+
+    }
+  
+
+}
+
 $carrito = isset($_SESSION['carrito']) ? 1 : 0;
 
 // var_dump(listarRegistros(new Conexion, $plan, $limite, 'test', $offSet));
