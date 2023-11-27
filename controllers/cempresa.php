@@ -2,7 +2,7 @@
 require_once __DIR__ . '/' . '../models/classes/Conexion.php';
 require_once __DIR__ . '/' . '../models/classes/Cuenta.php';
 require_once __DIR__ . '/' . '../models/classes/Ubicacion.php';
-require_once __DIR__ . '/' . '../models/classes/Telefono.php';
+
 require_once __DIR__ . '/' . '../models/classes/Empresa.php';
 require_once __DIR__ . '/' . '../controllers/cpreparelogo.php';
 
