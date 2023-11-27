@@ -58,10 +58,6 @@ if(isset($_POST['controller']))
 $empresa = isset($_SESSION['id_empresa']) ? $_SESSION['id_empresa'] : $_POST['empresa'];
 $listadoRegistros = listar(new Conexion, $suscripcion, $empresa);
 
-// if(empty($listadoRegistros))
-// {
-//     $listadoPlanes = $planes->listar(new Conexion);
-// }
 
 
 

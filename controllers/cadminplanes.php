@@ -117,6 +117,7 @@ if(isset($_POST['controller']))
         $_SESSION['carrito']['nom_plan'] = $_POST['nom_plan'];
         $_SESSION['carrito']['valor_plan'] = $_POST['valor_plan'];
         $_SESSION['carrito']['dias_vigencia'] = $_POST['dias_vigencia'];
+        // header('location: ../home.php?pg=10');
 
     }
   

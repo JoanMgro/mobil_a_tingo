@@ -7,7 +7,7 @@
 <section class="main__section section">
     <h1>Mobilatingo eShop</h1>
     <?php
-    var_dump($_SESSION);
+    // var_dump($_SESSION);
     
     ?>
 
