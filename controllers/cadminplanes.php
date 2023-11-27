@@ -112,12 +112,12 @@ if(isset($_POST['controller']))
 {
     if($_POST['controller'] == 'carrito')
     {
-        session_start();
+        
         $_SESSION['carrito']['id_plan'] = $_POST['id_plan'];
         $_SESSION['carrito']['nom_plan'] = $_POST['nom_plan'];
         $_SESSION['carrito']['valor_plan'] = $_POST['valor_plan'];
         $_SESSION['carrito']['dias_vigencia'] = $_POST['dias_vigencia'];
-        // header('location: ../home.php?pg=10');
+        header('location: ../home.php?pg=14');
 
     }
   

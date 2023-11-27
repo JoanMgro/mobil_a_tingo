@@ -7,13 +7,13 @@ document.addEventListener('click', (e) => {
     {
         const httpRequest = new XMLHttpRequest();
         
-        httpRequest.open('POST', '../../controllers/cadminsuscripciones.php', true);
+        httpRequest.open('POST', '../home.php?pg=19', true);
         httpRequest.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
         httpRequest.onload = () =>{
             console.log(httpRequest.status);
             if(httpRequest.status === 200)
             {
-                window.location='../home.php?pg=10';
+                window.location='../home.php?pg=19';
             }
             
         }
@@ -27,7 +27,7 @@ document.addEventListener('click', (e) => {
     {
         const httpRequest = new XMLHttpRequest();
     
-        httpRequest.open('POST', '../../controllers/cadminsuscripciones.php', true);
+        httpRequest.open('POST', '../home.php?pg=19', true);
         httpRequest.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
         httpRequest.onload = () =>{
         console.log(httpRequest.status);
