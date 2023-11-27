@@ -48,7 +48,7 @@ if(isset($_POST['action']) && ($_POST['action'] == 'crearEmpresa'))
         
     
     }
-    echo "<script type='application/javascript'>window.location='../index.php?pg=1005&newreg=true'</script>";  
+    echo "<script type='text/javascript'>window.location='../index.php?pg=1005&newreg=true'</script>";  
    
 }
 

@@ -21,7 +21,7 @@ class PlanesMobilatingo{
     {
         $dbh = $conn->get_conexion(); 
         $sql = "SELECT pm.id_plan, pm.nom_plan, pm.desc_plan, pm.valor_plan";
-        $sql .= " FROM Planes_Mobilatingo pm;";
+        $sql .= " FROM Planes_Mobilatingo pm WHERE activo = 1;";
         // $sql = "call get_planes()";
         $stmt = $dbh->prepare($sql);
         $stmt->execute();
@@ -93,6 +93,22 @@ class PlanesMobilatingo{
         $dbh = null;
         $stmt = null;
         return $this->currentRows;
+    }
+
+    public function listarEshop(Conexion $conn)
+    {
+        $dbh = $conn->get_conexion();
+        
+            $sql = "SELECT * FROM Planes_Mobilatingo WHERE activo = 1";
+            $stmt = $dbh->prepare($sql);
+
+            $stmt->execute();
+            $planes = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $dbh = null;
+            $stmt = null;
+        
+        return $planes;
+
     }
 
     public function listar(Conexion $conn, $limite = null, $filtro  = null, $offset = null)

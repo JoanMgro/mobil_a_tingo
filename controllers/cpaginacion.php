@@ -1,6 +1,18 @@
 <?php
 
-$page = isset($_POST['page']) ? (empty($_POST['page']) ? 1 : $_POST['page']) : 1;
+
+if($resetPage)
+{
+    $page = 1;
+}
+else
+{
+    $page = isset($_POST['page']) ? (empty($_POST['page']) ? 1 : $_POST['page']) : 1;
+
+}
+    
+
+
 function totalPages($model, $limite, $filtro)
 {   
    

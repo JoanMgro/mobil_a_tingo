@@ -44,7 +44,7 @@ function acceder()
         //regresar a pagina login
         
         session_destroy();
-        echo "<script type='application/javascript'>window.location='../index.php?pg=1005'</script>";
+        echo "<script type='text/javascript'>window.location='../index.php?pg=1005'</script>";
     }
     
 

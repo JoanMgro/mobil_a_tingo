@@ -73,6 +73,6 @@ function crearConfig(Conexion $conn, Configuracion $model)
 // $con = new Configuracion(1,'1','1','1',1,'1',1,'1',1,'1',1,1,1,1,1);
 // actualizarConfig(new Conexion, $con);
 
-$listaRegistros = listarConfig(new Conexion, new Configuracion());
+$listaRegistros = listarConfig(new Conexion, new Configuracion);
 
 ?>

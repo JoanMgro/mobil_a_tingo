@@ -1,13 +1,21 @@
 <?php
 require_once __DIR__ . '/' . '../models/classes/Conexion.php';
 require_once __DIR__ . '/' . '../models/classes/PlanesMobilatingo.php';
-require_once __DIR__ . '/' . './cpaginacion.php';
+
 
 
 function listarRegistros(Conexion $conn, PlanesMobilatingo $model, $limite, $filtro, $offSet)
 {   
     
-    return $model->listar($conn, $limite, $filtro, $offSet);
+    if($_SESSION['pefid'] == 2)
+    {
+        return $model->listarEshop($conn);
+    }
+    else
+    {
+        return $model->listar($conn, $limite, $filtro, $offSet);
+    }
+   
 
 }
 
@@ -36,37 +44,43 @@ function crearRegistro(Conexion $conn, PlanesMobilatingo $modelo, $nombre, $desc
 //Creo la instancia
 $plan = new PlanesMobilatingo();
 
-//llamamos la funcion correspondiente
-if($_POST['controller'] == 'activar')
+if(isset($_POST['controller']))
 {
-    activarRegistro(new Conexion, $plan, $_POST['id_plan'], $_POST['activo']);
-}   
-if($_POST['controller'] == 'actualizar')
-{
-    actualizarRegistro(new Conexion, $plan, $_POST['id_plan'], $_POST['nom_plan'], $_POST['desc_plan'], $_POST['valor_plan'], $_POST['dias_vigencia']);
-}
 
-if($_POST['controller'] == 'eliminar')
-{
-    if(isset($_POST['id_plan']))
+    //llamamos la funcion correspondiente
+    if($_POST['controller'] == 'activar')
     {
-        
-        eliminarRegistro(new Conexion, $plan, $_POST['id_plan']);
+        activarRegistro(new Conexion, $plan, $_POST['id_plan'], $_POST['activo']);
+    }   
+    if($_POST['controller'] == 'actualizar')
+    {
+        actualizarRegistro(new Conexion, $plan, $_POST['id_plan'], $_POST['nom_plan'], $_POST['desc_plan'], $_POST['valor_plan'], $_POST['dias_vigencia']);
     }
-    
-}
-if($_POST['controller'] == 'crear')
-{
-    if(isset($_POST['nom_plan'], $_POST['desc_plan'], $_POST['valor_plan'], $_POST['dias_vigencia']))
-    {
-    
-        
-            $mostrar = isset($_POST['activo']) ? isset($_POST['activo']) : 1;
-            crearRegistro(new Conexion, $plan, $_POST['nom_plan'], $_POST['desc_plan'], $_POST['valor_plan'], $_POST['dias_vigencia'], $mostrar);
-              
 
+    if($_POST['controller'] == 'eliminar')
+    {
+        if(isset($_POST['id_plan']))
+        {
+            
+            eliminarRegistro(new Conexion, $plan, $_POST['id_plan']);
+        }
+        
     }
-    
+    if($_POST['controller'] == 'crear')
+    {
+        if(isset($_POST['nom_plan'], $_POST['desc_plan'], $_POST['valor_plan'], $_POST['dias_vigencia']))
+        {
+        
+            
+                $mostrar = isset($_POST['activo']) ? isset($_POST['activo']) : 1;
+                crearRegistro(new Conexion, $plan, $_POST['nom_plan'], $_POST['desc_plan'], $_POST['valor_plan'], $_POST['dias_vigencia'], $mostrar);
+                
+
+        }
+        
+    }
+
+
 }
 
 
@@ -79,7 +93,8 @@ $filtro = isset($_POST['filtro']) ? (empty($_POST['filtro']) ? null : $_POST['fi
 // $limite = isset($_POST['limite']) ? (empty($_POST['limite']) ? $pagina->getNumberOfRegisters(new Conexion, $filtro) : $_POST['limite']) : $pagina->getNumberOfRegisters(new Conexion, $filtro); 
 $limite = isset($_POST['limite']) ? (empty($_POST['limite']) ? 5 : $_POST['limite']) : 5; 
 
-
+$resetPage = !isset($filtro) ? false : (isset($resetPage) ? false : true); 
+require_once __DIR__ . '/' . './cpaginacion.php';
 //obtengo el total de paginas para mostrar los registros
 
 $totalPages = totalPages($plan, $limite, $filtro);
@@ -87,6 +102,7 @@ $totalPages = totalPages($plan, $limite, $filtro);
 $offSet = offSet($limite, $page); 
 $listadoRegistros = listarRegistros(new Conexion, $plan, $limite, $filtro, $offSet);
 
+//preguntamos si carrito esta seteado .. si no enrtonces vale 0.
 $carrito = isset($_SESSION['carrito']) ? 1 : 0;
 
 // var_dump(listarRegistros(new Conexion, $plan, $limite, 'test', $offSet));

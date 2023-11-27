@@ -31,7 +31,7 @@ function borrarCarro()
     unset($_SESSION['carrito']);
 }
 
-$michu = $_SESSION['id_empresa'];
+//$michu = $_SESSION['id_empresa'];
 
 $planes = new PlanesMobilatingo();
 $suscripcion = new Suscripcion();

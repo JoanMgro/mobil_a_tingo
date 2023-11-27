@@ -1,13 +1,13 @@
 <?php
     require_once __DIR__ . '/' . '../../controllers/cadminplanes.php';
-    // require_once __DIR__ . '/' . '../../controllers/cshop.php';
+    // require_once __DIR__ . '/' . '../../controllers/cshop.php'; 
 
 ?>
 
 <section class="main__section section">
     <h1>Mobilatingo eShop</h1>
     <?php
-    
+    //var_dump($carrito);
     ?>
 
 </section>

@@ -39,7 +39,7 @@ require __DIR__ . '/' . '../../controllers/cadminusuarios.php';
     <?php foreach($listadoRegistros as $registro):?>
     <div class="pagina">
         
-        <form id="<?php echo 'updateform' . $registro['id_cuenta'];?>" class="pagina__registro registro" action="" method="post">
+        <form id="<?php echo 'updateform' . $registro['id_cuenta'];?>" class="pagina__registro registro" action="#" method="post">
             <label class="registro__label" for="<?php echo 'id-' . $registro['id_cuenta'];?>"><b>Id:</b></label>
             <input class="registro__input registro__input_short type="text" name="id_cuenta" id="<?php echo 'id-' . $registro['id_cuenta'];?>" value="<?=$registro['id_cuenta']?>">
             

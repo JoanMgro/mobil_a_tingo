@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/' . '../models/classes/Conexion.php';
 require_once __DIR__ . '/' . '../models/classes/Faq.php';
-require_once __DIR__ . '/' . './cpaginacion.php';
+
 
 
 function listarRegistros(Conexion $conn, Faq $model, $limite, $filtro, $offSet)
@@ -35,38 +35,42 @@ function crearRegistro(Conexion $conn, Faq $modelo, $question, $answer, $activo)
 
 //Creo la instancia
 $faq = new Faq();
-
-//llamamos la funcion correspondiente
-if($_POST['controller'] == 'activar')
+if(isset($_POST['controller']))
 {
-    activarRegistro(new Conexion, $faq, $_POST['id_faq'], $_POST['activo']);
-}   
-if($_POST['controller'] == 'actualizar')
-{
-    actualizarRegistro(new Conexion, $faq, $_POST['id_faq'], $_POST['question'], $_POST['answer']);
-}
-
-if($_POST['controller'] == 'eliminar')
-{
-    if(isset($_POST['id_faq']))
+        //llamamos la funcion correspondiente
+    if($_POST['controller'] == 'activar')
     {
-        
-        eliminarRegistro(new Conexion, $faq, $_POST['id_faq']);
-    }
-    
-}
-if($_POST['controller'] == 'crear')
-{
-    if(isset($_POST['question'], $_POST['answer']))
+        activarRegistro(new Conexion, $faq, $_POST['id_faq'], $_POST['activo']);
+    }   
+    if($_POST['controller'] == 'actualizar')
     {
-    
-        
-            $mostrar = isset($_POST['activo']) ? isset($_POST['activo']) : 1;
-            crearRegistro(new Conexion, $faq, $_POST['question'], $_POST['answer'], $mostrar);
-              
-
+        actualizarRegistro(new Conexion, $faq, $_POST['id_faq'], $_POST['question'], $_POST['answer']);
     }
-    
+
+    if($_POST['controller'] == 'eliminar')
+    {
+        if(isset($_POST['id_faq']))
+        {
+            
+            eliminarRegistro(new Conexion, $faq, $_POST['id_faq']);
+        }
+        
+    }
+    if($_POST['controller'] == 'crear')
+    {
+        if(isset($_POST['question'], $_POST['answer']))
+        {
+        
+            
+                $mostrar = isset($_POST['activo']) ? isset($_POST['activo']) : 1;
+                crearRegistro(new Conexion, $faq, $_POST['question'], $_POST['answer'], $mostrar);
+                
+
+        }
+        
+    }
+
+
 }
 
 
@@ -79,7 +83,8 @@ $filtro = isset($_POST['filtro']) ? (empty($_POST['filtro']) ? null : $_POST['fi
 // $limite = isset($_POST['limite']) ? (empty($_POST['limite']) ? $pagina->getNumberOfRegisters(new Conexion, $filtro) : $_POST['limite']) : $pagina->getNumberOfRegisters(new Conexion, $filtro); 
 $limite = isset($_POST['limite']) ? (empty($_POST['limite']) ? 5 : $_POST['limite']) : 5; 
 
-
+$resetPage = !isset($filtro) ? false : (isset($resetPage) ? false : true); 
+require_once __DIR__ . '/' . './cpaginacion.php';
 //obtengo el total de paginas para mostrar los registros
 
 $totalPages = totalPages($faq, $limite, $filtro);

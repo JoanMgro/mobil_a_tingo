@@ -10,11 +10,16 @@ function listarPaginasPorPerfil(Conexion $conn, Perfil $perfil, $pefid, $pagmen)
 
 $pagper = new Perfil();
 
-if($_POST['controller'] == 'mostrar')
+if(isset($_POST['controller']))
+{
+    if($_POST['controller'] == 'mostrar')
 {
     
     $listadoPagPer= listarPaginasPorPerfil(new Conexion, $pagper, $_POST['pefid'], $_POST['pagmen']);
 }
+
+}
+
 
 
 

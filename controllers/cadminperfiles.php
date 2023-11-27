@@ -25,25 +25,31 @@ function listarPaginasPorPerfil(Conexion $conn, Perfil $perfil, $pefid, $pagmen)
 $perfil = new Perfil();
 
 
+
+
+if(isset($_POST['controller']))
+{
+        if($_POST['controller'] == 'mostrar')
+    {
+        
+        $listadoPagPer= listarPaginasPorPerfil(new Conexion, $perfil, $_POST['pefid'], $_POST['pagmen']);
+    }
+
+
+    if($_POST['controller'] == 'borrarpagper')
+    {
+        borrarPagPer(new Conexion, $perfil, $_POST['pefid'], $_POST['pagid']);
+
+    }
+    if($_POST['controller'] == 'agregarpagper')
+    {
+        agregarPagPer(new Conexion, $perfil, $_POST['pefid'], $_POST['pagid']);
+    }
+
+
+}
+
 $listadoRegistros = listarPerfiles(new Conexion, $perfil);
-
-
-if($_POST['controller'] == 'mostrar')
-{
-    
-    $listadoPagPer= listarPaginasPorPerfil(new Conexion, $perfil, $_POST['pefid'], $_POST['pagmen']);
-}
-
-
-if($_POST['controller'] == 'borrarpagper')
-{
-    borrarPagPer(new Conexion, $perfil, $_POST['pefid'], $_POST['pagid']);
-
-}
-if($_POST['controller'] == 'agregarpagper')
-{
-    agregarPagPer(new Conexion, $perfil, $_POST['pefid'], $_POST['pagid']);
-}
 
 
 

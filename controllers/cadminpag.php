@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/' . '../models/classes/Conexion.php';
 require_once __DIR__ . '/' . '../models/classes/Pagina.php';
-require_once __DIR__ . '/' . './cpaginacion.php';
+
 
 
 function listarRegistros(Conexion $conn, Pagina $model, $limite, $filtro, $offSet)
@@ -36,37 +36,43 @@ function crearRegistro(Conexion $conn, Pagina $modelo, $id, $nombre, $archivo, $
 //Creo la instancia
 $pagina = new Pagina();
 
-//llamamos la funcion correspondiente
-if($_POST['controller'] == 'activar')
+if(isset($_POST['controller']))
 {
-    activarRegistro(new Conexion, new Pagina, $_POST['pagid'], $_POST['pagmos']);
-}   
-if($_POST['controller'] == 'actualizar')
-{
-    actualizarRegistro(new Conexion, new Pagina, $_POST['pagid'], $_POST['oldid'], $_POST['pagnom'], $_POST['pagarc'], $_POST['pagord'], $_POST['pagmen']);
-}
-
-if($_POST['controller'] == 'eliminar')
-{
-    if(isset($_POST['pagid']))
+        //llamamos la funcion correspondiente
+    if($_POST['controller'] == 'activar')
     {
-        
-        eliminarRegistro(new Conexion, $pagina, $_POST['pagid']);
-    }
-    
-}
-if($_POST['controller'] == 'crear')
-{
-    if(isset($_POST['id'], $_POST['nombre'], $_POST['archivo'], $_POST['orden'], $_POST['menu']))
+        activarRegistro(new Conexion, new Pagina, $_POST['pagid'], $_POST['pagmos']);
+        echo "<script type='text/javascript'>window.location='../home.php?pg=104'</script>";
+    }   
+    if($_POST['controller'] == 'actualizar')
     {
-    
-        
-            $mostrar = isset($_POST['activo']) ? isset($_POST['activo']) : 0;
-            crearRegistro(new Conexion, $pagina, $_POST['id'], $_POST['nombre'], $_POST['archivo'], $mostrar,$_POST['orden'], $_POST['menu']);
-              
-
+        actualizarRegistro(new Conexion, new Pagina, $_POST['pagid'], $_POST['oldid'], $_POST['pagnom'], $_POST['pagarc'], $_POST['pagord'], $_POST['pagmen']);
     }
-    
+
+    if($_POST['controller'] == 'eliminar')
+    {
+        if(isset($_POST['pagid']))
+        {
+            
+            eliminarRegistro(new Conexion, $pagina, $_POST['pagid']);
+        }
+        
+    }
+    if($_POST['controller'] == 'crear')
+    {
+        if(isset($_POST['id'], $_POST['nombre'], $_POST['archivo'], $_POST['orden'], $_POST['menu']))
+        {
+        
+            
+                $mostrar = isset($_POST['activo']) ? isset($_POST['activo']) : 0;
+                crearRegistro(new Conexion, $pagina, $_POST['id'], $_POST['nombre'], $_POST['archivo'], $mostrar,$_POST['orden'], $_POST['menu']);
+                
+
+        }
+        
+    }
+
+
 }
 
 
@@ -77,6 +83,8 @@ $filtro = isset($_POST['filtro']) ? (empty($_POST['filtro']) ? null : $_POST['fi
 // $limite = isset($_POST['limite']) ? (empty($_POST['limite']) ? $pagina->getNumberOfRegisters(new Conexion, $filtro) : $_POST['limite']) : $pagina->getNumberOfRegisters(new Conexion, $filtro); 
 $limite = isset($_POST['limite']) ? (empty($_POST['limite']) ? 5 : $_POST['limite']) : 5; 
 
+$resetPage = !isset($filtro) ? false : (isset($resetPage) ? false : true); 
+require_once __DIR__ . '/' . './cpaginacion.php';
 
 //obtengo el total de paginas para mostrar los registros
 
