@@ -96,7 +96,7 @@ class Pagina
         return $this->paginas;
     }
 
-    public function listar(Conexion $conn, $limite = null, $filtro, $offset)
+    public function listar(Conexion $conn, $limite, $filtro, $offset)
     {
         $dbh = $conn->get_conexion();
 
