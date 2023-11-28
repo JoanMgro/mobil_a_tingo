@@ -13,6 +13,12 @@
     
 }
 
+.main__section_cuenta{
+    @include pos-col(1, 12);
+    justify-self: center;
+}
+
+
 .main__paginas_title{
     @include pos-col(1, 12);
     justify-self: center;
@@ -52,6 +58,11 @@
     }
     .main__section{
         @include pos-col(2, 10);
+    }
+
+    .main__section_cuenta{
+        @include pos-col(2, 10);
+       
     }
  
 }

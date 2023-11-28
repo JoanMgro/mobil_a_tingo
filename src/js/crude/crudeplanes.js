@@ -37,6 +37,7 @@ document.addEventListener('click', (e) => {
         httpRequest.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
         httpRequest.onload = () =>{
          console.log(httpRequest.status);
+         window.location='../home.php?pg=103';
         }
                 
         httpRequest.send(`controller=actualizar&id_plan=${object.id_plan}&nom_plan=${object.nom_plan}&desc_plan=${object.desc_plan}&valor_plan=${object.valor_plan}&dias_vigencia=${object.dias_vigencia}`);

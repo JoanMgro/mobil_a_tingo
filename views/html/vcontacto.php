@@ -1,4 +1,4 @@
-<section class="main__section section section_contactenos">
+<section class="main__section_cuenta section section_contactenos">
     <div class="form">
         <input class="form__input_contactenos input" type="text"  id="cnombre" placeholder="Nombre">
         <input class="form__input_contactenos input" type="text"  id="cemail" placeholder="Correo electronico">

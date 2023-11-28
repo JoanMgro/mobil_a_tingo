@@ -27,7 +27,7 @@ function crearConfig(Conexion $conn, Configuracion $model)
 
  if(isset($_POST['controller']))
    {
-    if($_POST['controller'] == 'actualizar')
+    if($_POST['controller'] == 'actualizarConfig')
     {
         $mosdir = isset($_POST['mosdir']) ? $_POST['mosdir'] : 0;
         $mostel = isset($_POST['mostel']) ? $_POST['mostel'] : 0;
@@ -47,7 +47,7 @@ function crearConfig(Conexion $conn, Configuracion $model)
           
     }
 
-    if($_POST['controller'] == 'crear')
+    if($_POST['controller'] == 'crearConfig')
     {
           
         $mosdir = isset($_POST['mosdir']) ? $_POST['mosdir'] : 0;

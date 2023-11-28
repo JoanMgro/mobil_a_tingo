@@ -15,13 +15,13 @@ document.addEventListener('click', (e) => {
 
 if(e.target.value == 'Actualizar')
 {
-    document.querySelector('#controller').value = 'actualizar';
+    document.querySelector('#controller').value = 'actualizarConfig';
     document.querySelector('#cuentareg').submit();
 }
 
 if(e.target.value == 'Crear')
 {
-    document.querySelector('#controller').value = 'crear';
+    document.querySelector('#controller').value = 'crearConfig';
     document.querySelector('#cuentareg').submit();
 }
 

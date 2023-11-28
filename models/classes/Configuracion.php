@@ -44,7 +44,7 @@ class Configuracion{
     {
 
         $dbh = $conn->get_conexion();            
-        $sql = "SELECT * FROM Configuracion ";
+        $sql = "SELECT * FROM Configuracion";
         $stmt = $dbh->prepare($sql);
         $stmt->execute();
         $config = $stmt->fetchAll(PDO::FETCH_ASSOC);

@@ -1,4 +1,4 @@
-<section class="main__section section section_registrarse">
+<section class="main__section_cuenta section section_registrarse">
   <p class="text text_registrarse_titulo">Datos de Registro</p>      
       
   <form id="registrarse" action="../../controllers/cempresa.php" method="POST" class="form form_registrarse" enctype="multipart/form-data">

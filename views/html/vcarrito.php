@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/' . '../../controllers/cadminsuscripciones.php';
 ?>
-<section class="main__section section">
+<section class="main__section_cuenta section">
 <p class="text text_dashboard_title">Mi Carrito de Compras</p>
 <?php
 // var_dump($_SESSION['carrito']);

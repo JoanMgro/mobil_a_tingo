@@ -33,7 +33,7 @@ document.addEventListener('click', (e) => {
         console.log(httpRequest.status);
             if(httpRequest.status === 200)
             {
-                window.location='../home.php?pg=10';
+                window.location='../home.php?pg=19';
             }
         }
         // httpRequest.send(JSON.stringify(payload));

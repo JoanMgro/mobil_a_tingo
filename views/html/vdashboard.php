@@ -25,7 +25,7 @@ require_once __DIR__ . '/' . '../../controllers/cdashboard.php';
     
 </section>
 <?php if($_SESSION['pefid'] == 1):?>
-    <section class="main__section section section_dashboard">
+    <section class="main__section_cuenta section section_dashboard">
         <p class="text text_dashboard_title">Mi Cuenta</p>
         <form id="cuenta" action="" method="" class="form-container__form form form_type_dashboard">
           

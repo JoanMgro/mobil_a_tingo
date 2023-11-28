@@ -36,7 +36,7 @@ if($_SESSION['pefid'] == 2)
     {
       $ubicacion = new Ubicacion($_POST['pais'], $_POST['departamento'], $_POST['ciudad'], $_POST['barrio'], $_POST['direccion'], $_POST['latitud'], $_POST['longitud']);
       
-      $logo = isset($_FILES['logo']) ? prepararLogo() : null;
+      $logo = isset($_FILES['logo']) && $_FILES['logo']['size'] > 0 ? prepararLogo() : $_SESSION['url_logo'];
 
       $empresa = new Empresa($_SESSION['id_empresa'],null, null, null, $logo,  $_POST['contacto'], $_POST['servicios']);
       actualizarEmpresa(new Conexion, $empresa, $ubicacion, $_POST['id_ubicacion']);
