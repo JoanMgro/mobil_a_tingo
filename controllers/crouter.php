@@ -9,6 +9,13 @@ function showPage(Conexion $conn, Pagina $pag)
 
 }
 
+if(!isset($_GET['pg']))
+{
+    
+    echo "<script type='text/javascript'>window.location='../index.php?pg=1000'</script>";
+}
+
+
 $pg = isset($_GET['pg']) ? $_GET['pg'] : 1000;
 
 $pag = new Pagina($pg); 
