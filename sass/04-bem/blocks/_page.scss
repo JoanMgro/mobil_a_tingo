@@ -29,6 +29,7 @@
       @include absolute($bottom: 0rem, $left: 0rem, $right: 0rem);
       @include disp-flex;
       min-height: 5.3rem;
+      z-index: -1;
 
     }
 }
